@@ -33,11 +33,11 @@ cd personal-performance-assistant
 /ppa-init-constraints
 ```
 
-This will run the initialization prompt which helps set up or update the assistant constraints and apply templates to your workspace files.
+This will run the initialization prompt which helps set up or update the assistant guidelines and apply templates to your workspace files.
 
 ## Structure
 
-- .ppa/ — assistant constraints and templates
+- .ppa/ — assistant guidelines and templates
 - .github/prompts/ — conversational prompts for the assistant
 - workspace/ — your personal Markdown documents (DO NOT COMMIT SENSITIVE DATA)
 - README.md — this file
@@ -62,5 +62,5 @@ Fork → branch → PR. Keep changes small and document template or guideline up
 
 ## Note
 
-If you prefer English as the default workspace language, run the `/ppa-init-constraints` prompt and select English during setup to update `.ppa/Guidelines.md` accordingly.
+If you prefer English as the default workspace language, run the `/ppa-init-constraints` prompt and select English during setup to update `.ppa/guidelines.md` accordingly.
 
