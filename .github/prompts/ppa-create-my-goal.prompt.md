@@ -1,3 +1,7 @@
+---
+description: This prompt helps the user create a SMART goal and adds it to the goals.md file.
+---
+
 # PPA: Help Me Create a Goal (English)
 
 This prompt assists the user in drafting a SMART goal. It collects a short title, purpose, measurable outcomes, timeframe, and suggested key results. It will then create a new file in `workspace/goals.md` using `.ppa/templates/goal.md`.

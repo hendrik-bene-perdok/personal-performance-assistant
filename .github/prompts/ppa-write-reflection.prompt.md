@@ -1,4 +1,8 @@
-# PPA: Write Reflection (English)
+---
+description: This prompt guides the user through writing a reflection entry and fills the reflection template.
+---
+
+# PPA: Write Reflection
 
 Use this prompt to guide the user through writing a reflection entry. It will ask about the situation, actions, outcome and insights, then fill the `.ppa/templates/reflection-listening.md` template.
 
