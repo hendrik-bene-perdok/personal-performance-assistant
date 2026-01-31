@@ -15,9 +15,14 @@ The `guidelines.md` file must *at a minimum* contain the following baseline rule
 - **Structure**: Keep sentences relatively short and direct.
 - **Default Language**: English. Unless the user explicitly requests another language, all output MUST be in English.
 
+
 # WORKSPACE GUIDELINES
 - All file names and file content created or updated in the `workspace/` folder MUST adhere to the Default Language.
-- When referencing files in the `workspace/` folder, ALWAYS use relative paths.
+- When referencing files in the `workspace/` folder, ALWAYS use the following variable mappings (defined in the generated `guidelines.md`):
+    - `[PROFILE]` -> Path to the profile file (e.g., `workspace/profile.md` or `workspace/profiel.md`)
+    - `[ROLE_DESC]` -> Path to the role description (e.g., `workspace/current-role-description.md`)
+    - `[JOURNAL]` -> Path to the journal (e.g., `workspace/journal.md`)
+    - `[GOALS]` -> Path to the goals file (e.g., `workspace/goals.md`)
 - If a file does not exist in the `workspace/` folder, you MUST create it using the appropriate template from `.ppa/templates/`.
 - Use relative paths when referencing workspace files.
 
@@ -27,7 +32,7 @@ The `guidelines.md` file must *at a minimum* contain the following baseline rule
 - Follow the structure of the template EXACTLY. Do not skip sections or change the order.
 
 # CONTEXT AWARENESS GUIDELINES
-- Always consider workspace/profile.md as the base context for the user.
+- Always consider [PROFILE] as the base context for the user.
 - Read this file to understand the user's role, goals, and style before generating any content.
 
 </baseline_rules>
@@ -36,7 +41,7 @@ The `guidelines.md` file must *at a minimum* contain the following baseline rule
 Ask the user the following questions one by one (or grouped if appropriate) to customize the constraints. Ensure you get clear answers.
 
 0. **Introduction**: "Hello! I am the PPA Configuration Wizard. I will help you set up the guidelines for your Personal Performance Assistant. Let's start with a few questions to understand your preferences."
-1.  **Language Preference**: "Do you want to change the default language(eg. "Dutch", "German")?"
+1.  **Language Preference**: "Do you want to change the default language (e.g., "Dutch", "German")?"
 2.  **Writing Style**: "What writing style do you prefer for your agents? (e.g., Professional, Casual, Socratic, Concise, Encouraging)"
 3.  **Custom Rules**: "Do you have any specific strict rules you want to enforce globally across all agents? (e.g., 'Never use emojis', 'Always format dates as YYYY-MM-DD', 'Always provide sources')"
 
@@ -45,9 +50,27 @@ Ask the user the following questions one by one (or grouped if appropriate) to c
 - Do not proceed to generation until you are confident the requirements are clear.
 
 ## Phase 3: Generation
-Once the interview is complete, generate the full content of `.ppa/guidelines.md`.
+Once the interview is complete, perform the following actions:
 
-**Requirements for Output:**
+1.  **Define File Names**: Determine the appropriate filenames based on the chosen language (e.g., if Dutch: `profile.md` -> `profiel.md`, `goals.md` -> `doelen.md`).
+2.  **Initialize Workspace**: 
+    - Check if the `workspace/` directory exists. If not, create it.
+    - Check if the following files exist in `workspace/`. If not, create them (empty or with a header):
+        - File mapping to `[PROFILE]`
+        - File mapping to `[ROLE_DESC]`
+        - File mapping to `[JOURNAL]`
+        - File mapping to `[GOALS]`
+3.  **Generate Guidelines**: Generate the full content of `.ppa/guidelines.md`.
+
+**Requirements for Output (`.ppa/guidelines.md`):**
+- **Variable Definitions**: explicitly define the mapping at the top of the file:
+    ```markdown
+    # FILE VARIABLE MAPPINGS
+    $PROFILE = "workspace/..."
+    $ROLE_DESC = "workspace/..."
+    $JOURNAL = "workspace/..."
+    $GOALS = "workspace/..."
+    ```
 - Merge the <baseline_rules> with the user's preferences.
 - Organize the file with clear H1 headers (e.g., `# LANGUAGE RULE`, `# STYLE GUIDELINES`, `# CUSTOM RULES`).
 - Ensure the rules are written as imperative instructions for an AI (e.g., "You MUST...", "Always...").

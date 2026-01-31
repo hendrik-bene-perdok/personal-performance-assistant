@@ -12,7 +12,7 @@ A simple, framework for tracking goals and reflections in Markdown, designed to 
 
 ## About this project
 
-This repository provides a compact structure and templates to capture SMART goals, maintain a profile, and keep a regular logbook with guided reflection. It is optimized for local use with an AI assistant (for example inside VS Code).
+This repository provides a compact structure and templates to capture SMART goals, maintain a profile, and keep a regular logbook with guided reflection. It is optimized for local use with an AI assistant inside VS Code.
 
 ## Quick Start
 
