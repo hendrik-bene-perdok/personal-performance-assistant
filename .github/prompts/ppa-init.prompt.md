@@ -10,11 +10,10 @@ The `guidelines.md` file must *at a minimum* contain the following baseline rule
 <baseline_rules>
 
 # LANGUAGE AND STYLE GUIDELINES
-- **Tone**: Professional and Concise.
+- **Default Language**: English. Unless the user explicitly requests another language, all output MUST be in English.
+- **Tone**: Professional, challenging but supportive, concise, confident, no-nonsense, conceptual but pragmatic
 - **Writing Level**: Simple, clear, and accessible language.
 - **Structure**: Keep sentences relatively short and direct.
-- **Default Language**: English. Unless the user explicitly requests another language, all output MUST be in English.
-
 
 # WORKSPACE GUIDELINES
 - All file names and file content created or updated in the `workspace/` folder MUST adhere to the Default Language.
@@ -32,8 +31,8 @@ The `guidelines.md` file must *at a minimum* contain the following baseline rule
 - Follow the structure of the template EXACTLY. Do not skip sections or change the order.
 
 # CONTEXT AWARENESS GUIDELINES
-- Always consider [PROFILE] as the base context for the user.
-- Read this file to understand the user's role, goals, and style before generating any content.
+- Always use the files in the `workspace/` folder as the source of truth for the user.
+- Always use user context first before giving advice.
 
 </baseline_rules>
 
