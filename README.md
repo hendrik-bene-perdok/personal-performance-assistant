@@ -12,7 +12,7 @@ A simple, framework for tracking goals and reflections in Markdown, designed to 
 
 ## About this project
 
-This repository provides a compact structure and templates to capture SMART goals, maintain a profile, and keep a regular logbook with guided reflection. It is optimized for local use with an AI assistant (for example inside VS Code).
+This repository provides a compact structure and templates to capture SMART goals, maintain a profile, and keep a regular logbook with guided reflection. It is optimized for local use with an AI assistant inside VS Code.
 
 ## Quick Start
 
@@ -33,11 +33,11 @@ cd personal-performance-assistant
 /ppa-init-constraints
 ```
 
-This will run the initialization prompt which helps set up or update the assistant constraints and apply templates to your workspace files.
+This will run the initialization prompt which helps set up or update the assistant guidelines and apply templates to your workspace files.
 
 ## Structure
 
-- .ppa/ — assistant constraints and templates
+- .ppa/ — assistant guidelines and templates
 - .github/prompts/ — conversational prompts for the assistant
 - workspace/ — your personal Markdown documents (DO NOT COMMIT SENSITIVE DATA)
 - README.md — this file
@@ -62,5 +62,5 @@ Fork → branch → PR. Keep changes small and document template or guideline up
 
 ## Note
 
-If you prefer English as the default workspace language, run the `/ppa-init-constraints` prompt and select English during setup to update `.ppa/Guidelines.md` accordingly.
+If you prefer English as the default workspace language, run the `/ppa-init-constraints` prompt and select English during setup to update `.ppa/guidelines.md` accordingly.
 
