@@ -17,17 +17,14 @@ Here is the complete, standardized **AI Agent & Prompt Engineering Principles** 
 | --- | --- | --- |
 | **1. Routine & High-Velocity**<br>
 
-<br>*(The Router)* | **GPT-5 Mini**<br>
+<br>*(The Router)* | **GPT-5 mini (copilot)**<br>
 
 <br>*(Fallback: GPT-4o)* | **Low Latency:** Real-time orchestration, simple summarization, intent classification, and fast data processing. |
 | **2. Strategic Reasoning & Research**<br>
 
-<br>*(The Architect)* | **GPT-5, Claude Opus 4.5**<br>
+<br>*(The Architect)* | **GPT-5 (copilot), Gemini 3 Pro (Preview) (copilot),  Claude Opus 4.5**<br>
 
-<br>*(Deep Research for data)* | **High Intelligence:** Complex planning, math/logic proofs, creative ideation, and multi-source literature reviews. |
-| **3. Technical Execution & Multimodal**<br>
-
-<br>*(The Engineer)* | **Claude Sonnet 4.5, Gemini 3 Pro** | **High Precision:** Deterministic coding, strict JSON/YAML generation, web browsing, and vision/audio analysis. |
+<br>*(The Engineer)* | **Claude Sonnet 4.5, Gemini 3 Pro (Preview) (copilot)** | **High Precision:** Deterministic coding, strict JSON/YAML generation, web browsing, and vision/audio analysis. |
 
 ---
 
