@@ -24,10 +24,11 @@ Conduct a structured interview with the user to gather requirements, and subsequ
 
    ## PATH VARIABLE MAPPINGS
    You MUST treat the following variables as dynamic references. The actual filenames MUST be translated to the Default Language.
+   - $GUIDELINES: "workspace/[guidelines_filename]" (e.g., "workspace/guidelines.md" for English, "workspace/richtlijnen.md" for Dutch)
    - $PROFILE: "workspace/[profile_filename]" (e.g., "workspace/profile.md" for English, "workspace/profiel.md" for Dutch)
-   - $ROLE_DESC: "workspace/[role_description_filename]"
-   - $JOURNAL: "workspace/[journal_filename]"
-   - $GOALS: "workspace/[goals_filename]"
+   - $ROLE_DESCRIPTION: "workspace/[role_description_filename]" (e.g., "workspace/role_description.md" for English, "workspace/rol_beschrijving.md" for Dutch)
+   - $JOURNAL: "workspace/[journal_filename]" (e.g., "workspace/journal.md" for English, "workspace/dagboek.md" for Dutch)
+   - $GOALS: "workspace/[goals_filename]" (e.g., "workspace/goals.md" for English, "workspace/doelen.md" for Dutch)
 
    ## FILE OPERATION RULES
    - **Naming Convention**: You MUST ensure all file names adhere to the default language.
@@ -37,9 +38,9 @@ Conduct a structured interview with the user to gather requirements, and subsequ
 
    # WORKSPACE RULES
    - You MUST ensure the `workspace/` folder exists.
-   - You MUST determine the appropriate filenames for the workspace files ($PROFILE, $ROLE_DESC, etc.) based on the Default Language.
-   - You MUST ensure all file content in the `workspace/` folder is translated to the Default Language, except for system files if simplified.
-   - If a file does not exist in the `workspace/` folder, you MUST create it using the appropriate template from `.ppa/templates/`, translating both the filename and the content.
+   - You MUST determine the appropriate filenames(full name) for the workspace files ($PROFILE, $ROLE_DESCRIPTION, etc.) based on the Default Language.
+   - You MUST create the appropriate files in `workspace/`.
+      - If a file does not exist in the `workspace/` folder, you MUST create it using the appropriate template from `.ppa/templates/`, translating both the filename and the content.
    - You MUST use relative paths when referencing workspace files.
 
    # TEMPLATE ADHERENCE RULES
@@ -76,7 +77,7 @@ Conduct a structured interview with the user to gather requirements, and subsequ
 4. **Initialize Workspace**
    - **Pre-requisite**: You MUST ONLY proceed if the user has confirmed the requirements in Step 3.
    - Check if `workspace/` exists (create if not).
-   - Check for existence of mapped files (`[PROFILE]`, `[ROLE_DESC]`, etc.). Create them with templates if missing.
+   - Check for existence of mapped files (`[PROFILE]`, `[ROLE_DESCRIPTION]`, etc.). Create them with templates if missing.
 
 5. **Generate Output**
    - Determine and generate localized filenames in `workspace/` based on the chosen language.
