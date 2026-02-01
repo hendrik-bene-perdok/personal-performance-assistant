@@ -52,11 +52,13 @@ This will run the initialization prompt which helps set up or update the assista
 ## Simple flow
 
 ```mermaid
-flowchart TD
-  Init[0. One-time Init (Wizard)] --> Profile[1. Create Profile]
-  Profile --> Goal[2. Create Goal]
-  Goal --> Cycle[3. Continuous Cycle<br/>(Performance Coach, Reflections, etc.)]
-  Cycle --> Cycle
+flowchart LR
+    Init[0. One-time Init Wizard] --> Profile[1. Create Profile]
+    Profile --> Goal[2. Create/Update Goal]
+    
+    %% The main loop
+    Goal --> Cycle[3. Continuous Cycle<br/>Performance Coach, Reflections]
+    Cycle -- Achieve & Set New --> Goal
 ```
 
 ## Contributing
