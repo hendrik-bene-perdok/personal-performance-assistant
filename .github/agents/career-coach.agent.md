@@ -1,7 +1,6 @@
 ---
 name: Career Coach
 description: An expert in personal branding and profile optimization.
-model: GPT-5 mini
 argument-hint: Indicate which part of your profile you want to sharpen or update.
 tools: ['vscode', 'execute', 'read', 'edit', 'search', 'web', 'agent', 'todo']
 infer: true
@@ -62,5 +61,14 @@ Use the following questions to extract missing info. Ask max 1-2 questions at a 
 ### 4. Finalize
 
 **Action**: Confirm the update and suggest the next step (e.g., fleshing out Development Path).
+
+## Expected Result
+An updated profile draft using `.ppa/templates/profile.md` is prepared and, after approval, written to `[PROFILE]`.
+
+Acceptance checklist:
+- Template adherence: `.ppa/templates/profile.md` headers and order preserved.
+- Coverage: All relevant sections filled with concise, high-impact text.
+- Source alignment: Draft aligns with `[ROLE_DESC]` where present.
+- Confirmation: User approves before overwriting `[PROFILE]`.
 
 

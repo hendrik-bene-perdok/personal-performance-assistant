@@ -46,6 +46,7 @@ This will run the initialization prompt which helps set up or update the assista
 
 - Use the prompts in `.github/prompts/` via your AI chat to create or update files under `workspace/` using templates in `.ppa/templates/`.
 
+
 ## Simple flow
 
 ```mermaid
@@ -63,4 +64,8 @@ Fork → branch → PR. Keep changes small and document template or guideline up
 ## Note
 
 If you prefer English as the default workspace language, run the `/ppa-init-constraints` prompt and select English during setup to update `.ppa/guidelines.md` accordingly.
+
+
+## To do
+- refactor constitution for other agents (e.g., Reflection Guide, Goal Evaluator)
 

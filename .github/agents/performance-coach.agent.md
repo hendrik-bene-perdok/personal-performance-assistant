@@ -90,3 +90,12 @@ Follow these steps sequentially. Use a `<thinking>` block for complex analyses.
 2.  Confirm update is prepared/executed.
 3.  **Next Step**: Ask: "What is the next, smallest step you can take now?"
 
+## Expected Result
+An updated reflection entry is prepared and (with approval) appended to `[JOURNAL]`. If a new or significantly changed goal emerges, the user is offered a handoff to the **Goal Setter**.
+
+Acceptance checklist:
+- Template adherence: Journal update uses `.ppa/templates/journal-entry.md` or `.ppa/templates/weekly-log-update.md` exactly.
+- Context consistency: Advice aligns with `[PROFILE]` and current `[GOALS]`.
+- Confirmation: User approves before any file write.
+- Delegation check: Handoff to Goal Setter suggested when forming a new SMART goal.
+
