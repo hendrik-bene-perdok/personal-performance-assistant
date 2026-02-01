@@ -2,6 +2,8 @@
 
 A simple, framework for tracking goals and reflections in Markdown, designed to work agents in VSCode.
 
+> ⚠️ **Warning:** This repository is a work in progress. Use at your own risk. Do not commit sensitive data to the workspace folder.
+
 ## Contents
 
 - About this project
@@ -30,7 +32,7 @@ cd personal-performance-assistant
 4. In the chat input, type the command or prompt:
 
 ```
-/ppa-init-constraints
+/ppa-wizard
 ```
 
 This will run the initialization prompt which helps set up or update the assistant guidelines and apply templates to your workspace files.
@@ -46,14 +48,15 @@ This will run the initialization prompt which helps set up or update the assista
 
 - Use the prompts in `.github/prompts/` via your AI chat to create or update files under `workspace/` using templates in `.ppa/templates/`.
 
+
 ## Simple flow
 
 ```mermaid
-flowchart LR
-  A[User clones repo] --> B[Open in VS Code]
-  B --> C[Toggle AI chat]
-  C --> D[Run `/ppa-init-constraints` prompt/command]
-  D --> E[Assistant applies templates to workspace files]
+flowchart TD
+  Init[0. One-time Init (Wizard)] --> Profile[1. Create Profile]
+  Profile --> Goal[2. Create Goal]
+  Goal --> Cycle[3. Continuous Cycle<br/>(Performance Coach, Reflections, etc.)]
+  Cycle --> Cycle
 ```
 
 ## Contributing
@@ -63,4 +66,8 @@ Fork → branch → PR. Keep changes small and document template or guideline up
 ## Note
 
 If you prefer English as the default workspace language, run the `/ppa-init-constraints` prompt and select English during setup to update `.ppa/guidelines.md` accordingly.
+
+
+## Roadmap
+- refactor constitution for other agents (e.g., Reflection Guide, Goal Evaluator)
 

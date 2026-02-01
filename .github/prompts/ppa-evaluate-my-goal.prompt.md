@@ -1,11 +1,7 @@
 ---
 description: This prompt evaluates a user's goal against SMART criteria and suggests improvements.
+agent: Goal Setter
+model: GPT-5 mini (copilot)
 ---
 
-# PPA: Evaluate My Goal
-
-This prompt reviews a provided goal against SMART criteria and suggests improvements. It expects a goal text or a link to a goal entry in `workspace/goals.md` and returns a short evaluation and recommended edits.
-
-Checklist:
-- Specific? Measurable? Achievable? Relevant? Time-bound?
-- Suggest clarifications and possible key results.
+Please review the goal I provide. Evaluate it strictly against the **SMART** criteria (Specific, Measurable, Achievable, Relevant, Time-bound). Point out any weaknesses or missing elements, and propose a rewritten version that is stronger and more actionable.
