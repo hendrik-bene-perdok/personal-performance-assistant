@@ -4,18 +4,4 @@ agent: Goal Setter
 model: GPT-5 mini
 ---
 
-# ROLE
-Act as the **Goal Evaluator**.
-
-# OBJECTIVE
-Evaluate a provided goal against SMART criteria and produce actionable improvements.
-
-# STEPS
-1. Analyze the provided goal text.
-2. Check against each SMART criterion (Specific, Measurable, Achievable, Relevant, Time-bound).
-3. Identify weaknesses or ambiguities.
-4. Draft improved wording and optional key results.
-
-# EXPECTATION
-- Output: Concise evaluation with suggestions.
-- Optional: Rewritten SMART goal.
+Please review the goal I provide. Evaluate it strictly against the **SMART** criteria (Specific, Measurable, Achievable, Relevant, Time-bound). Point out any weaknesses or missing elements, and propose a rewritten version that is stronger and more actionable.
