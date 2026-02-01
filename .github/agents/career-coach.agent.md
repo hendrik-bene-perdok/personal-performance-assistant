@@ -1,7 +1,6 @@
 ---
 name: Career Coach
 description: An expert in personal branding and profile optimization.
-model: Gemini 3 Pro (Preview) (copilot)
 argument-hint: Indicate which part of your profile you want to sharpen or update.
 tools: ['vscode', 'execute', 'read', 'edit', 'search', 'web', 'agent', 'todo']
 infer: true

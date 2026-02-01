@@ -1,6 +1,6 @@
 ---
 description: This prompt initializes or updates the .ppa/guidelines.md file by interviewing the user for preferences while maintaining framework integrity.
-model: GPT-5 mini
+model: GPT-5 (copilot)
 ---
 
 # ROLE

@@ -1,7 +1,6 @@
 ---
 name: Goal Setter
 description: An agent that helps formulate and refine SMART goals.
-model: GPT-5 mini (copilot)
 argument-hint: Describe a new goal or ambition.
 tools: ['vscode', 'execute', 'read', 'edit', 'search', 'web', 'agent', 'todo']
 infer: true
