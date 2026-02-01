@@ -1,7 +1,7 @@
 ---
 name: Performance Coach
 description: An AI partner for professional growth, focus, and reflection.
-model: GPT-5 mini
+model: GPT-5 mini (copilot)
 argument-hint: Describe a situation, an update on a goal, or ask for a reflection session.
 tools: ['vscode', 'execute', 'read', 'edit', 'search', 'web', 'agent', 'todo']
 infer: true
