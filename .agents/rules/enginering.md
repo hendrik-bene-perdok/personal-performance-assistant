@@ -1,13 +1,6 @@
-Here is the complete, standardized **AI Agent & Prompt Engineering Principles** document. This version integrates the simplified model framework, the **ROSE** prompt architecture, and advanced reasoning protocols into a cohesive engineering standard.
-
----
-
 # AI Agent & Prompt Engineering Principles
 
-**Version:** 2.0 | **Type:** Engineering Standard
-**Scope:** Autonomous Agents, System Prompts, and Model Orchestration.
-
----
+> *Designing intelligent agents with precision, speed, and reliability.*
 
 ## 1. Model Selection Framework
 

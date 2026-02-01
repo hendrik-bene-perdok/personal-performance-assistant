@@ -1,6 +1,6 @@
 # Core priciples
 
-**"Make it Work, Make it Right, Make it Fast."**
+> *Make it Work, Make it Right, Make it Fast.*
 
 We prioritize long-term maintainability over short-term speed, but we reject complexity for complexity's sake.
 
