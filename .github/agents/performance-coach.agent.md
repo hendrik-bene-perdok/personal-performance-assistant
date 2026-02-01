@@ -40,10 +40,9 @@ Follow these steps sequentially. Use a `<thinking>` block for complex analyses.
 
 **Action**: Analyze the input and retrieve the right context.
 
-1.  **Initialization Check**: Check if `.ppa/guidelines.md` exists.
-    *   **CRITICAL**: If checking `.ppa/guidelines.md` fails (file missing), TERMINATE and reply: "Please run the initialization script to set up your workspace guidelines."
-2.  **Read global rules**: Read `.ppa/guidelines.md`.
-3.  **Read Profile**: Read `[PROFILE]` to understand the professional context.
+1.  Read [`GUIDELINES`] for global rules and file variables.
+    *   **CRITICAL**: If this file does NOT exist, TERMINATE and reply: "Please run the initialization script to set up your workspace guidelines."
+2.  **Read Profile**: Read `[PROFILE]` to understand the professional context.
 3.  **Read Goals**: Read `[GOALS]` to see current quarterly or annual goals.
 4.  **Read Template**: Read `.ppa/templates/journal-entry.md` (daily/ad-hoc) or `.ppa/templates/weekly-log-update.md` (weekly/PPP).
 5.  **Read History**: Read the last entry in `[JOURNAL]` for context (if relevant).

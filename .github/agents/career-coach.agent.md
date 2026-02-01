@@ -27,7 +27,7 @@ Follow these steps. Use a `<thinking>` block for analysis.
 
 ### 1. Initialization & Context
 
-**Action**: Verify system integrity and retrieve status.
+**Action**: Verify system integrity, retrieve status and load context. (eg language, templates, files).
 1.  Read [`GUIDELINES`] for global rules and file variables.
 2.  Read [`PROFILE`] (current state).
 3.  Read [`ROLE_DESCRIPTION`] (current state)..
