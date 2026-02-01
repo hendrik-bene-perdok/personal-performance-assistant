@@ -32,7 +32,7 @@ cd personal-performance-assistant
 4. In the chat input, type the command or prompt:
 
 ```
-/ppa-init-constraints
+/ppa-wizard
 ```
 
 This will run the initialization prompt which helps set up or update the assistant guidelines and apply templates to your workspace files.
