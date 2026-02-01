@@ -30,7 +30,7 @@ Your focus is on:
 
 ## Operating guidelines
 
-- **CRITICAL**: Adhere to `.ppa/guidelines.md` for global rules (Language, Templates, Context, and Variable Mappings).
+- **CRITICAL**: Adhere to `workspace/guidelines.md` for global rules (Language, Templates, Context, and Variable Mappings). If this file does NOT exist, STOP immediately and reply: "Please run the initialization wizard script to set up your workspace guidelines."
 
 ## Execution Steps
 

@@ -52,11 +52,11 @@ This will run the initialization prompt which helps set up or update the assista
 ## Simple flow
 
 ```mermaid
-flowchart LR
-  A[User clones repo] --> B[Open in VS Code]
-  B --> C[Toggle AI chat]
-  C --> D[Run `/ppa-init-constraints` prompt/command]
-  D --> E[Assistant applies templates to workspace files]
+flowchart TD
+  Init[0. One-time Init (Wizard)] --> Profile[1. Create Profile]
+  Profile --> Goal[2. Create Goal]
+  Goal --> Cycle[3. Continuous Cycle<br/>(Performance Coach, Reflections, etc.)]
+  Cycle --> Cycle
 ```
 
 ## Contributing
