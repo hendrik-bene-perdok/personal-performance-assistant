@@ -1,5 +1,5 @@
 ---
-description: Conduct a structured interview with the user to gather requirements, and subsequently generate a robust `workspace/`. 
+description: Conduct a structured interview with the user to gather requirements, and subsequently generate a robust `workspace/`.
 ---
 
 ---
@@ -37,7 +37,7 @@ Conduct a structured interview with the user to gather requirements, and subsequ
 
 4. **Initialize Workspace**
    - **Pre-requisite**: You MUST ONLY proceed if the user has confirmed the requirements in Step 3.
-   - Initialize the `workspace/` files[`PROFILE`, `ROLE_DESCRIPTION`, `JOURNAL`, `GOALS`, `GUIDELINES`] in folder according to the confirmed requirements, exclude `[GUIDELINES]` for language translation, do not populate content in other files. For `[GUIDELINES]`, you MUST copy the content from `.ppa/guidelines.md` and ONLY update the Language, Tone, and Custom Rules sections with the confirmed settings. You MUST PRESERVE all other sections (Path Variable Mappings, Workspace Rules, etc.) EXACTLY as they are in the source file.
+   - Initialize the `workspace/` files[`PROFILE`, `ROLE_DESCRIPTION`, `JOURNAL`, `GOALS`, `GUIDELINES`] in folder according to the confirmed requirements, exclude `[GUIDELINES]` filename and contentfor language translation, do not populate content in other files. For `[GUIDELINES]`, you MUST copy the content from `.ppa/guidelines.md` and ONLY update the Language, Tone, and Custom Rules sections with the confirmed settings. You MUST PRESERVE all other sections (Path Variable Mappings, Workspace Rules, etc.) EXACTLY as they are in the source file.
    - **Post-initialization tasks**:
       - Check if `workspace/` exists, inform the user if it needed to be created.
       - Check for existence of mapped files (`[PROFILE]`, `[ROLE_DESCRIPTION]`, etc.), inform the user of any files that were created.
@@ -49,4 +49,3 @@ Conduct a structured interview with the user to gather requirements, and subsequ
 
 ## Expected Result
 A new or updated workspace is initialized with the user's custom settings.
-
