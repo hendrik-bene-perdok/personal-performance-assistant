@@ -25,36 +25,9 @@ code .
 
 3. Toggle your AI chat/assistant integration (for example Copilot Chat or another AI extension).
 
-4. In the chat input, type the command (e.g. `/ppa-wizard` or `/) or prompt.
+4. In the chat input, type the command (e.g. `/ppa-wizard`) or prompt.
 
 This will run the initialization prompt which helps set up or update the assistant guidelines and apply templates to your workspace files.
-
-## Structure
-
-- .agent/workflows/ — agent workflows
-- .github/prompts/ — conversational prompts for the assistant
-- .ppa/ — assistant guidelines and templates
-- workspace/ — your personal Markdown documents (DO NOT COMMIT SENSITIVE DATA)
-- README.md — this file
-
-## Development
-
-The agent definitions are maintained in `.github/agents`. To propagate changes to the `.agent/workflows` directory (used by the agent), run the sync script:
-
-**Windows (PowerShell):**
-```powershell
-.ppa/helpers/sync-agents.ps1
-```
-
-**Linux/Mac (Bash):**
-```bash
-./.ppa/helpers/sync-agents.sh
-```
-
-## Usage
-
-- Use the prompts in `.github/prompts/` or `.agent/workflows/` via your AI chat to create or update files under `workspace/` using templates.
-
 
 ## Simple flow
 
@@ -68,9 +41,33 @@ flowchart LR
     Cycle -- Achieve & Set New --> Goal
 ```
 
+## Usage
+
+- Use the chat in `/` to list prompts and run them via your AI chat to create or update files under `workspace/` using templates.
+
+## Structure
+
+- .agent/workflows/ — agent workflows
+- .github/prompts/ — conversational prompts for the assistant
+- .ppa/ — assistant guidelines and templates
+- workspace/ — your personal Markdown documents (DO NOT COMMIT SENSITIVE DATA)
+- README.md — this file
+
 ## Contributing
 
 Fork → branch → PR. Keep changes small and document template or guideline updates.
+
+The agent definitions are maintained in `.github/agents`. To propagate changes to the `.agent/workflows` directory (used by the agent), run the sync script:
+
+**Windows (PowerShell):**
+```powershell
+.ppa/helpers/sync-agents.ps1
+```
+
+**Linux/Mac (Bash):**
+```bash
+./.ppa/helpers/sync-agents.sh
+```
 
 ## Roadmap
 
