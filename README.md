@@ -1,20 +1,9 @@
 ﻿# Personal Performance Assistant (PPA)
 
-A simple, framework for tracking goals and reflections in Markdown, designed to work agents in VSCode or Antigravity.
+## About this project
+A lightweight framework for managing SMART goals, maintaining a personal profile, and keeping a structured logbook with guided reflections. Designed for seamless use with AI agents in VS Code or Antigravity.
 
 > ⚠️ **Warning:** This repository is a work in progress. Use at your own risk. Do not commit sensitive data.
-
-## Contents
-
-- About this project
-- Quick Start
-- Structure
-- Usage
-- Contributing
-
-## About this project
-
-This repository provides a compact structure and templates to capture SMART goals, maintain a profile, and keep a regular logbook with guided reflection. It is optimized for local use with an AI assistant inside VS Code.
 
 ## Quick Start (VS Code)
 
