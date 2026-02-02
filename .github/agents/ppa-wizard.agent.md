@@ -32,14 +32,13 @@ Conduct a structured interview with the user to gather requirements, and subsequ
 4. **Initialize Workspace**
    - **Pre-requisite**: You MUST ONLY proceed if the user has confirmed the requirements in Step 3.
    - Initialize the `workspace/` files[`PROFILE`, `ROLE_DESCRIPTION`, `JOURNAL`, `GOALS`, `GUIDELINES`] in folder according to the confirmed requirements, exclude `[GUIDELINES]` for language translation, do not populate content in other files. For `[GUIDELINES]`, you MUST copy the content from `.ppa/guidelines.md` and ONLY update the Language, Tone, and Custom Rules sections with the confirmed settings. You MUST PRESERVE all other sections (Path Variable Mappings, Workspace Rules, etc.) EXACTLY as they are in the source file.
-   - Post-initialization tasks:
+   - **Post-initialization tasks**:
       - Check if `workspace/` exists, inform the user if it needed to be created.
       - Check for existence of mapped files (`[PROFILE]`, `[ROLE_DESCRIPTION]`, etc.), inform the user of any files that were created.
       - Check if the files are empty, if not inform the user to avoid overwriting existing content.
 
-5. **Check initialize**
-   - Complete the following checklist to ensure the workspace is correctly initialized, else report discrepancies to the user:
-      - Check contents and structure of [`GUIDELINES`] compliance to the template(structure).
-      - Check generate localized filenames in `workspace/` based on the chosen default language.
-   - Summarize the completed initialization steps to the user.
+5. **Summary**: Summarize the completed initialization steps to the user.
+
+## Expected Result
+A new or updated workspace is initialized with the user's custom settings.
 

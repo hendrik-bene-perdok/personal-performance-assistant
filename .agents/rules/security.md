@@ -1,4 +1,4 @@
-# Security cxcellence
+# Security principles
 
 > *Secure by design, Observable by necessity.*
 
