@@ -1,26 +1,19 @@
 ﻿# Personal Performance Assistant (PPA)
 
-## About this project
-A lightweight framework for managing SMART goals, maintaining a personal profile, and keeping a structured logbook with guided reflections. Designed for seamless use with AI agents in VS Code or Antigravity.
+> ⚠️ **WARNING:** This repository is a work in progress. Use at your own risk. Do not commit sensitive data.
 
-> ⚠️ **Warning:** This repository is a work in progress. Use at your own risk. Do not commit sensitive data.
+
+A lightweight framework for managing SMART goals, maintaining a personal profile, and keeping a structured logbook with guided reflections. Designed for seamless use with AI agents in VS Code or Antigravity.
 
 ## Quick Start (VS Code)
 
 1. Clone the repository:
 
-```bash
+```
 git clone <repo-url>
 cd personal-performance-assistant
 code .
 ```
-
-```powershell
-git clone <repo-url>
-cd personal-performance-assistant
-code .
-```
-
 2. Open the folder in VS Code.
 
 3. Toggle your AI chat/assistant integration (for example Copilot Chat or another AI extension).
