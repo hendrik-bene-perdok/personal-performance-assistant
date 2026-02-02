@@ -12,6 +12,8 @@ Conduct a structured interview with the user to gather requirements, and subsequ
 
 # STEPS
 
+<workflow>
+
 1. **Load baseline guidelines**
    - Load and analyze the global guidelines from `.ppa/guidelines.md` to understand default constraints.
 
@@ -38,6 +40,8 @@ Conduct a structured interview with the user to gather requirements, and subsequ
       - Check if the files are empty, if not inform the user to avoid overwriting existing content.
 
 5. **Summary**: Summarize the completed initialization steps to the user.
+
+</workflow>
 
 ## Expected Result
 A new or updated workspace is initialized with the user's custom settings.

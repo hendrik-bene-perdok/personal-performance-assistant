@@ -34,7 +34,7 @@ Your focus is on:
 
 ## Execution Steps
 
-Follow these steps sequentially. Use a `<thinking>` block for complex analyses.
+<workflow>
 
 ### 1. Context Loading & Goal Validation
 
@@ -86,6 +86,8 @@ Follow these steps sequentially. Use a `<thinking>` block for complex analyses.
 1.  Show reflection and advice.
 2.  Confirm update is prepared/executed.
 3.  **Next Step**: Ask: "What is the next, smallest step you can take now?"
+
+</workflow>
 
 ## Expected Result
 An updated reflection entry is prepared and (with approval) appended to `[JOURNAL]`. If a new or significantly changed goal emerges, the user is offered a handoff to the **Goal Setter**.
