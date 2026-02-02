@@ -29,18 +29,15 @@ cd personal-performance-assistant
 
 3. Toggle your AI chat/assistant integration (for example Copilot Chat or another AI extension).
 
-4. In the chat input, type the command or prompt:
-
-```
-/ppa-wizard
-```
+4. In the chat input, type the command (e.g. `/ppa-wizard` or `/) or prompt.
 
 This will run the initialization prompt which helps set up or update the assistant guidelines and apply templates to your workspace files.
 
 ## Structure
 
-- .ppa/ — assistant guidelines and templates
+- .agent/workflows/ — agent workflows
 - .github/prompts/ — conversational prompts for the assistant
+- .ppa/ — assistant guidelines and templates
 - workspace/ — your personal Markdown documents (DO NOT COMMIT SENSITIVE DATA)
 - README.md — this file
 
