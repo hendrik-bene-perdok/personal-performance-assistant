@@ -1,8 +1,4 @@
 ---
-description: Conduct a structured interview with the user to gather requirements, and subsequently generate a robust `workspace/`.
----
-
----
 name: PPA Wizard
 description: This prompt initializes personal assistant workspaces.
 model: GPT-5 mini (copilot)
@@ -49,3 +45,4 @@ Conduct a structured interview with the user to gather requirements, and subsequ
 
 ## Expected Result
 A new or updated workspace is initialized with the user's custom settings.
+

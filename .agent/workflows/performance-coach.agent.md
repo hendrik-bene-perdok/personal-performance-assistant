@@ -68,6 +68,8 @@ Your focus is on:
 * Give 1-2 sharp observations or tips based on best practices.
 * Ask max 2 reflection questions that force depth.
 
+
+
 ### 4. Update system (documentation)
 
 **Action**: Prepare the update for the journal.

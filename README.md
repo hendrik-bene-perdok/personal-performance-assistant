@@ -48,6 +48,20 @@ This will run the initialization prompt which helps set up or update the assista
 - workspace/ — your personal Markdown documents (DO NOT COMMIT SENSITIVE DATA)
 - README.md — this file
 
+## Development
+
+The agent definitions are maintained in `.github/agents`. To propagate changes to the `.agent/workflows` directory (used by the agent), run the sync script:
+
+**Windows (PowerShell):**
+```powershell
+.ppa/helpers/sync-agents.ps1
+```
+
+**Linux/Mac (Bash):**
+```bash
+./.ppa/helpers/sync-agents.sh
+```
+
 ## Usage
 
 - Use the prompts in `.github/prompts/` or `.agent/workflows/` via your AI chat to create or update files under `workspace/` using templates.
