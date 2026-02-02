@@ -6,7 +6,7 @@
 ## Where I'm going
 [Future role, responsibilities and desired balance.]
 
-## My Value
+## My core strengths
 [What problems you solve; your approach and strengths.]
 
 ## What energizes me
@@ -14,12 +14,6 @@
 
 ## What I explicitly do not want
 [Dealbreakers and anti-goals.]
-
-## Development Plan (Short term 1–2 years)
-[Skills, tools and certifications to acquire.]
-
-## Development Plan (Long term ~5 years)
-[Career evolution and leadership/governance goals.]
 
 ## Success Criteria
 [How to measure success after 6–12 months.]
