@@ -1,8 +1,8 @@
 ﻿# Personal Performance Assistant (PPA)
 
-A simple, framework for tracking goals and reflections in Markdown, designed to work agents in VSCode.
+A simple, framework for tracking goals and reflections in Markdown, designed to work agents in VSCode or Antigravity.
 
-> ⚠️ **Warning:** This repository is a work in progress. Use at your own risk. Do not commit sensitive data to the workspace folder.
+> ⚠️ **Warning:** This repository is a work in progress. Use at your own risk. Do not commit sensitive data.
 
 ## Contents
 
@@ -16,37 +16,55 @@ A simple, framework for tracking goals and reflections in Markdown, designed to 
 
 This repository provides a compact structure and templates to capture SMART goals, maintain a profile, and keep a regular logbook with guided reflection. It is optimized for local use with an AI assistant inside VS Code.
 
-## Quick Start
+## Quick Start (VS Code)
 
 1. Clone the repository:
 
 ```bash
 git clone <repo-url>
 cd personal-performance-assistant
+code .
+```
+
+```powershell
+git clone <repo-url>
+cd personal-performance-assistant
+code .
 ```
 
 2. Open the folder in VS Code.
 
 3. Toggle your AI chat/assistant integration (for example Copilot Chat or another AI extension).
 
-4. In the chat input, type the command or prompt:
-
-```
-/ppa-wizard
-```
+4. In the chat input, type the command (e.g. `/ppa-wizard` or `/) or prompt.
 
 This will run the initialization prompt which helps set up or update the assistant guidelines and apply templates to your workspace files.
 
 ## Structure
 
-- .ppa/ — assistant guidelines and templates
+- .agent/workflows/ — agent workflows
 - .github/prompts/ — conversational prompts for the assistant
+- .ppa/ — assistant guidelines and templates
 - workspace/ — your personal Markdown documents (DO NOT COMMIT SENSITIVE DATA)
 - README.md — this file
 
+## Development
+
+The agent definitions are maintained in `.github/agents`. To propagate changes to the `.agent/workflows` directory (used by the agent), run the sync script:
+
+**Windows (PowerShell):**
+```powershell
+.ppa/helpers/sync-agents.ps1
+```
+
+**Linux/Mac (Bash):**
+```bash
+./.ppa/helpers/sync-agents.sh
+```
+
 ## Usage
 
-- Use the prompts in `.github/prompts/` via your AI chat to create or update files under `workspace/` using templates in `.ppa/templates/`.
+- Use the prompts in `.github/prompts/` or `.agent/workflows/` via your AI chat to create or update files under `workspace/` using templates.
 
 
 ## Simple flow
@@ -65,11 +83,21 @@ flowchart LR
 
 Fork → branch → PR. Keep changes small and document template or guideline updates.
 
-## Note
-
-If you prefer English as the default workspace language, run the `/ppa-init-constraints` prompt and select English during setup to update `.ppa/guidelines.md` accordingly.
-
-
 ## Roadmap
+
 - refactor constitution for other agents (e.g., Reflection Guide, Goal Evaluator)
+- add development plan to profile template
+
+    ```markdown
+    ## Development Plan 
+
+    ### Short term (1–3 months)
+    [Skills, tools and certifications to acquire.]
+
+    ### Mid term (3–12 months)
+    [Career evolution and leadership/governance goals.]
+
+    ### Long term (greater than 1 year)
+    [Career evolution and leadership/governance goals.]
+    ```
 
