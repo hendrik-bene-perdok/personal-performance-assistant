@@ -1,6 +1,6 @@
 param(
     [string]$WorkspacePath = "workspace",
-    [string]$BackupRoot = "backup"
+    [string]$BackupRoot = "backups"
 )
 
 $dateStr = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"

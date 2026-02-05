@@ -56,4 +56,3 @@ Conduct a structured interview with the user to gather requirements, and subsequ
 
 ## Expected Result
 A new or updated workspace is initialized with the user's custom settings.
-
