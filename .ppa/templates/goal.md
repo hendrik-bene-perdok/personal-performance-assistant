@@ -1,4 +1,4 @@
-### Goal [Number]: [Title]
+## Goal [Number]: [Title]
 
 - Description: [Short description of the goal]
 

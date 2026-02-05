@@ -6,7 +6,8 @@ Thank you for your interest in contributing!
 
 - **.github/agents**: The primary source of truth for agent definitions.
 - **.agent/workflows**: The directory used by the agent runtime. **Do not edit files here directly.**
-- **.ppa/helpers**: Helper scripts for maintenance.
+- **.ppa/helpers**: Helper scripts for maintenance (e.g., sync, backup).
+- **.ppa/templates**: Markdown templates used by the wizard to initialize files.
 
 ## Making Changes to Agents
 
@@ -31,3 +32,4 @@ Thank you for your interest in contributing!
 
 - Keep changes small and focused.
 - Document any changes to templates or guidelines.
+

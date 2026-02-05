@@ -12,6 +12,7 @@ You MUST treat the following variables as dynamic references. The actual filenam
 - [`ROLE_DESCRIPTION`]: "workspace/[role_description_filename]"
 - [`JOURNAL`]: "workspace/[journal_filename]" 
 - [`GOALS`]: "workspace/[goals_filename]"
+- [`GAP`]: "workspace/[gap_filename]"
 
 - **Naming Convention**: You MUST ensure all file names adhere to the default language.
 - **Variable Usage**: When referencing these files within the workspace, you MUST ALWAYS use the [`VARIABLE_NAME`] syntax (e.g., "See [`PROFILE`]").

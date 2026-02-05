@@ -22,45 +22,45 @@ code .
 
 This will run the initialization prompt which helps set up or update the assistant guidelines and apply templates to your workspace files.
 
+## Available Agents
+
+| Slash Command | Description |
+| :--- | :--- |
+| `/Career Coach` | Expert in personal branding and profile optimization. |
+| `/Goal Setter` | Helps formulate and refine SMART goals. |
+| `/Performance Coach` | Partner for professional growth, focus, and reflection. |
+| `/PPA Wizard` | Initializes and updates personal assistant workspaces. |
+
 ## Simple flow
 
 ```mermaid
 flowchart LR
-    Init[0. One-time Init Wizard] --> Profile[1. Create Profile]
-    Profile --> Goal[2. Create/Update Goal]
+    Init[0. Wizard: Init/Update] --> Profile[1. Create Profile]
+    Profile --> Gap[2. Gap Analysis]
+    Gap --> Goal[3. Create/Update Goal]
     
     %% The main loop
-    Goal --> Cycle[3. Continuous Cycle<br/>Performance Coach, Reflections]
+    Goal --> Cycle[4. Continuous Cycle<br/>Performance Coach, Reflections]
     Cycle -- Achieve & Set New --> Goal
+    Cycle -- Reviews --> Gap
 ```
 
 ## Usage
 
-- Use the chat in `/` to list prompts and run them via your AI chat to create or update files under `workspace/` using templates.
+- Use the slash commands (e.g. `/ppa-wizard`) to interact with specific agents.
+- **Wizard (`/ppa-wizard`)**: Run this to Initialize a new workspace OR Update an existing one (includes backup functionality).
 
 ## Structure
 
-- .agent/workflows/ — agent workflows
-- .github/prompts/ — conversational prompts for the assistant
-- .ppa/ — assistant guidelines and templates
-- workspace/ — your personal Markdown documents (DO NOT COMMIT SENSITIVE DATA)
-- README.md — this file
+- `.agent/workflows/` — Agent workflows and prompts.
+- `.agent/rules/` — Specific rules for agents (e.g., Gap Analysis).
+- `.github/agents/` — Source of truth for agent definitions.
+- `.ppa/` — Assistant guidelines and templates.
+    - `templates/` — Markdown templates for profiles, goals, etc.
+    - `helpers/` — Maintenance scripts (backup, sync).
+- `workspace/` — Your personal Markdown documents (DO NOT COMMIT SENSITIVE DATA).
+- `README.md` — This file.
 
-## Contributing
-
-Fork → branch → PR. Keep changes small and document template or guideline updates.
-
-The agent definitions are maintained in `.github/agents`. To propagate changes to the `.agent/workflows` directory (used by the agent), run the sync script:
-
-**Windows (PowerShell):**
-```powershell
-.ppa/helpers/sync-agents.ps1
-```
-
-**Linux/Mac (Bash):**
-```bash
-./.ppa/helpers/sync-agents.sh
-```
 
 ## Roadmap
 
