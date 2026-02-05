@@ -17,13 +17,18 @@ if [ ! -d "$SOURCE_DIR" ]; then
 fi
 
 # Copy files
+count=0
 for file in "$SOURCE_DIR"/*.agent.md; do
     if [ -f "$file" ]; then
-        cp "$file" "$DEST_DIR/"
-        echo "Synced: $(basename "$file")"
+        if cp "$file" "$DEST_DIR/"; then
+            echo "Synced: $(basename "$file")"
+            ((count++))
+        else
+            echo "Error: Failed to copy $(basename "$file")"
+        fi
     else
         echo "No .agent.md files found in '$SOURCE_DIR'."
     fi
 done
 
-echo "Sync complete."
+echo "Sync complete. $count files synced."
