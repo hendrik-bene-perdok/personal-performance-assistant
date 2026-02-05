@@ -46,8 +46,9 @@ Conduct a structured interview with the user to gather requirements, and subsequ
 
 6. **Execution**
    - **Initialize**: Create `workspace/` files based on gathered requirements.
+      - Do NOT translate language for `[GUIDELINES]`(filename and content). ONLY update the Language, Tone, and Custom Rules sections with the confirmed requirement settings. You MUST PRESERVE all other sections (Path Variable Mappings, Workspace Rules, etc.) EXACTLY as they are in the source file.
+      - Do NOT populate content in other files. 
    - **Update**: Create missing files (using templates) and update `guidelines.md` (adding missing variables like `[GAP]` without overwriting user customizations).
-   - For `[GAP]`: Use `.ppa/templates/gap-analysis.md`.
    - **Post-execution**: Check existence of files and inform the user.
 
 7. **Summary**: Summarize the actions taken (Created X, Updated Y, Skipped Z).
