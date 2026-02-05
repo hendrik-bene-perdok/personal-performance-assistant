@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 # Determine script directory to allow running from anywhere
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
@@ -16,14 +17,27 @@ if [ ! -d "$SOURCE_DIR" ]; then
     exit 1
 fi
 
+# Synced flag
+SYNCED_COUNT=0
+
 # Copy files
 for file in "$SOURCE_DIR"/*.agent.md; do
     if [ -f "$file" ]; then
-        cp "$file" "$DEST_DIR/"
-        echo "Synced: $(basename "$file")"
+        if cp "$file" "$DEST_DIR/"; then
+             echo "Synced: $(basename "$file")"
+             ((SYNCED_COUNT++))
+        else
+             echo "Error: Failed to copy $(basename "$file")" >&2
+             exit 1
+        fi
     else
         echo "No .agent.md files found in '$SOURCE_DIR'."
+        break
     fi
 done
 
-echo "Sync complete."
+if [ "$SYNCED_COUNT" -eq 0 ]; then
+    echo "Warning: No files were synced."
+else
+    echo "Sync complete. $SYNCED_COUNT files processed."
+fi
