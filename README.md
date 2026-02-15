@@ -80,9 +80,10 @@ The PPA uses a clear distinction between **Templates** (blueprints) and **Worksp
 
 -   **Templates** (`.ppa/templates/`): These are the structural starting points. Agents read these to understand how to format new files.
 -   **Workspace** (`workspace/`): This is where your personal data lives.
-    -   `profiel.md`: Your user profile and context.
-    -   `doelen.md`: Your active goals.
-    -   `logboek.md`: Your daily journal and reflection log.
+    -   `profile.md`: Your user profile and context.
+    -   `goals.md`: Your active goals.
+    -   `logbook.md`: Your daily journal and reflection log.
+    -   `gap-analysis.md`: Your gap analysis.
     -   *Note: Do not commit sensitive data in this folder.*
 
 
