@@ -18,41 +18,74 @@ code .
 
 3. Toggle your AI chat/assistant integration (for example Copilot Chat or another AI extension).
 
-4. In the chat input, type the command (e.g. `/ppa-wizard`) or prompt.
+4. In the chat input, type the command.
+    - to initialize: `/ppa-wizard` (this will run the initialization prompt)
+    - to set goal: `/goal setter(simple)` (this will run the goal setting prompt)
+    - etc.
 
-This will run the initialization prompt which helps set up or update the assistant guidelines and apply templates to your workspace files.
-
-## Available Agents
+## Available Agents (Usage)
 
 | Slash Command | Description |
 | :--- | :--- |
-| `/Career Coach` | Expert in personal branding and profile optimization. |
-| `/Gap Analysis` | An agent that performs gap analyses to identify discrepancies between current and desired states. |
-| `/Goal Setter` | An agent that helps formulate and refine SMART goals. |
-| `/Performance Goal Setter` | Helps formulate and refine SMART goals. |
-| `/Performance Coach` | Partner for professional growth, focus, and reflection. |
 | `/PPA Wizard` | Initializes and updates personal assistant workspaces. |
-| `/Simple Goals Setter` | A 3-step goal setting agent using the "List, Circle, Eliminate" method. |
-| `/Simple Goals Coach` | Strategic prioritization coach using the 3-step method. |
+| `/Goal Setter(simple)` | A 3-step goal setting agent using the "List, Circle, Eliminate" method. |
+| `/Coach(simple)` | Strategic prioritization coach using the 5/25 rule. |
+| `/Goal Setter(performance)` | Helps formulate and refine SMART goals. |
+| `/Coach(performance)` | Partner for professional growth, focus, and reflection. |
+| `/Career Coach` | Expert in personal branding and profile optimization. |
+| `/Gap Analysis` | Performs gap analyses to identify discrepancies between current and desired states. |
 
-## Simple flow
+
+## Workflow
 
 ```mermaid
-flowchart LR
-    Init[0. Wizard: Init/Update] --> Profile[1. Create Profile]
-    Profile --> Gap[2. Gap Analysis]
-    Gap --> Goal[3. Create/Update Goal]
+flowchart TD
+   %% Flow
+    Agents---|Reads|Templates
+    Agents---|Reads/Updates|Workspace
+
+
     
-    %% The main loop
-    Goal --> Cycle[4. Continuous Cycle<br/>Performance Coach, Reflections]
-    Cycle -- Achieve & Set New --> Goal
-    Cycle -- Reviews --> Gap
+    %% Connections between agents
+    Wizard --> Choose{Choose} --> GoalSetter
+    GoalSetter -- input--> Coach
+    Coach -- feedback--> GoalSetter
+    Coach --> GapAgent
+
+    subgraph Templates [Templates .ppa/templates]
+        T_Templates
+    end
+
+    subgraph Workspace [Workspace State workspace/]
+        W_Docs
+    end
+
+    subgraph Agents [Active agents workflow]
+        Wizard[Wizard: Init / Update]:::agent
+        Choose[Choose: Simple / Performance]:::agent
+        GoalSetter[Goal Setter]:::agent
+        Coach[Coach]:::agent
+        GapAgent[Gap Analysis]:::agent
+    end
+
+    Choose@{ shape: diamond, label: "Choose<br>simple or performance" }
+    W_Docs@{ shape: docs, label: "Documents<br>profile.md<br>goals.md<br>logbook.md<br>gap-analysis.md" }
+    T_Templates@{ shape: docs, label: "Templates<br>profile.template.md<br>goal.template.md<br>gap-analysis.template.md<br>journal.template.md" }
+ 
 ```
 
-## Usage
+## Templates & Workspace
 
-- Use the slash commands (e.g. `/ppa-wizard`) to interact with specific agents.
-- **Wizard (`/ppa-wizard`)**: Run this to Initialize a new workspace OR Update an existing one (includes backup functionality).
+The PPA uses a clear distinction between **Templates** (blueprints) and **Workspace** (your data):
+
+-   **Templates** (`.ppa/templates/`): These are the structural starting points. Agents read these to understand how to format new files.
+-   **Workspace** (`workspace/`): This is where your personal data lives.
+    -   `profile.md`: Your user profile and context.
+    -   `goals.md`: Your active goals.
+    -   `logbook.md`: Your daily journal and reflection log.
+    -   `gap-analysis.md`: Your gap analysis.
+    -   *Note: Do not commit sensitive data in this folder.*
+
 
 ## Structure
 
