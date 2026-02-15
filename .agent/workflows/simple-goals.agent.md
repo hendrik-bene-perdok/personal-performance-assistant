@@ -63,3 +63,5 @@ Acceptance checklist:
 - Exactly 3 goals are selected as priorities.
 - The user has explicitly grounded/acknowledged the "Avoid" list.
 - Integration with [`GOALS`] is offered/completed.
+- Update [`LOGBOOK`] with the new goals.
+
