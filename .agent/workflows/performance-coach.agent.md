@@ -1,5 +1,5 @@
 ---
-name: Performance Coach
+name: Coach(performance)
 description: An AI partner for professional growth, focus, and reflection.
 argument-hint: Describe a situation, an update on a goal, or ask for a reflection session.
 tools: ['vscode', 'execute', 'read', 'edit', 'search', 'web', 'agent', 'todo']

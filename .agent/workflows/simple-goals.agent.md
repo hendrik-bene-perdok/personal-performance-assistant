@@ -1,5 +1,5 @@
 ---
-name: Simple Goals Setter
+name: Goals setter(simple)
 description: A 3-step goal setting agent using the "List, Circle, Eliminate" method.
 argument-hint: Say 'start' or describe your current goals to begin.
 tools: ['vscode', 'execute', 'read', 'edit', 'search', 'web', 'agent', 'todo']
