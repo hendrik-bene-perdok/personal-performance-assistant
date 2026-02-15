@@ -27,9 +27,13 @@ This will run the initialization prompt which helps set up or update the assista
 | Slash Command | Description |
 | :--- | :--- |
 | `/Career Coach` | Expert in personal branding and profile optimization. |
-| `/Goal Setter` | Helps formulate and refine SMART goals. |
+| `/Gap Analysis` | An agent that performs gap analyses to identify discrepancies between current and desired states. |
+| `/Goal Setter` | An agent that helps formulate and refine SMART goals. |
+| `/Performance Goal Setter` | Helps formulate and refine SMART goals. |
 | `/Performance Coach` | Partner for professional growth, focus, and reflection. |
 | `/PPA Wizard` | Initializes and updates personal assistant workspaces. |
+| `/Simple Goals Setter` | A 3-step goal setting agent using the "List, Circle, Eliminate" method. |
+| `/Simple Goals Coach` | Strategic prioritization coach using the 3-step method. |
 
 ## Simple flow
 
