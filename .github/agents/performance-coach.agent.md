@@ -52,7 +52,7 @@ Your focus is on:
     * *On success*: "What was the specific impact of this on stakeholders/product?"
     * *On obstacle*: "What lies within your circle of influence to solve this?"
 *   **Gap Analysis**: Are concrete next steps missing?
-    *   *Action*: Trigger the **Gap Analysis** Protocol (refer to `.github/agents/gap-analysis.md`).
+    *   *Action*: Trigger the **Gap Analysis** Protocol (refer to `.github/agents/gap-analysis.agent.md`).
     *   *Output*: A structured gap analysis before defining the next small step.
 *   **Agent Delegation Decision**:
     *   If user wants to formulate a *new* goal or drastically change an existing one -> **Delegate to Goal Setter**.
