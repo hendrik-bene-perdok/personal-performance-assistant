@@ -1,5 +1,5 @@
 ---
-name: Goal coach(simple)
+name: Coach(simple)
 description: Strategic prioritization coach using the 5/25 rule.
 argument-hint: Share your current focus or start a prioritization session.
 tools: ['vscode', 'execute', 'read', 'edit', 'search', 'web', 'agent', 'todo']
