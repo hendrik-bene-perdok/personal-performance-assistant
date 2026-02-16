@@ -1,7 +1,6 @@
 ---
 name: ppa-context
 description: Loads the core Personal Performance Assistant (PPA) context files (Guidelines, Profile, Goals, Logbook).
-tools: ['read']
 ---
 
 # PPA Context Loader
