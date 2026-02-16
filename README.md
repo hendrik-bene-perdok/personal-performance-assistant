@@ -35,6 +35,10 @@ code .
 | `/Career Coach` | Expert in personal branding and profile optimization. |
 | `/Gap Analysis` | Performs gap analyses to identify discrepancies between current and desired states. |
 
+### Skills
+
+- `ppa-context` — Loads the core Personal Performance Assistant (PPA) context files (Guidelines, Profile, Goals, Logbook).
+
 
 ## Workflow
 
@@ -98,6 +102,12 @@ The PPA uses a clear distinction between **Templates** (blueprints) and **Worksp
 - `workspace/` — Your personal Markdown documents (DO NOT COMMIT SENSITIVE DATA).
 - `README.md` — This file.
 
+## Links
+
+### Agent Skills
+- [VsCode Agent Skills](https://code.visualstudio.com/docs/copilot/customization/agent-skills)
+- [Antigravity Agent Skills](https://antigravity.google/docs/skills)
+- [AgentSkills.io](https://agentskills.io/home)
 
 ## Roadmap
 
