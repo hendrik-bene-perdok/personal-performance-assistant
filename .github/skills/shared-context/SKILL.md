@@ -1,6 +1,6 @@
 ---
 name: shared-context
-version: 1.1.0
+version: 1.1.1
 description: Bootstrap skill that loads the user's PPA context (rules, frameworks, guidelines, role, and workspace data) and confirms it before any other skill acts.
 ---
 
@@ -15,7 +15,7 @@ acting on stale or assumed data.
 ## Workflow
 
 - [ ] **1. Load defaults & rules**
-  - Read `.config/rules/agent.md` (hard rules: language, write gate, disclaimer, retro, versioning).
+  - Read `.agent/rules/agent.md` (hard rules: language, write gate, disclaimer, retro, versioning).
   - Adopt Dutch as the default response language.
 
 - [ ] **2. Load assets (frameworks, cadence & guidelines)**

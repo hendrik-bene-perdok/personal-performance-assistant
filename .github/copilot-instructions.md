@@ -7,7 +7,7 @@ This repository hosts a **Personal Performance Assistant (PPA)**: a thin routing
 - **Agent**: [.github/agents/ppa.agent.md](agents/ppa.agent.md) — routes to skills for actionable work and spars read-only as a coaching partner.
 - **Skills**: [.github/skills/](skills/) — each skill owns one capability (shaping a goal, refining it, checking in, reviewing, prioritizing, roadmapping, personal reflection, self-improvement).
 - **Bootstrap**: every interaction starts with the `shared-context` skill, which loads the user's data.
-- **Hard rules**: [.config/rules/agent.md](../.config/rules/agent.md) — binding rules (write gate, language, disclaimer, retro, versioning).
+- **Hard rules**: [.agent/rules/agent.md](../.agent/rules/agent.md) — binding rules (write gate, language, disclaimer, retro, versioning).
 - **Data**: the repository-root `workspace/` folder is the single source of truth (Dutch markdown files).
 
 ## Operating principles

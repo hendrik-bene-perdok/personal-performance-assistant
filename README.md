@@ -27,7 +27,7 @@ PPA uses a **thin agent, rich skill** design:
 - **Agent** (`.github/agents/ppa.agent.md`): routes actionable requests to skills AND spars as a read-only coaching partner.
 - **Skills** (`.github/skills/`): each owns one capability and carries a SemVer `version`.
 - **Bootstrap**: every interaction starts with the `shared-context` skill, which loads your data and confirms it.
-- **Hard rules** (`.config/rules/agent.md`): binding rules including the **write gate** (no `workspace/` file changes without explicit confirmation), Dutch as default language, AI disclaimer, mandatory retro, and versioning.
+- **Hard rules** (`.agent/rules/agent.md`): binding rules including the **write gate** (no `workspace/` file changes without explicit confirmation), Dutch as default language, AI disclaimer, mandatory retro, and versioning.
 - **Data** (`workspace/`): your local Dutch markdown files are the single source of truth.
 
 ### Agent
@@ -101,7 +101,7 @@ The PPA uses a clear distinction between **Templates** (blueprints) and **Worksp
 - `.github/agents/` — Agent definition: `ppa` (strategic router & coach).
 - `.github/skills/` — Rich skills, each with a versioned `SKILL.md`, plus templates/ and helpers/.
 - `.github/copilot-instructions.md` — Architecture and operating principles.
-- `.config/rules/agent.md` — Hard rules (write gate, language, disclaimer, retro, versioning).
+- `.agent/rules/agent.md` — Hard rules (write gate, language, disclaimer, retro, versioning).
 - `.agent/rules/` — General engineering/agent principles (always-on).
 - `workspace/` — Your personal Markdown documents (DO NOT COMMIT SENSITIVE DATA).
 - `CHANGELOG.md` — SemVer history of architecture and skill changes.

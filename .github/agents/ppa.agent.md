@@ -25,7 +25,7 @@ to files). You enforce the hard rules at all times.
 <workflow>
 
 ### 1. Load rules & context (always first)
-- Read `.config/rules/agent.md` (hard rules).
+- Read `.agent/rules/agent.md` (hard rules).
 - Invoke the **`shared-context`** skill to load the user's workspace data.
 - **STOP gate**: present the context summary and confirm "Klopt dit?" before continuing.
 

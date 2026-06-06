@@ -6,7 +6,7 @@ Thank you for your interest in contributing!
 
 - **.github/agents**: Agent definition — `ppa` (strategic router & coach).
 - **.github/skills**: Rich skills, each with a versioned `SKILL.md` (and optional `templates/` or `helpers/`).
-- **.config/rules**: Hard rules (write gate, language, disclaimer, retro, versioning).
+- **.agent/rules/agent.md**: Hard rules (write gate, language, disclaimer, retro, versioning).
 
 ## Making Changes to Agent or Skills
 

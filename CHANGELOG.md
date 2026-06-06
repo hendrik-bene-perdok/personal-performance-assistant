@@ -14,8 +14,8 @@ and skills are versioned according to [Semantic Versioning](https://semver.org/s
 - Updated `README.md` and `CONTRIBUTING.md` path representations and architecture diagrams.
 
 ### Added
-- Initial "Thin Agent, Rich Skill" architecture at the repository root (`.github/`, `.config/`).
+- Initial "Thin Agent, Rich Skill" architecture at the repository root (`.github/`, `.agent/`).
 - Thin router `ppa.agent.md` with intent table.
 - Skills: `shared-context`, `goal-shape`, `goal-refine`, `check-in`, `review`, `prioritize`, `roadmap`, `personal-retro`, `meta-retro`.
-- Hard rules in `.config/rules/agent.md` (write gate, language, disclaimer, mandatory retro, versioning).
+- Hard rules in `.agent/rules/agent.md` (write gate, language, disclaimer, mandatory retro, versioning).
 - `copilot-instructions.md` describing architecture and operating principles.
