@@ -1,7 +1,7 @@
 ---
 name: check-in
-version: 1.0.1
-description: Logs progress on the Top 3 goals into workspace/logboek.md following the journaling template, with a coaching nudge toward impact over output.
+version: 1.0.2
+description: Logs progress on the Top 3 goals into workspace/logboek following the journaling template, with a coaching nudge toward impact over output.
 ---
 
 # Check-in
@@ -12,7 +12,7 @@ WHEN the user reports progress, an obstacle, or a daily/ad-hoc update on a goal.
 Triggers: "ik heb vandaag...", "update op doel X", "log mijn voortgang",
 "ik liep tegen ... aan".
 
-This skill owns appending entries to `workspace/logboek.md`.
+This skill owns appending entries to `workspace/logboek/YYYY-MM-logboek.md`.
 
 ## Workflow
 
@@ -25,8 +25,10 @@ This skill owns appending entries to `workspace/logboek.md`.
   - On obstacle: "Wat ligt binnen je cirkel van invloed om dit op te lossen?"
 - [ ] **5. Draft entry** — Build a journal entry from `.github/skills/shared-context/templates/journaling.md`
       (ad-hoc / daily / weekly variant). Fill placeholders only.
-- [ ] **6. STOP — write gate** — Show the entry. Ask "Mag ik dit aan `logboek.md` toevoegen? (ja/nee)".
-- [ ] **7. Append & confirm** — On approval, append (do not overwrite) and confirm.
+- [ ] **6. STOP — write gate** — Show the full entry as a labeled block:
+      `> **Entry voor logboek (workspace/logboek/YYYY-MM-logboek.md):**`
+      Then ask: "Mag ik dit wegschrijven naar `logboek/YYYY-MM-logboek.md`? (ja/nee)".
+- [ ] **7. Append & confirm** — On approval, append to `workspace/logboek/YYYY-MM-logboek.md` (do not overwrite) and confirm.
 - [ ] **8. Next step** — Ask: "Wat is de kleinste volgende stap die je nu kunt zetten?"
 
 ## STOP gates
@@ -36,5 +38,5 @@ This skill owns appending entries to `workspace/logboek.md`.
 
 ## Expected result
 
-A new, template-conform entry appended to `workspace/logboek.md` after approval, plus
+A new, template-conform entry appended to `workspace/logboek/YYYY-MM-logboek.md` after approval, plus
 one concrete next step.

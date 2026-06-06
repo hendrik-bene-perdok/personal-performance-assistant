@@ -20,9 +20,13 @@ Persona, professional context, and (optionally) a development plan
 ## workspace/rolbeschrijving.md (role description)
 The user's role, responsibilities and constraints. Used to judge goal relevance.
 
-## workspace/logboek.md (journal)
-Chronological journal. `check-in`, `review` and `personal-retro` append entries here,
-following the template in `.github/skills/shared-context/templates/journaling.md`. Newest entries are most relevant.
+## workspace/logboek/ (journal directory)
+Chronological journal, split into monthly files with the naming convention
+`YYYY-MM-logboek.md` (e.g. `2026-06-logboek.md`). `check-in`, `review` and
+`personal-retro` append entries to the current month's file,
+following the template in `.github/skills/shared-context/templates/journaling.md`.
+Newest entries are most relevant. When reading, open the current month's file;
+when a new month starts, create a new file using the same naming convention.
 
 ## workspace/gap-analyse.md (gap analysis)
 Discrepancy between current and desired state for a goal/domain. Read during `review`.

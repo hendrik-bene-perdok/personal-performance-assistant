@@ -1,6 +1,6 @@
 ---
 name: shared-context
-version: 1.1.1
+version: 2.0.0
 description: Bootstrap skill that loads the user's PPA context (rules, frameworks, guidelines, role, and workspace data) and confirms it before any other skill acts.
 ---
 
@@ -33,7 +33,7 @@ acting on stale or assumed data.
     - `workspace/doelen.md` (goals: Top 3, Avoid list, Next actions)
     - `workspace/profiel.md` (profile / persona)
     - `workspace/rolbeschrijving.md` (role description)
-    - `workspace/logboek.md` (journal — read the most recent entries)
+    - `workspace/logboek/YYYY-MM-logboek.md` (journal — read the current month's file)
     - `workspace/gap-analyse.md` (gap analysis, if present)
     - `workspace/richtlijnen.md` (user-specific guidelines, if present)
   - Do NOT write anything in this step.
