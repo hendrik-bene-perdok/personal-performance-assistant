@@ -4,29 +4,16 @@ Thank you for your interest in contributing!
 
 ## structure
 
-- **.github/agents**: The primary source of truth for agent definitions.
-- **.agent/workflows**: The directory used by the agent runtime. **Do not edit files here directly.**
-- **.ppa/helpers**: Helper scripts for maintenance (e.g., sync, backup).
-- **.ppa/templates**: Markdown templates used by the wizard to initialize files.
+- **.github/agents**: Agent definition — `ppa` (strategic router & coach).
+- **.github/skills**: Rich skills, each with a versioned `SKILL.md` (and optional `templates/` or `helpers/`).
+- **.config/rules**: Hard rules (write gate, language, disclaimer, retro, versioning).
 
-## Making Changes to Agents
+## Making Changes to Agent or Skills
 
-1.  **Edit**: Make your changes in `.github/agents/*.agent.md`.
-2.  **Sync**: Run the sync script to update `.agent/workflows`.
-
-    **Windows:**
-    ```powershell
-    .ppa/helpers/sync-agents.ps1
-    ```
-
-    **Linux/Mac:**
-    ```bash
-    chmod +x .ppa/helpers/sync-agents.sh
-    ./.ppa/helpers/sync-agents.sh
-    ```
-
-3.  **Verify**: Ensure the changes are correctly reflected in `.agent/workflows`.
-4.  **Commit**: Commit both the source files in `.github/agents` and the synced files in `.agent/workflows`.
+1.  **Edit**: Change the relevant file in `.github/agents/ppa.agent.md` or `.github/skills/<skill>/SKILL.md`.
+2.  **Version**: For a skill change, bump its SemVer `version` in the `SKILL.md` frontmatter.
+3.  **Changelog**: Prepend an entry to `CHANGELOG.md` describing the change.
+4.  **Verify**: Confirm the router's intent table still points to valid skill/mode scenarios.
 
 ## General Guidelines
 
