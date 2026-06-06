@@ -15,7 +15,7 @@ Triggers: "te veel op mijn bord", "waar moet ik op focussen", "help me prioriter
 
 - [ ] **1. Context** — Ensure the agent bootstrap has loaded context and the user confirmed it.
 - [ ] **2. List** — Surface all current goals/commitments (from `doelen.md` + anything new).
-- [ ] **3. Circle (5/25)** — Apply the 5/25 rule from `.github/context/frameworks.md`,
+- [ ] **3. Circle (5/25)** — Apply the 5/25 rule from `.github/skills/prioritize/SKILL.md`,
       adapted to PPA's Top 3. Help the user pick the vital few.
 - [ ] **4. Avoid** — Everything not chosen becomes an explicit Avoid-at-all-costs item —
       not a "later" list. Name the focus cost of each.
@@ -33,3 +33,14 @@ Triggers: "te veel op mijn bord", "waar moet ik op focussen", "help me prioriter
 ## Expected result
 
 A focused Top 3 and an honest Avoid list, recorded in `workspace/doelen.md` after approval.
+
+## Frameworks
+
+**5/25 Rule (focus / prioritization)**
+
+Attributed to a Warren Buffett anecdote:
+1. List your top 25 goals/wishes.
+2. Circle the 5 most important.
+3. The other 20 become an **avoid-at-all-costs** list — they steal focus from the top 5.
+
+In PPA, the Top 3 in `doelen.md` are the active focus; everything parked goes to the Avoid list.

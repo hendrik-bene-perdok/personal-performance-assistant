@@ -16,7 +16,7 @@ WHEN the user wants to improve the assistant — wrong routing, weak output, a m
 capability, an annoying behaviour. Triggers: "verbeter de agent", "de assistant deed
 iets fout", "voeg een skill toe", "pas de regels aan".
 
-> NOT about the user's own performance — that is `personal-retro`. Keep them separate.
+> NOT about the user's own performance — that is `journal`. Keep them separate.
 ---
 name: meta-retro
 description: Improves the PPA agent itself. Collects friction signals, proposes concrete skill/rule changes, and applies them behind a write gate.
@@ -30,7 +30,7 @@ WHEN the user wants to improve the assistant — wrong routing, weak output, a m
 capability, an annoying behaviour. Triggers: "verbeter de agent", "de assistant deed
 iets fout", "voeg een skill toe", "pas de regels aan".
 
-> NOT about the user's own performance — that is `personal-retro`. Keep them separate.
+> NOT about the user's own performance — that is `journal`. Keep them separate.
 
 ## Workflow
 
