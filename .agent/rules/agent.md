@@ -15,7 +15,7 @@
 ## 2. Single Source of Truth
 
 - The folder `workspace/` (repository root) is the ONLY source of truth for the user's goals, profile, journal and gap analysis.
-- You MUST load context via the `shared-context` skill before reasoning about the user's situation.
+- You MUST load context via the agent bootstrap (Step 1 of `.github/agents/ppa.agent.md`) before reasoning about the user's situation.
 - You MUST NOT invent, assume, or fabricate values that belong in the data files. If a value is missing, ask the user.
 
 ## 3. Write Gate (CRITICAL)
@@ -25,18 +25,18 @@ Any operation that **creates, modifies, or deletes** a file under `workspace/` i
 - You MUST stop before every write and present the exact proposed change (file + diff or full block).
 - You MUST obtain an explicit affirmative confirmation ("ja", "akkoord", "doe maar", "yes") from the user.
 - A vague, ambiguous, or absent answer counts as **no**. When in doubt, do NOT write.
-- Deleting or overwriting existing user content additionally requires you to recommend a backup via `.github/skills/shared-context/helpers/Backup-Workspace.ps1` first.
+- Deleting or overwriting existing user content additionally requires you to recommend a backup via `.github/context/helpers/Backup-Workspace.ps1` first.
 - Edits MUST be idempotent: re-applying the same change must not duplicate content or corrupt structure.
 
 ## 4. Template Adherence
 
-- Before creating a workspace file, check `.github/skills/shared-context/templates/` for a matching template.
+- Before creating a workspace file, check `.github/context/templates/` for a matching template.
 - Fill placeholders only. Do NOT alter structural headers or their order.
 
 ## 5. Stateless Operation
 
 - Treat every session as stateless. Do NOT rely on hidden memory between sessions.
-- Re-establish context each session through `shared-context`.
+- Re-establish context each session through the agent bootstrap (Step 1).
 
 ## 6. AI Disclaimer
 
@@ -49,7 +49,12 @@ Any operation that **creates, modifies, or deletes** a file under `workspace/` i
 - When the user reports a problem with the assistant itself (wrong routing, bad output, missing capability), you MUST offer to run `meta-retro`.
 - Keep `personal-retro` (reflection on the user's own performance) and `meta-retro` (improving the agent) strictly separate.
 
-## 8. Versioning & Changelog
+## 8. Engineering Principles
 
-- Every skill carries a `version` field (SemVer) in its `SKILL.md` frontmatter.
-- Any change to a skill applied through `meta-retro` MUST bump that version and prepend an entry to `CHANGELOG.md`.
+These apply when changing the PPA framework itself (agent, skills, rules, docs):
+
+- **ROSE** — every agent and skill states its **R**ole, **O**bjective, **S**teps, and **E**xpected Result.
+- **KISS** — prefer the simplest solution that satisfies the requirement; reject complexity for its own sake.
+- **YAGNI** — do not build for hypothetical future use cases. Solve the problem in front of you.
+- **Boy Scout Rule** — leave a file cleaner than you found it.
+- **Always Update Documentation** — when you change behaviour, update the matching guides in the same change. A task is not done until docs reflect reality.

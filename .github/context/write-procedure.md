@@ -21,7 +21,7 @@ procedure. It implements hard rule §3.
 
 4. **Protect existing content**
    - If the change overwrites or deletes existing user content, first recommend a backup:
-     run `.github/skills/shared-context/helpers/Backup-Workspace.ps1`.
+     run `.github/context/helpers/Backup-Workspace.ps1`.
    - Prefer appending or targeted replacement over wholesale rewrites.
 
 5. **Apply & confirm**

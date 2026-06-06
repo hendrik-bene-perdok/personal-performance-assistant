@@ -1,6 +1,5 @@
 ---
 name: check-in
-version: 1.0.2
 description: Logs progress on the Top 3 goals into workspace/logboek following the journaling template, with a coaching nudge toward impact over output.
 ---
 
@@ -16,14 +15,14 @@ This skill owns appending entries to `workspace/logboek/YYYY-MM-logboek.md`.
 
 ## Workflow
 
-- [ ] **1. Context** — Ensure `shared-context` has run and is confirmed.
+- [ ] **1. Context** — Ensure the agent bootstrap has loaded context and the user confirmed it.
 - [ ] **2. Link** — Tie the update to a specific Top 3 goal. If it links to none,
       ask whether it is a new goal (route to `goal-shape`) or a side issue.
 - [ ] **3. Status** — Classify: progress, stagnation, or obstacle.
 - [ ] **4. Coaching nudge** — One sharp reflection:
   - On progress: "Wat was de concrete impact (uitkomst), niet alleen de output?"
   - On obstacle: "Wat ligt binnen je cirkel van invloed om dit op te lossen?"
-- [ ] **5. Draft entry** — Build a journal entry from `.github/skills/shared-context/templates/journaling.md`
+- [ ] **5. Draft entry** — Build a journal entry from `.github/context/templates/journaling.md`
       (ad-hoc / daily / weekly variant). Fill placeholders only.
 - [ ] **6. STOP — write gate** — Show the full entry as a labeled block:
       `> **Entry voor logboek (workspace/logboek/YYYY-MM-logboek.md):**`
