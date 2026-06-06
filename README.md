@@ -50,6 +50,10 @@ PPA uses a **thin agent, rich skill** design:
 | `personal-retro` | Structured reflection on your own performance. |
 | `meta-retro` | Improve the assistant itself (SemVer bump + changelog). |
 
+### Skills
+
+- `ppa-context` — Loads the core Personal Performance Assistant (PPA) context files (Guidelines, Profile, Goals, Logbook).
+
 
 ## Workflow
 
