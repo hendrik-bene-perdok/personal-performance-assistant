@@ -18,71 +18,72 @@ code .
 
 3. Toggle your AI chat/assistant integration (for example Copilot Chat or another AI extension).
 
-4. In the chat input, type the command.
-    - to initialize: `/ppa-wizard` (this will run the initialization prompt)
-    - to set goal: `/goal setter(simple)` (this will run the goal setting prompt)
-    - etc.
+4. Select the **PPA** agent (the thin router) and describe what you want to do — set a goal, log progress, review your week, prioritize, plan, or reflect. The router loads your context and delegates to the right skill.
 
-## Available Agents (Usage)
+## Architecture
 
-| Slash Command | Description |
+PPA uses a **thin agent, rich skill** design:
+
+- **Agent** (`.github/agents/ppa.agent.md`): routes actionable requests to skills AND spars as a read-only coaching partner.
+- **Skills** (`.github/skills/`): each owns one capability and carries a SemVer `version`.
+- **Bootstrap**: every interaction starts with the `shared-context` skill, which loads your data and confirms it.
+- **Hard rules** (`.config/rules/agent.md`): binding rules including the **write gate** (no `workspace/` file changes without explicit confirmation), Dutch as default language, AI disclaimer, mandatory retro, and versioning.
+- **Data** (`workspace/`): your local Dutch markdown files are the single source of truth.
+
+### Agent
+
+| Agent | Description |
 | :--- | :--- |
-| `/PPA Wizard` | Initializes and updates personal assistant workspaces. |
-| `/Goal Setter(simple)` | A 3-step goal setting agent using the "List, Circle, Eliminate" method. |
-| `/Coach(simple)` | Strategic prioritization coach using the 5/25 rule. |
-| `/Goal Setter(performance)` | Helps formulate and refine SMART goals. |
-| `/Coach(performance)` | Partner for professional growth, focus, and reflection. |
-| `/Career Coach` | Expert in personal branding and profile optimization. |
-| `/Gap Analysis` | Performs gap analyses to identify discrepancies between current and desired states. |
+| **PPA** | Routes to skills for actionable work; spars read-only as a coaching partner for open-ended thinking. |
 
 ### Skills
 
-- `ppa-context` — Loads the core Personal Performance Assistant (PPA) context files (Guidelines, Profile, Goals, Logbook).
+| Skill | Purpose |
+| :--- | :--- |
+| `shared-context` | Bootstrap: load rules, frameworks, and workspace data, then confirm. |
+| `goal-shape` | Turn a vague intention into one sharp candidate goal. |
+| `goal-refine` | Refine a goal into SMART/OKR and record it (behind the write gate). |
+| `check-in` | Log progress on the Top 3 into the journal. |
+| `review` | Week/period review with stagnation detection. |
+| `prioritize` | 5/25 focus — keep a Top 3, park the rest. |
+| `roadmap` | Quarterly themed overview of your goals. |
+| `personal-retro` | Structured reflection on your own performance. |
+| `meta-retro` | Improve the assistant itself (SemVer bump + changelog). |
 
 
 ## Workflow
 
 ```mermaid
 flowchart TD
-   %% Flow
-    Agents---|Reads|Templates
-    Agents---|Reads/Updates|Workspace
+    User([User request]) --> Router[PPA Router]
+    Router --> Context[shared-context\nload + confirm]
+    Context --> Intent{Classify intent}
 
+    Intent --> GoalShape[goal-shape]
+    Intent --> GoalRefine[goal-refine]
+    Intent --> CheckIn[check-in]
+    Intent --> Review[review]
+    Intent --> Prioritize[prioritize]
+    Intent --> Roadmap[roadmap]
+    Intent --> PersonalRetro[personal-retro]
+    Intent --> MetaRetro[meta-retro]
 
-    
-    %% Connections between agents
-    Wizard --> Choose{Choose} --> GoalSetter
-    GoalSetter -- input--> Coach
-    Coach -- feedback--> GoalSetter
-    Coach --> GapAgent
+    GoalRefine -.write gate.-> Workspace[(workspace/)]
+    CheckIn -.write gate.-> Workspace
+    Review -.write gate.-> Workspace
+    Prioritize -.write gate.-> Workspace
+    PersonalRetro -.write gate.-> Workspace
+    MetaRetro -.write gate.-> Skills[(.github/skills)]
 
-    subgraph Templates [Templates .ppa/templates]
-        T_Templates
-    end
-
-    subgraph Workspace [Workspace State workspace/]
-        W_Docs
-    end
-
-    subgraph Agents [Active agents workflow]
-        Wizard[Wizard: Init / Update]:::agent
-        Choose[Choose: Simple / Performance]:::agent
-        GoalSetter[Goal Setter]:::agent
-        Coach[Coach]:::agent
-        GapAgent[Gap Analysis]:::agent
-    end
-
-    Choose@{ shape: diamond, label: "Choose<br>simple or performance" }
-    W_Docs@{ shape: docs, label: "Documents<br>profile.md<br>goals.md<br>logbook.md<br>gap-analysis.md" }
-    T_Templates@{ shape: docs, label: "Templates<br>profile.template.md<br>goal.template.md<br>gap-analysis.template.md<br>journal.template.md" }
- 
+    Context -.reads.-> Workspace
+    Context -.reads.-> Templates[(.github/skills/shared-context/templates)]
 ```
 
 ## Templates & Workspace
 
 The PPA uses a clear distinction between **Templates** (blueprints) and **Workspace** (your data):
 
--   **Templates** (`.ppa/templates/`): These are the structural starting points. Agents read these to understand how to format new files.
+-   **Templates** (`.github/skills/shared-context/templates/`): These are the structural starting points. Agents read these to understand how to format new files.
 -   **Workspace** (`workspace/`): This is where your personal data lives.
     -   `profile.md`: Your user profile and context.
     -   `goals.md`: Your active goals.
@@ -93,13 +94,13 @@ The PPA uses a clear distinction between **Templates** (blueprints) and **Worksp
 
 ## Structure
 
-- `.agent/workflows/` — Agent workflows and prompts.
-- `.agent/rules/` — Specific rules for agents (e.g., Gap Analysis).
-- `.github/agents/` — Source of truth for agent definitions.
-- `.ppa/` — Assistant guidelines and templates.
-    - `templates/` — Markdown templates for profiles, goals, etc.
-    - `helpers/` — Maintenance scripts (backup, sync).
+- `.github/agents/` — Agent definition: `ppa` (strategic router & coach).
+- `.github/skills/` — Rich skills, each with a versioned `SKILL.md`, plus templates/ and helpers/.
+- `.github/copilot-instructions.md` — Architecture and operating principles.
+- `.config/rules/agent.md` — Hard rules (write gate, language, disclaimer, retro, versioning).
+- `.agent/rules/` — General engineering/agent principles (always-on).
 - `workspace/` — Your personal Markdown documents (DO NOT COMMIT SENSITIVE DATA).
+- `CHANGELOG.md` — SemVer history of architecture and skill changes.
 - `README.md` — This file.
 
 ## Links

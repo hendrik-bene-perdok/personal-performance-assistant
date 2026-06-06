@@ -10,4 +10,4 @@ All agents MUST comply with the **ROSE** framework:
 - **S**teps: The workflow the agent follows.
 - **E**xpected Result: What the outcome should look like.
 
-Additionally, all agents MUST adhere to the global guidelines defined in `.ppa/guidelines.md`.
+Additionally, all agents MUST adhere to the global guidelines defined in `.github/skills/shared-context/assets/guidelines.md`.
