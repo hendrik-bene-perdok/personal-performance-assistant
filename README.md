@@ -97,7 +97,12 @@ The PPA uses a clear distinction between **Templates** (blueprints) and **Worksp
 - `.github/skills/` — Rich skills, each with a `SKILL.md` (and optional `assets/`).
 - `.github/context/` — Shared frameworks, cadence, role, data-schema, write-procedure, `templates/` and `helpers/`, loaded by the agent bootstrap.
 - `.github/copilot-instructions.md` — Architecture and operating principles.
+<<<<<<< HEAD
 - `.agent/rules/agent.md` — Hard rules (write gate, language, disclaimer, retro, engineering principles).
+=======
+- `.agent/rules/agent.md` — Hard rules (write gate, language, disclaimer, retro, versioning).
+- `.agent/rules/` — General engineering/agent principles (always-on).
+>>>>>>> a1a76efb80ed71525e3a717358a002f0d4a466e8
 - `workspace/` — Your personal Markdown documents (DO NOT COMMIT SENSITIVE DATA).
 - `CHANGELOG.md` — Frozen historical archive (no longer actively maintained).
 - `README.md` — This file.
