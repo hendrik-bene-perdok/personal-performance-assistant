@@ -1,6 +1,6 @@
 ---
 name: personal-retro
-version: 1.0.1
+version: 1.0.3
 description: Guides a structured reflection on the USER's own performance and patterns (not the agent). Captures insights into the journal.
 ---
 
@@ -18,7 +18,7 @@ Triggers: "reflecteer op mijn week", "wat ging goed/fout bij mij", "welke patron
 ## Workflow
 
 - [ ] **1. Context** — Ensure `shared-context` has run and is confirmed.
-- [ ] **2. Look back** — Read recent `workspace/logboek.md` and current `doelen.md`.
+- [ ] **2. Look back** — Read `workspace/logboek/YYYY-MM-logboek.md` (current month) and current `doelen.md`.
 - [ ] **3. Reflect (structured)** — Walk these prompts, one or two at a time:
   - **Wat ging goed?** — concrete wins and their impact.
   - **Wat ging niet?** — obstacles, where energy leaked, Avoid-list slips.
@@ -26,10 +26,12 @@ Triggers: "reflecteer op mijn week", "wat ging goed/fout bij mij", "welke patron
   - **Wat neem je mee?** — one or two concrete intentions.
 - [ ] **4. Challenge** — Push on impact over output; on obstacles, focus on the circle
       of influence. Keep it supportive but honest.
-- [ ] **5. Draft entry** — Build a reflection entry from `templates/retro-entry.md`
-      (or the weekly variant of `.github/skills/shared-context/templates/journaling.md`).
-- [ ] **6. STOP — write gate** — Show the entry. Ask "Mag ik dit aan `logboek.md` toevoegen? (ja/nee)".
-- [ ] **7. Append & confirm** — On approval, append (never overwrite) and confirm.
+- [ ] **5. Draft entry** — First read `.github/skills/shared-context/templates/journaling.md`.
+      Then build the reflection entry using that template. Fill placeholders only; do not alter headers.
+- [ ] **6. STOP — write gate** — Show the full entry as a labeled block:
+      `> **Entry voor logboek (workspace/logboek/YYYY-MM-logboek.md):**`
+      Then ask: "Mag ik dit wegschrijven naar `logboek/YYYY-MM-logboek.md`? (ja/nee)".
+- [ ] **7. Append & confirm** — On approval, append to `workspace/logboek/YYYY-MM-logboek.md` (never overwrite) and confirm.
 - [ ] **8. Next** — Offer `review` (goal status) or `prioritize` if focus drifted.
 
 ## STOP gates
@@ -40,5 +42,5 @@ Triggers: "reflecteer op mijn week", "wat ging goed/fout bij mij", "welke patron
 
 ## Expected result
 
-A structured personal reflection appended to `workspace/logboek.md` after approval,
+A structured personal reflection appended to `workspace/logboek/YYYY-MM-logboek.md` after approval,
 with one or two concrete intentions.

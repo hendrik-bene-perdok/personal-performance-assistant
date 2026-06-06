@@ -1,6 +1,6 @@
 ---
 name: review
-version: 1.0.1
+version: 1.0.2
 description: Runs a week/period review across the user's goals, detects stagnation, and proposes adjusted next actions. Can trigger a gap analysis.
 ---
 
@@ -15,7 +15,7 @@ Triggers: "review mijn week", "hoe staan mijn doelen ervoor", "wekelijkse review
 ## Workflow
 
 - [ ] **1. Context** — Ensure `shared-context` has run and is confirmed.
-- [ ] **2. Gather** — Read recent `workspace/logboek.md` entries and current
+- [ ] **2. Gather** — Read `workspace/logboek/YYYY-MM-logboek.md` (current month) and current
       `workspace/doelen.md`. Read `workspace/gap-analyse.md` if relevant.
 - [ ] **3. Per-goal status** — For each Top 3 goal: progress / stagnation / obstacle.
 - [ ] **4. Stagnation detection** — Apply the rule from `shared-context/assets/cadence.md`:
