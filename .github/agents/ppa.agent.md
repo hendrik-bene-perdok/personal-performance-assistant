@@ -50,9 +50,7 @@ the user's situation. It establishes the single source of truth.
 > Context is only confirmed if "Klopt dit?" has been explicitly asked and answered in the
 > current session. When in doubt, re-run this bootstrap.
 
-> **Note:** A "ja" (yes) as approval for a write action does NOT count as context confirmation.
-> Context is only confirmed if "Klopt dit?" has been explicitly asked and answered in the
-> current session. When in doubt, reload via `shared-context`.
+
 
 ### 2. Classify intent
 - Map the user's request to a single skill or to **spar mode** using the intent table below.
