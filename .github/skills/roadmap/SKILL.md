@@ -24,7 +24,7 @@ Triggers: "kwartaalplan", "roadmap", "overzicht van mijn doelen over tijd",
       change `doelen.md` by default.
 - [ ] **7. STOP — write gate (optional)** — If the user wants the roadmap saved (e.g. to
       `workspace/profiel.md` development plan), follow the write procedure and get "ja".
-- [ ] **8. Next** — Offer `goal-refine` for any milestone that needs SMART detailing.
+- [ ] **8. Next** — Offer `goal` for any milestone that needs SMART detailing.
 
 ## STOP gates
 

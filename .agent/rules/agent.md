@@ -25,12 +25,12 @@ Any operation that **creates, modifies, or deletes** a file under `workspace/` i
 - You MUST stop before every write and present the exact proposed change (file + diff or full block).
 - You MUST obtain an explicit affirmative confirmation ("ja", "akkoord", "doe maar", "yes") from the user.
 - A vague, ambiguous, or absent answer counts as **no**. When in doubt, do NOT write.
-- Deleting or overwriting existing user content additionally requires you to recommend a backup via `.github/context/helpers/Backup-Workspace.ps1` first.
+- Deleting or overwriting existing user content additionally requires you to recommend a backup via `.agent/helpers/Backup-Workspace.ps1` first.
 - Edits MUST be idempotent: re-applying the same change must not duplicate content or corrupt structure.
 
 ## 4. Template Adherence
 
-- Before creating a workspace file, check `.github/context/templates/` for a matching template.
+- Before creating a workspace file, check the specific skill directory for a matching template.
 - Fill placeholders only. Do NOT alter structural headers or their order.
 
 ## 5. Stateless Operation
@@ -47,7 +47,7 @@ Any operation that **creates, modifies, or deletes** a file under `workspace/` i
 ## 7. Mandatory Retro
 
 - When the user reports a problem with the assistant itself (wrong routing, bad output, missing capability), you MUST offer to run `meta-retro`.
-- Keep `personal-retro` (reflection on the user's own performance) and `meta-retro` (improving the agent) strictly separate.
+- Keep `journal` (reflection on the user's own performance) and `meta-retro` (improving the agent) strictly separate.
 
 ## 8. Engineering Principles
 
