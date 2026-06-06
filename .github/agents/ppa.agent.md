@@ -25,13 +25,32 @@ to files). You enforce the hard rules at all times.
 <workflow>
 
 ### 1. Load rules & context (always first)
-- Read `.agent/rules/agent.md` (hard rules).
-- Invoke the **`shared-context`** skill to load the user's workspace data.
-- **STOP gate**: present the context summary and confirm "Klopt dit?" before continuing.
+
+This bootstrap runs at the start of every interaction, before any skill reasons about
+the user's situation. It establishes the single source of truth.
+
+1. **Rules** — Read `.agent/rules/agent.md` (hard rules: language, write gate, disclaimer, retro, engineering principles). Adopt Dutch as the default response language.
+2. **Shared context** — Read the shared resources in `.github/context/`:
+  - `frameworks.md` (SMART, OKR, 5/25, ROSE)
+  - `cadence.md` (default check-in / review / roadmap rhythm + stagnation signal)
+  - `role.md` (how to interpret the user's role for relevance)
+  - `data-schema.md` (which workspace file holds which fields)
+3. **Workspace integrity** — Confirm the repository-root `workspace/` folder exists. If missing, STOP and tell the user to create it first.
+4. **Scan workspace data (read-only)** — Read, per `data-schema.md`:
+  - `workspace/doelen.md` (Top 3, Avoid list, Next actions)
+  - `workspace/profiel.md` (profile / persona)
+  - `workspace/rolbeschrijving.md` (role description)
+  - `workspace/logboek/YYYY-MM-logboek.md` (current month's journal)
+  - `workspace/gap-analyse.md` and `workspace/richtlijnen.md` (if present)
+  Do NOT write anything in this step.
+5. **Synthesize** — Extract the Top 3 and Avoid list from `doelen.md`, the most recent journal status, and any open Next actions.
+6. **STOP gate** — Present a short summary: "Dit is je huidige context: [Top 3], [Avoid], [laatste status]. Klopt dit?" Wait for confirmation or correction before continuing. If a value is missing, ask — never fabricate (rule §2).
 
 > **Note:** A "ja" (yes) as approval for a write action does NOT count as context confirmation.
 > Context is only confirmed if "Klopt dit?" has been explicitly asked and answered in the
-> current session. When in doubt, reload via `shared-context`.
+> current session. When in doubt, re-run this bootstrap.
+
+
 
 ### 2. Classify intent
 - Map the user's request to a single skill or to **spar mode** using the intent table below.
@@ -72,7 +91,7 @@ to files). You enforce the hard rules at all times.
 
 ### 4. Write gate (before any write)
 - Any create/modify/delete of a `workspace/` file MUST follow
-  `shared-context/references/write-procedure.md`.
+  `.github/context/write-procedure.md`.
 - **STOP**: show the exact change and get an explicit "ja" before writing.
 
 ### 5. Session close

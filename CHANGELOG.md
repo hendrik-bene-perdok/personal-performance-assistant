@@ -1,5 +1,10 @@
 # Changelog
 
+> **Status: bevroren (niet langer actief onderhouden).**
+> De PPA hanteert geen SemVer-versionering of changelog-discipline meer (KISS/YAGNI).
+> Skills en regels worden direct aangepast via `meta-retro`; gebruik `git log` / `git diff`
+> voor de wijzigingsgeschiedenis. Onderstaande entries blijven als historisch archief staan.
+
 All notable changes to the PPA architecture and its skills are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and skills are versioned according to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).

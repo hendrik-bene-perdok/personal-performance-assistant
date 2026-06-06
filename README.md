@@ -24,10 +24,10 @@ code .
 
 PPA uses a **thin agent, rich skill** design:
 
-- **Agent** (`.github/agents/ppa.agent.md`): routes actionable requests to skills AND spars as a read-only coaching partner.
-- **Skills** (`.github/skills/`): each owns one capability and carries a SemVer `version`.
-- **Bootstrap**: every interaction starts with the `shared-context` skill, which loads your data and confirms it.
-- **Hard rules** (`.agent/rules/agent.md`): binding rules including the **write gate** (no `workspace/` file changes without explicit confirmation), Dutch as default language, AI disclaimer, mandatory retro, and versioning.
+- **Agent** (`.github/agents/ppa.agent.md`): routes actionable requests to skills AND spars as a read-only coaching partner. Its Step 1 bootstrap loads the rules and shared context, then confirms your data.
+- **Skills** (`.github/skills/`): each owns one capability via a `SKILL.md`.
+- **Shared context** (`.github/context/`): frameworks, cadence, role, data-schema, write-procedure, templates and helpers shared across skills. Loaded by the agent bootstrap.
+- **Hard rules** (`.agent/rules/agent.md`): binding rules including the **write gate** (no `workspace/` file changes without explicit confirmation), Dutch as default language, AI disclaimer, mandatory retro, and engineering principles.
 - **Data** (`workspace/`): your local Dutch markdown files are the single source of truth.
 
 ### Agent
@@ -40,7 +40,6 @@ PPA uses a **thin agent, rich skill** design:
 
 | Skill | Purpose |
 | :--- | :--- |
-| `shared-context` | Bootstrap: load rules, frameworks, and workspace data, then confirm. |
 | `goal-shape` | Turn a vague intention into one sharp candidate goal. |
 | `goal-refine` | Refine a goal into SMART/OKR and record it (behind the write gate). |
 | `check-in` | Log progress on the Top 3 into the journal. |
@@ -48,11 +47,7 @@ PPA uses a **thin agent, rich skill** design:
 | `prioritize` | 5/25 focus — keep a Top 3, park the rest. |
 | `roadmap` | Quarterly themed overview of your goals. |
 | `personal-retro` | Structured reflection on your own performance. |
-| `meta-retro` | Improve the assistant itself (SemVer bump + changelog). |
-
-### Skills
-
-- `ppa-context` — Loads the core Personal Performance Assistant (PPA) context files (Guidelines, Profile, Goals, Logbook).
+| `meta-retro` | Improve the assistant itself. |
 
 
 ## Workflow
@@ -60,7 +55,7 @@ PPA uses a **thin agent, rich skill** design:
 ```mermaid
 flowchart TD
     User([User request]) --> Router[PPA Router]
-    Router --> Context[shared-context\nload + confirm]
+    Router --> Context[bootstrap\nload rules + context + confirm]
     Context --> Intent{Classify intent}
 
     Intent --> GoalShape[goal-shape]
@@ -80,14 +75,14 @@ flowchart TD
     MetaRetro -.write gate.-> Skills[(.github/skills)]
 
     Context -.reads.-> Workspace
-    Context -.reads.-> Templates[(.github/skills/shared-context/templates)]
+    Context -.reads.-> Templates[(.github/context/templates)]
 ```
 
 ## Templates & Workspace
 
 The PPA uses a clear distinction between **Templates** (blueprints) and **Workspace** (your data):
 
--   **Templates** (`.github/skills/shared-context/templates/`): These are the structural starting points. Agents read these to understand how to format new files.
+-   **Templates** (`.github/context/templates/`): These are the structural starting points. Agents read these to understand how to format new files.
 -   **Workspace** (`workspace/`): This is where your personal data lives.
     -   `profile.md`: Your user profile and context.
     -   `goals.md`: Your active goals.
@@ -99,12 +94,17 @@ The PPA uses a clear distinction between **Templates** (blueprints) and **Worksp
 ## Structure
 
 - `.github/agents/` — Agent definition: `ppa` (strategic router & coach).
-- `.github/skills/` — Rich skills, each with a versioned `SKILL.md`, plus templates/ and helpers/.
+- `.github/skills/` — Rich skills, each with a `SKILL.md` (and optional `assets/`).
+- `.github/context/` — Shared frameworks, cadence, role, data-schema, write-procedure, `templates/` and `helpers/`, loaded by the agent bootstrap.
 - `.github/copilot-instructions.md` — Architecture and operating principles.
+<<<<<<< HEAD
+- `.agent/rules/agent.md` — Hard rules (write gate, language, disclaimer, retro, engineering principles).
+=======
 - `.agent/rules/agent.md` — Hard rules (write gate, language, disclaimer, retro, versioning).
 - `.agent/rules/` — General engineering/agent principles (always-on).
+>>>>>>> a1a76efb80ed71525e3a717358a002f0d4a466e8
 - `workspace/` — Your personal Markdown documents (DO NOT COMMIT SENSITIVE DATA).
-- `CHANGELOG.md` — SemVer history of architecture and skill changes.
+- `CHANGELOG.md` — Frozen historical archive (no longer actively maintained).
 - `README.md` — This file.
 
 ## Links

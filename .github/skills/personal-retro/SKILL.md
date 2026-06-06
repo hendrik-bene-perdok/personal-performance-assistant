@@ -1,6 +1,5 @@
 ---
 name: personal-retro
-version: 1.0.3
 description: Guides a structured reflection on the USER's own performance and patterns (not the agent). Captures insights into the journal.
 ---
 
@@ -17,7 +16,7 @@ Triggers: "reflecteer op mijn week", "wat ging goed/fout bij mij", "welke patron
 
 ## Workflow
 
-- [ ] **1. Context** — Ensure `shared-context` has run and is confirmed.
+- [ ] **1. Context** — Ensure the agent bootstrap has loaded context and the user confirmed it.
 - [ ] **2. Look back** — Read `workspace/logboek/YYYY-MM-logboek.md` (current month) and current `doelen.md`.
 - [ ] **3. Reflect (structured)** — Walk these prompts, one or two at a time:
   - **Wat ging goed?** — concrete wins and their impact.
@@ -26,7 +25,7 @@ Triggers: "reflecteer op mijn week", "wat ging goed/fout bij mij", "welke patron
   - **Wat neem je mee?** — one or two concrete intentions.
 - [ ] **4. Challenge** — Push on impact over output; on obstacles, focus on the circle
       of influence. Keep it supportive but honest.
-- [ ] **5. Draft entry** — First read `.github/skills/shared-context/templates/journaling.md`.
+- [ ] **5. Draft entry** — First read `.github/context/templates/journaling.md`.
       Then build the reflection entry using that template. Fill placeholders only; do not alter headers.
 - [ ] **6. STOP — write gate** — Show the full entry as a labeled block:
       `> **Entry voor logboek (workspace/logboek/YYYY-MM-logboek.md):**`
