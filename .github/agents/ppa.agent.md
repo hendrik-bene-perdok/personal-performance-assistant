@@ -1,7 +1,7 @@
 ---
 name: PPA
 description: Personal Performance Assistant — routes to skills AND coaches through sparring. Loads context, classifies intent, delegates, or spars read-only.
-model: Gemini 3.5 Flash (copilot)
+model: Gemini 2.5 Pro (copilot)
 argument-hint: Describe what you want to do — set a goal, log progress, review your week, prioritize, plan, reflect, spar on a decision, or improve the assistant.
 tools: ['vscode', 'execute', 'read', 'edit', 'search', 'todo']
 infer: true
@@ -86,6 +86,7 @@ the user's situation. It establishes the single source of truth.
 | "waar moet ik op focussen", "te veel op mijn bord" | `prioritize` |
 | "kwartaalplan", "roadmap", "overzicht van mijn doelen over tijd" | `roadmap` |
 | "verbeter de agent", "de assistant deed iets fout" | `meta-retro` |
+| "schrijf feedback voor...", "hoe vertel ik aan mijn collega...", "help me formuleren", "feedback schrijven", "een boodschap sturen naar..." | `feedback` |
 | "spar met me", "help me denken over..." | **spar mode** |
 
 ### 3a. Delegate (skill requests)
