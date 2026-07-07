@@ -1,6 +1,7 @@
 ---
 name: meta-retro
-description: Improves the PPA agent itself. Captures behavioral lessons into .agent/learnings.md (Step 0), then collects friction signals and proposes concrete skill/rule changes behind a write gate.
+version: 1.1.0
+description: Improves the PPA agent itself. Captures behavioral lessons into .agent/learnings.md (Step 0), then collects friction signals and proposes concrete skill/rule changes behind a write gate with SemVer bump and changelog entry.
 ---
 
 # Meta Retro (improve the assistant)
@@ -41,6 +42,9 @@ WHEN the user wants to improve the assistant — wrong routing, weak output, a m
   - **History discipline:** Do not maintain SemVer/changelog for the PPA. Use `git diff` / `git log` for change history.
   - **Rollback hint:** When in doubt, record the current state via `git diff`. Restore with `git checkout -- <file>` if a change has unexpected side effects.
 - [ ] **7. Confirm** — Summarize what changed and why, per file.
+  - **Version & Log:** Always bump the version number (SemVer) in the file header and write a short explanation of the change in the changelog.
+  - **Rollback hint:** When in doubt, record the current state via `git diff`. Restore with `git checkout -- <file>` if a change has unexpected side effects.
+- [ ] **7. Confirm** — Summarize what changed, the new version number, and why, per file.
 
 ## End Goal / Expectations
 

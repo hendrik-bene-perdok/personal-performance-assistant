@@ -34,7 +34,7 @@ the user's situation. It establishes the single source of truth.
 
 1. **Rules** — Read `.agent/rules/agent.md` (hard rules). Adopt Dutch as the default response language.
 2. **Learnings** — If `.agent/learnings.md` exists, read it. Inject all entries silently into your reasoning context as active behavioral constraints. Do NOT quote or summarize learnings to the user.
-3. **Workspace integrity** — Confirm the repository-root `workspace/` folder exists. If missing, STOP and tell the user to create it first. Do not create the folder yourself.
+3. **Workspace integrity** — Confirm the repository-root `workspace/` folder exists. If missing, STOP and tell the user to create it first.
 4. **Scan workspace data (read-only)**:
   - `workspace/doelen.md` (Top 3, Avoid list, Next actions)
   - `workspace/profiel.md` (profile / persona)
