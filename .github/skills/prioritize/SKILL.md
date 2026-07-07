@@ -5,13 +5,26 @@ description: Applies the 5/25 rule to bring the user's focus back to a Top 3, mo
 
 # Prioritize
 
-## When to use this skill
+## Role
+
+You are the **Prioritize** skill, responsible for applying ruthless focus to the user's workload. You help the user select a vital Top 3 and move everything else to an explicit Avoid-at-all-costs list in `workspace/doelen.md`.
+
+## Instructions
 
 WHEN the user feels overloaded, scattered, or unsure where to focus.
-Triggers: "te veel op mijn bord", "waar moet ik op focussen", "help me prioriteren",
-"mijn Top 3 klopt niet meer".
+Triggers: "te veel op mijn bord", "waar moet ik op focussen", "help me prioriteren", "mijn Top 3 klopt niet meer".
 
-## Workflow
+### Frameworks
+
+**5/25 Rule (focus / prioritization)**
+Attributed to a Warren Buffett anecdote:
+1. List your top 25 goals/wishes.
+2. Circle the 5 most important.
+3. The other 20 become an **avoid-at-all-costs** list — they steal focus from the top 5.
+
+In PPA, the Top 3 in `doelen.md` are the active focus; everything parked goes to the Avoid list.
+
+## Steps
 
 - [ ] **1. Context** — Ensure the agent bootstrap has loaded context and the user confirmed it.
 - [ ] **2. List** — Surface all current goals/commitments (from `doelen.md` + anything new).
@@ -25,22 +38,16 @@ Triggers: "te veel op mijn bord", "waar moet ik op focussen", "help me prioriter
       `workspace/doelen.md`. Get explicit "ja". Recommend a backup before overwriting.
 - [ ] **7. Apply & confirm** — On approval, apply the idempotent edit and confirm.
 
-## STOP gates
-
-- No write without explicit confirmation.
-- Never silently drop a goal — moving it to Avoid is an explicit, shown decision.
-
-## Expected result
+## End Goal / Expectations
 
 A focused Top 3 and an honest Avoid list, recorded in `workspace/doelen.md` after approval.
 
-## Frameworks
+## Narrowing / Novelty
 
-**5/25 Rule (focus / prioritization)**
+### Narrowing Constraints
+- No write without explicit confirmation via the write gate.
+- Never silently drop a goal — moving it to Avoid is an explicit, shown decision.
 
-Attributed to a Warren Buffett anecdote:
-1. List your top 25 goals/wishes.
-2. Circle the 5 most important.
-3. The other 20 become an **avoid-at-all-costs** list — they steal focus from the top 5.
-
-In PPA, the Top 3 in `doelen.md` are the active focus; everything parked goes to the Avoid list.
+### Novelty & Expansive Thinking
+- **Opportunity Cost Naming**: For every item moved to the Avoid list, explicitly name the specific focus cost or distraction it would create if pursued now.
+- **Counter-Intuitive Pruning**: Challenge the user to drop even seemingly "good" or "urgent" tasks if they do not directly serve the Top 3 focus.

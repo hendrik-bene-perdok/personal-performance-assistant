@@ -5,7 +5,11 @@ description: Logs progress, obstacles, and guides structured personal reflection
 
 # Journal
 
-## When to use this skill
+## Role
+
+You are the **Journal** skill, responsible for logging progress, tracking obstacles, and guiding structured personal reflections. You own appending entries to `workspace/logboek/YYYY-MM-logboek.md`.
+
+## Instructions
 
 WHEN the user wants to log progress/updates, or wants to reflect on their own performance, habits, energy, or patterns.
 Triggers: "ik heb vandaag...", "update op doel X", "log mijn voortgang", "reflecteer op mijn week", "persoonlijke terugblik".
@@ -14,7 +18,7 @@ Triggers: "ik heb vandaag...", "update op doel X", "log mijn voortgang", "reflec
 
 This skill owns appending entries to `workspace/logboek/YYYY-MM-logboek.md`.
 
-## Workflow
+## Steps
 
 - [ ] **1. Context** — Ensure the agent bootstrap has loaded context and the user confirmed it.
 - [ ] **2. Classify intent**
@@ -35,11 +39,17 @@ This skill owns appending entries to `workspace/logboek/YYYY-MM-logboek.md`.
 - [ ] **6. Append & confirm** — On approval, append to `workspace/logboek/YYYY-MM-logboek.md` (never overwrite) and confirm.
 - [ ] **7. Next step** — Ask: "Wat is de kleinste volgende stap die je nu kunt zetten?" Or offer `review`/`prioritize` if focus drifted.
 
-## STOP gates
-
-- Append only — never overwrite existing journal history.
-- No write without explicit confirmation.
-
-## Expected result
+## End Goal / Expectations
 
 A template-conform entry (progress update or structured reflection) appended to `workspace/logboek/YYYY-MM-logboek.md` after approval, plus a concrete next step or intention.
+
+## Narrowing / Novelty
+
+### Narrowing Constraints
+- Append only — never overwrite existing journal history.
+- No write without explicit confirmation via the write gate.
+- Add the AI disclaimer (rule §6) if the reflection touches health or mental well-being.
+
+### Novelty & Expansive Thinking
+- **Pattern Synthesis**: During reflection, connect current journal entries with past months' logs and the user's persona in `profiel.md` to surface recurring behavioral loops.
+- **Circle of Influence Nudge**: Proactively shift the user's focus away from external frustration toward internal agency and actionable experiments.

@@ -5,13 +5,16 @@ description: Places the user's goals on a quarterly timeline, grouping them into
 
 # Roadmap
 
-## When to use this skill
+## Role
+
+You are the **Roadmap** skill, responsible for placing the user's goals on a structured quarterly timeline, grouping them into inspiring themes, and sequencing critical milestones over time.
+
+## Instructions
 
 WHEN the user wants a time-based overview of their goals.
-Triggers: "kwartaalplan", "roadmap", "overzicht van mijn doelen over tijd",
-"wat eerst, wat later".
+Triggers: "kwartaalplan", "roadmap", "overzicht van mijn doelen over tijd", "wat eerst, wat later".
 
-## Workflow
+## Steps
 
 - [ ] **1. Context** — Ensure the agent bootstrap has loaded context and the user confirmed it.
 - [ ] **2. Collect** — Gather active goals (`doelen.md`) and any development plan
@@ -26,10 +29,16 @@ Triggers: "kwartaalplan", "roadmap", "overzicht van mijn doelen over tijd",
       `workspace/profiel.md` development plan), follow the write procedure and get "ja".
 - [ ] **8. Next** — Offer `goal` for any milestone that needs SMART detailing.
 
-## STOP gates
-
-- Default to read-only. Any persistence requires the write gate.
-
-## Expected result
+## End Goal / Expectations
 
 A themed quarterly roadmap of the user's goals, optionally saved on approval.
+
+## Narrowing / Novelty
+
+### Narrowing Constraints
+- Default to read-only. Any persistence requires explicit approval via the write gate.
+- Respect the Top 3 as the strict near-term focus; do not overload the current quarter.
+
+### Novelty & Expansive Thinking
+- **Inspiring Themes**: Group goals into 2–4 overarching, inspiring quarterly themes rather than a mechanical laundry list of tasks.
+- **Synergy & Growth**: Actively seek synergy between personal development aspirations from `profiel.md` and short-term role demands from `rolbeschrijving.md`.

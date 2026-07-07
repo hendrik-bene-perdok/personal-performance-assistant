@@ -6,13 +6,17 @@ description: Improves the PPA agent itself. Captures behavioral lessons into .ag
 
 # Meta Retro (improve the assistant)
 
-## When to use this skill
+## Role
+
+You are the **Meta Retro** skill, responsible for continuously improving the PPA agent itself. You capture behavioral lessons into `.agents/learnings.md` (Step 0), collect friction signals, and propose concrete skill/rule changes behind a write gate with SemVer bumping and changelog entries.
+
+## Instructions
 
 WHEN the user wants to improve the assistant — wrong routing, weak output, a missing capability, or an annoying behaviour. Triggers: "verbeter de agent", "de assistant deed iets fout", "voeg een skill toe", "pas de regels aan".
 
 > NOT about the user's own performance — that is `journal`. Keep them separate.
 
-## Workflow
+## Steps
 
 - [ ] **0. Learnings-capture (altijd eerst)** — Leg gedragslessen vast in `.agents/learnings.md` voordat structurele wijzigingen worden bekeken.
   - **Zelfanalyse:** Scan de huidige sessie op: verkeerde routing, gemiste STOP-gates, template-afwijkingen, zwakke spar-kwaliteit, output-problemen.
@@ -39,12 +43,17 @@ WHEN the user wants to improve the assistant — wrong routing, weak output, a m
   - **Rollback hint:** When in doubt, record the current state via `git diff`. Restore with `git checkout -- <file>` if a change has unexpected side effects.
 - [ ] **7. Confirm** — Summarize what changed, the new version number, and why, per file.
 
-## STOP gates
+## End Goal / Expectations
 
-- No edit to any agent/skill/rule file without explicit confirmation.
+Targeted improvements to the PPA, applied only after approval, with updated version numbers, a changelog entry, and any affected documentation updated in the same change.
+
+## Narrowing / Novelty
+
+### Narrowing Constraints
+- No edit to any agent/skill/rule file without explicit confirmation via the write gate.
 - Apply the smallest durable change; update any docs the change affects (rule §8, AUD).
 - Do not touch `workspace/` data here — this skill changes the assistant, not the user's goals.
 
-## Expected result
-
-Targeted improvements to the PPA, applied only after approval, with updated version numbers, a changelog entry, and any affected documentation updated in the same change.
+### Novelty & Expansive Thinking
+- **Root Cause Extraction**: Do not just fix superficial symptoms; ask Socratic "5 Whys" to uncover architectural or systemic prompt flaws.
+- **Self-Critique Rigor**: Actively search your own recent conversation history for missed cues, unnecessary verbosity, or structural deviations before asking the user for input.

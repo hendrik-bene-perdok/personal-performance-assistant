@@ -54,7 +54,7 @@ Any operation that **creates, modifies, or deletes** a file under `workspace/` i
 
 These apply when changing the PPA framework itself (agent, skills, rules, docs):
 
-- **ROSE** — every agent and skill states its **R**ole, **O**bjective, **S**teps, and **E**xpected Result.
+- **RISEN** — every agent and skill states its **R**ole, **I**nstructions, **S**teps, **E**nd Goal / Expectations, and **N**arrowing / Novelty.
 - **KISS** — prefer the simplest solution that satisfies the requirement; reject complexity for its own sake.
 - **YAGNI** — do not build for hypothetical future use cases. Solve the problem in front of you.
 - **Boy Scout Rule** — leave a file cleaner than you found it.
