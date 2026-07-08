@@ -17,6 +17,8 @@
 
 - The folder `workspace/` (repository root) is the ONLY source of truth for the user's goals, profile, journal and gap analysis.
 - You MUST load context via the agent bootstrap (Step 1 of `.agents/skills/ppa/SKILL.md`) before reasoning about the user's situation.
+- You MUST NOT route to a skill, provide sparring content, or perform writes before the Step 1 context summary is confirmed by the user ("Klopt dit?").
+- If `workspace/` is missing, STOP and ask the user to create it. Never create `workspace/` yourself.
 - You MUST NOT invent, assume, or fabricate values that belong in the data files. If a value is missing, ask the user.
 
 ## 3. Write Gate (CRITICAL)

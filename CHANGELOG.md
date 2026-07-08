@@ -1,13 +1,17 @@
 # Changelog
 
-> **Status: bevroren (niet langer actief onderhouden).**
-> De PPA hanteert geen SemVer-versionering of changelog-discipline meer (KISS/YAGNI).
-> Skills en regels worden direct aangepast via `meta-retro`; gebruik `git log` / `git diff`
-> voor de wijzigingsgeschiedenis. Onderstaande entries blijven als historisch archief staan.
-
 All notable changes to the PPA architecture and its skills are documented here.
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
-and skills are versioned according to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+
+## [2026-07-08] — Consolidatie naar .agents/ en RISEN framework
+
+### Added
+- **RISEN Framework**: Overstap van ROSE naar RISEN (**R**ole, **I**nstructions, **S**teps, **E**nd Goal / Expectations, and **N**arrowing / Novelty) in alle skills en regels.
+- **`.agents/AGENTS.md`**: Nieuwe harde stop op Step 1 (`"Klopt dit?"`) toegevoegd en check op ontbrekende `workspace/` map.
+
+### Changed
+- **Architectuur Consolidatie**: Alle regels, skills, scripts en configuraties zijn gemigreerd naar één centrale map: `.agents/`. De dubbele folders `.agent/` en `.github/` zijn verwijderd (Single Source of Truth / KISS).
+- **Documentatie**: `README.md` en `CONTRIBUTING.md` zijn bijgewerkt om uitsluitend naar `.agents/` te verwijzen.
 
 ## [2026-06-06] — Socratische coaching, session close, logboek-directory, template discipline
 

@@ -38,7 +38,7 @@ WHEN the user wants to improve the assistant — wrong routing, weak output, a m
 - [ ] **4. Proposal** — For each kept item, draft a precise change: target file (skill/rule/router), exact edit, and the reason. Prefer the smallest, most targeted change that fixes the root cause (KISS / YAGNI, rule §8).
 - [ ] **5. STOP — write gate** — Present all proposals. Get explicit "ja" per change before editing any agent/skill/rule file. (Same gate as workspace writes; see rule §3.)
 - [ ] **6. Apply** — Make the approved, idempotent edits.
-  - **Dependency check:** Before writing, scan whether other skills, templates, or `ppa.agent.md` reference the file being changed. Verify whether the change affects them.
+  - **Dependency check:** Before writing, scan whether other skills, templates, or `.agents/skills/ppa/SKILL.md` reference the file being changed. Verify whether the change affects them.
   - **Version & Log:** Always bump the version number (SemVer) in the file header and write a short explanation of the change in the changelog.
   - **Rollback hint:** When in doubt, record the current state via `git diff`. Restore with `git checkout -- <file>` if a change has unexpected side effects.
 - [ ] **7. Confirm** — Summarize what changed, the new version number, and why, per file.
