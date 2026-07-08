@@ -1,4 +1,4 @@
-﻿# Personal Performance Assistant (PPA)
+# Personal Performance Assistant (PPA)
 
 > ⚠️ **WARNING:** This repository is a work in progress. Use at your own risk. Do not commit sensitive data.
 
@@ -22,89 +22,73 @@ code .
 
 ## Architecture
 
-PPA uses a **thin agent, rich skill** design:
+PPA uses a **thin router, rich skill** design consolidated under `.agents/`:
 
-- **Agent** (`.github/agents/ppa.agent.md`): routes actionable requests to skills AND spars as a read-only coaching partner. Its Step 1 bootstrap loads the rules and shared context, then confirms your data.
-- **Skills** (`.github/skills/`): each owns one capability via a `SKILL.md`.
-- **Shared context** (`.github/context/`): frameworks, cadence, role, data-schema, write-procedure, templates and helpers shared across skills. Loaded by the agent bootstrap.
-- **Hard rules** (`.agent/rules/agent.md`): binding rules including the **write gate** (no `workspace/` file changes without explicit confirmation), Dutch as default language, AI disclaimer, mandatory retro, and engineering principles.
+- **Router & Coach** (`.agents/skills/ppa/SKILL.md`): routes actionable requests to skills AND spars as a read-only coaching partner. Its Step 1 bootstrap loads rules and learnings, then confirms your data.
+- **Skills** (`.agents/skills/`): each owns one modular capability via a `SKILL.md`.
+- **Hard rules** (`.agents/AGENTS.md`): binding rules including the **write gate** (no `workspace/` file changes without explicit confirmation), Dutch as default language, AI disclaimer, mandatory retro, and RISEN engineering principles.
+- **Learnings** (`.agents/learnings.md`): persistent behavioral lessons accumulated across sessions.
 - **Data** (`workspace/`): your local Dutch markdown files are the single source of truth.
-
-### Agent
-
-| Agent | Description |
-| :--- | :--- |
-| **PPA** | Routes to skills for actionable work; spars read-only as a coaching partner for open-ended thinking. |
 
 ### Skills
 
 | Skill | Purpose |
 | :--- | :--- |
-| `goal-shape` | Turn a vague intention into one sharp candidate goal. |
-| `goal-refine` | Refine a goal into SMART/OKR and record it (behind the write gate). |
-| `check-in` | Log progress on the Top 3 into the journal. |
-| `review` | Week/period review with stagnation detection. |
-| `prioritize` | 5/25 focus — keep a Top 3, park the rest. |
-| `roadmap` | Quarterly themed overview of your goals. |
-| `personal-retro` | Structured reflection on your own performance. |
-| `meta-retro` | Improve the assistant itself. |
-
+| `ppa` | Strategic router & sparring partner for open-ended thinking. |
+| `goal` | Turns a fuzzy wish into a concrete objective (SMART/OKR). |
+| `journal` | Logs progress, obstacles, and guides structured reflections. |
+| `review` | Week/period review across goals with stagnation detection. |
+| `prioritize` | Applies the 5/25 rule to keep focus on Top 3. |
+| `roadmap` | Quarterly themed timeline of your goals and milestones. |
+| `feedback` | Structures clear, honest feedback using the "Ruimte Teruggeven" pattern. |
+| `meta-retro` | Improves the PPA assistant itself and logs behavioral learnings. |
 
 ## Workflow
 
 ```mermaid
 flowchart TD
     User([User request]) --> Router[PPA Router]
-    Router --> Context[bootstrap\nload rules + context + confirm]
+    Router --> Context[bootstrap\nload rules + learnings + confirm]
     Context --> Intent{Classify intent}
 
-    Intent --> GoalShape[goal-shape]
-    Intent --> GoalRefine[goal-refine]
-    Intent --> CheckIn[check-in]
+    Intent --> Goal[goal]
+    Intent --> Journal[journal]
     Intent --> Review[review]
     Intent --> Prioritize[prioritize]
     Intent --> Roadmap[roadmap]
-    Intent --> PersonalRetro[personal-retro]
+    Intent --> Feedback[feedback]
     Intent --> MetaRetro[meta-retro]
 
-    GoalRefine -.write gate.-> Workspace[(workspace/)]
-    CheckIn -.write gate.-> Workspace
+    Goal -.write gate.-> Workspace[(workspace/)]
+    Journal -.write gate.-> Workspace
     Review -.write gate.-> Workspace
     Prioritize -.write gate.-> Workspace
-    PersonalRetro -.write gate.-> Workspace
-    MetaRetro -.write gate.-> Skills[(.github/skills)]
+    Roadmap -.write gate.-> Workspace
+    MetaRetro -.write gate.-> Skills[(.agents/skills & rules)]
 
     Context -.reads.-> Workspace
-    Context -.reads.-> Templates[(.github/context/templates)]
 ```
 
 ## Templates & Workspace
 
-The PPA uses a clear distinction between **Templates** (blueprints) and **Workspace** (your data):
+The PPA uses a clear distinction between **Templates** (blueprints inside skills) and **Workspace** (your data):
 
--   **Templates** (`.github/context/templates/`): These are the structural starting points. Agents read these to understand how to format new files.
--   **Workspace** (`workspace/`): This is where your personal data lives.
-    -   `profile.md`: Your user profile and context.
-    -   `goals.md`: Your active goals.
-    -   `logbook.md`: Your daily journal and reflection log.
-    -   `gap-analysis.md`: Your gap analysis.
-    -   *Note: Do not commit sensitive data in this folder.*
-
+- **Templates** (`.agents/skills/<skill>/`): Structural starting points and templates that skills use to format files.
+- **Workspace** (`workspace/`): This is where your personal data lives.
+    - `profiel.md` & `rolbeschrijving.md`: Your profile and role description.
+    - `doelen.md`: Your active Top 3 goals, avoid list, and next actions.
+    - `logboek/`: Your chronological monthly reflection logs.
+    - `gap-analyse.md`: Your gap analysis.
+    - *Note: Do not commit sensitive data in this folder.*
 
 ## Structure
 
-- `.github/agents/` — Agent definition: `ppa` (strategic router & coach).
-- `.github/skills/` — Rich skills, each with a `SKILL.md` (and optional `assets/`).
-- `.github/context/` — Shared frameworks, cadence, role, data-schema, write-procedure, `templates/` and `helpers/`, loaded by the agent bootstrap.
-- `.github/copilot-instructions.md` — Architecture and operating principles.
-<<<<<<< HEAD
-- `.agent/rules/agent.md` — Hard rules (write gate, language, disclaimer, retro, engineering principles).
-=======
-- `.agent/rules/agent.md` — Hard rules (write gate, language, disclaimer, retro, versioning).
-- `.agent/rules/` — General engineering/agent principles (always-on).
->>>>>>> a1a76efb80ed71525e3a717358a002f0d4a466e8
+- `.agents/AGENTS.md` — Hard rules (write gate, language, disclaimer, retro, RISEN principles).
+- `.agents/learnings.md` — Persistent behavioral lessons accumulated across sessions.
+- `.agents/skills/` — Modular skills (`ppa`, `goal`, `journal`, `review`, `prioritize`, `roadmap`, `feedback`, `meta-retro`).
+- `.agents/scripts/` — Helper scripts (e.g., `Backup-Workspace.ps1`).
 - `workspace/` — Your personal Markdown documents (DO NOT COMMIT SENSITIVE DATA).
-- `CHANGELOG.md` — Frozen historical archive (no longer actively maintained).
+- `CHANGELOG.md` — Project changelog.
 - `README.md` — This file.
 
 ## Links

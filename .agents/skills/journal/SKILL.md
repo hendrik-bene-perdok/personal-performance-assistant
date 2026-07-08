@@ -32,7 +32,7 @@ This skill owns appending entries to `workspace/logboek/YYYY-MM-logboek.md`.
   - **Look back:** Read `workspace/logboek/YYYY-MM-logboek.md` and current `doelen.md`.
   - **Reflect:** Walk through prompts (Wat ging goed? Wat ging niet? Welk patroon zie je? Wat neem je mee?).
   - **Challenge:** Push on impact over output; on obstacles, focus on the circle of influence. Keep it supportive but honest. Add the AI disclaimer (rule §6) if the reflection touches health or mental well-being.
-- [ ] **4. Draft entry** — Build an entry using `.agents/skills/journal/journaling.md`. Fill placeholders only; do not alter headers.
+- [ ] **4. Draft entry** — Build an entry using `asset/journaling.md` (local bundle). Fill placeholders only; do not alter headers.
 - [ ] **5. STOP — write gate** — Show the full entry as a labeled block:
       `> **Entry voor logboek (workspace/logboek/YYYY-MM-logboek.md):**`
       Then ask: "Mag ik dit wegschrijven naar `logboek/YYYY-MM-logboek.md`? (ja/nee)".

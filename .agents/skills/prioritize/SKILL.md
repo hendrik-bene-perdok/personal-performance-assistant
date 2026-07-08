@@ -28,7 +28,7 @@ In PPA, the Top 3 in `doelen.md` are the active focus; everything parked goes to
 
 - [ ] **1. Context** — Ensure the agent bootstrap has loaded context and the user confirmed it.
 - [ ] **2. List** — Surface all current goals/commitments (from `doelen.md` + anything new).
-- [ ] **3. Circle (5/25)** — Apply the 5/25 rule from `.agents/skills/prioritize/SKILL.md`,
+- [ ] **3. Circle (5/25)** — Apply the 5/25 rule (see Instructions and Narrowing below),
       adapted to PPA's Top 3. Help the user pick the vital few.
 - [ ] **4. Avoid** — Everything not chosen becomes an explicit Avoid-at-all-costs item —
       not a "later" list. Name the focus cost of each.
