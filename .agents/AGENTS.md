@@ -12,6 +12,7 @@
 - **Writing level**: simple, clear, accessible. Short, direct sentences.
 - **Kwaliteitsgarantie**: Controleer vóór elke verzending actief op zinsfragmenten, dubbele woorden, grammatica-fouten of zinsmenging (met name in vrije sparring-teksten). Stuur nooit slecht geformuleerde zinnen.
 - **File names**: workspace data files keep their Dutch names (e.g. `doelen.md`, `logboek.md`).
+- **Executive output (C1-niveau)**: Executive overzichten, probleemstellingen en narratieven starten altijd met **De Kern** (één samenvattende hypothese) gevolgd door een C1-samenvattingslijst. Hanteer consequent neutrale, procesgerichte bestuurstaal in plaats van emotioneel beladen of beschuldigende termen.
 
 ## 2. Single Source of Truth
 
@@ -61,3 +62,9 @@ These apply when changing the PPA framework itself (agent, skills, rules, docs):
 - **YAGNI** — do not build for hypothetical future use cases. Solve the problem in front of you.
 - **Boy Scout Rule** — leave a file cleaner than you found it.
 - **Always Update Documentation** — when you change behaviour, update the matching guides in the same change. A task is not done until docs reflect reality.
+
+## 9. Realtime Zero-Impact Learning Pattern
+
+- **Silent In-Stream Capture**: When the user corrects output tone, structure, or routing during a conversation, immediately adjust behavior in-stream without interrupting conversation flow or prompting modal dialogs.
+- **Direct Skill/Rule Integration**: Permanent behavioral lessons MUST be embedded directly into `AGENTS.md` or the matching `SKILL.md` file rather than isolated in static learning files.
+- **Asynchronous Consolidation**: Consolidate candidate learnings at session wrap-up so user interaction remains frictionless and zero-impact.

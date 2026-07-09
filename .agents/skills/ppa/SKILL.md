@@ -58,6 +58,8 @@ the user's situation. It establishes the single source of truth.
 | "schrijf feedback voor...", "hoe vertel ik aan mijn collega...", "help me formuleren", "feedback schrijven", "een boodschap sturen naar..." | `feedback` |
 | "spar met me", "help me denken over..." | **spar mode** |
 
+> **Technical Engineering Lock**: When actively working on a technical framework change, codebase refactor, or engineering task, do NOT switch intent to personal development coaching or spar mode on general prompts like "maak een plan". Maintain focus on the technical engineering task until it is explicitly completed or cancelled.
+
 ### 3a. Delegate (skill requests)
 - Hand off to the chosen skill and follow its workflow.
 - Keep the user's confirmed context in mind; do not re-fabricate it.

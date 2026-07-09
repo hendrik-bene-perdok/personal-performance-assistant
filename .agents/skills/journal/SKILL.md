@@ -1,5 +1,6 @@
 ---
 name: journal
+version: 1.1.0
 description: Logs progress, obstacles, and guides structured personal reflections. Appends entries to workspace/logboek following the local journaling template.
 ---
 
@@ -33,6 +34,7 @@ This skill owns appending entries to `workspace/logboek/YYYY-MM-logboek.md`.
   - **Reflect:** Walk through prompts (Wat ging goed? Wat ging niet? Welk patroon zie je? Wat neem je mee?).
   - **Challenge:** Push on impact over output; on obstacles, focus on the circle of influence. Keep it supportive but honest. Add the AI disclaimer (rule §6) if the reflection touches health or mental well-being.
 - [ ] **4. Draft entry** — Build an entry using `asset/journaling.md` (local bundle). Fill placeholders only; do not alter headers.
+  - **C1 & Neutrale Procestaal:** Formuleer reflecties in professioneel, neutraal C1-Nederlands (gebruik procesgerichte bestuurstaal in plaats van emotioneel beladen of beschuldigende termen). Start bij strategische reflecties altijd met `De Kern: ...`.
 - [ ] **5. STOP — write gate** — Show the full entry as a labeled block:
       `> **Entry voor logboek (workspace/logboek/YYYY-MM-logboek.md):**`
       Then ask: "Mag ik dit wegschrijven naar `logboek/YYYY-MM-logboek.md`? (ja/nee)".
