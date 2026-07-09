@@ -5,20 +5,19 @@
 
 A lightweight framework for managing SMART goals, maintaining a personal profile, and keeping a structured logbook with guided reflections. Designed for seamless use with AI agents in VS Code or Antigravity.
 
-## Quick Start (VS Code)
+## Quick Start (VS Code & Antigravity)
 
 1. Clone the repository:
 
 ```
 git clone <repo-url>
 cd personal-performance-assistant
-code .
 ```
-2. Open the folder in VS Code.
+2. Open the folder in **VS Code** (`code .`) or **Antigravity**.
 
-3. Toggle your AI chat/assistant integration (for example Copilot Chat or another AI extension).
+3. Toggle your AI chat/assistant integration (for example Copilot Chat in VS Code or your Antigravity agent).
 
-4. Select the **PPA** agent (the thin router) and describe what you want to do — set a goal, log progress, review your week, prioritize, plan, or reflect. The router loads your context and delegates to the right skill.
+4. Select or invoke the **PPA** skill (the thin router) and describe what you want to do — set a goal, log progress, review your week, prioritize, plan, or reflect. The environment automatically loads `.agents/AGENTS.md` (hard rules) and delegates to the right skill without requiring redundant agent files.
 
 ## Architecture
 
@@ -29,6 +28,8 @@ PPA uses a **thin router, rich skill** design consolidated under `.agents/`:
 - **Hard rules** (`.agents/AGENTS.md`): binding rules including the **write gate** (no `workspace/` file changes without explicit confirmation), Dutch as default language, AI disclaimer, mandatory retro, and RISEN engineering principles.
 - **Learnings** (`.agents/learnings.md`): persistent behavioral lessons accumulated across sessions.
 - **Data** (`workspace/`): your local Dutch markdown files are the single source of truth.
+
+> **Note on Modularity:** Following KISS and YAGNI principles, global behavioral boundaries live exclusively in `AGENTS.md`, while operational coaching workflows live in `SKILL.md`. There are no redundant agent definition files.
 
 ### Skills
 
@@ -64,7 +65,7 @@ flowchart TD
     Review -.write gate.-> Workspace
     Prioritize -.write gate.-> Workspace
     Roadmap -.write gate.-> Workspace
-    MetaRetro -.write gate.-> Skills[(.agents/skills & rules)]
+    MetaRetro -.write gate.-> Skills[(.agents/skills & AGENTS.md)]
 
     Context -.reads.-> Workspace
 ```

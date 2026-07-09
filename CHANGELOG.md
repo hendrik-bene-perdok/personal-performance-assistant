@@ -11,7 +11,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 - **Architectuur Consolidatie**: Alle regels, skills, scripts en configuraties zijn gemigreerd naar één centrale map: `.agents/`. De dubbele folders `.agent/` en `.github/` zijn verwijderd (Single Source of Truth / KISS).
-- **Documentatie**: `README.md` en `CONTRIBUTING.md` zijn bijgewerkt om uitsluitend naar `.agents/` te verwijzen.
+- **KISS/YAGNI Sanering**: Het redundante bestand `.agents/rules/agent.md` is verwijderd om dubbele regels en verouderde padverwijzingen uit te bannen. De PPA-architectuur leunt nu exclusief op `AGENTS.md` (grenzen) en `SKILL.md` (coaching workflow).
+- **Documentatie**: `README.md` en `CONTRIBUTING.md` zijn bijgewerkt met instructies en architectuur-diagrammen voor VS Code en Antigravity.
 
 ## [2026-06-06] — Socratische coaching, session close, logboek-directory, template discipline
 
