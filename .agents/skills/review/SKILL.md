@@ -26,6 +26,8 @@ Triggers: "review mijn week", "hoe staan mijn doelen ervoor", "wekelijkse review
 - [ ] **3. Per-goal status** — For each Top 3 goal: progress / stagnation / obstacle.
 - [ ] **4. Stagnation detection** — Apply the stagnation rule (see Narrowing constraints below):
       flag goals with ~2 weeks of no logged progress or a recurring obstacle.
+      If stagnation is detected AND the user's language around this goal signals frustration or self-criticism,
+      proactively offer the `reframe` skill: *"Ik zie dat dit doel al een tijdje vastloopt. Wil je samen anders naar deze blokkade kijken via een reframing?"*
 - [ ] **5. Gap check** — If a goal stalls because next steps are missing or the
       current→desired gap is unclear, propose a gap analysis (template
       `gap-analysis.md`, written to `workspace/gap-analyse.md`).
@@ -33,8 +35,8 @@ Triggers: "review mijn week", "hoe staan mijn doelen ervoor", "wekelijkse review
 - [ ] **7. STOP — write gate** — Show every proposed change (journal summary entry and/or
       `doelen.md` next-actions update). Get explicit "ja" per write.
 - [ ] **8. Apply & confirm** — On approval, apply idempotent edits and confirm.
-- [ ] **9. Next** — Offer `journal` for deeper reflection or `prioritize` if the
-      Top 3 feels overloaded.
+- [ ] **9. Next** — Offer `journal` for deeper reflection, `prioritize` if the
+      Top 3 feels overloaded, or `reframe` if stagnation has an emotional component.
 
 ## End Goal / Expectations
 
@@ -50,3 +52,4 @@ and/or a fresh gap analysis.
 ### Novelty & Expansive Thinking
 - **Stagnation Spotting**: Actively spot hidden stagnation patterns across journal entries and goal check-ins that the user might rationalize or overlook.
 - **Rigorous Pivoting**: When a goal stalls repeatedly, challenge the user to make rigorous choices: stop, pivot, or redefine the goal completely via a gap analysis rather than just pushing harder.
+- **Reframe Bridge**: When stagnation has a clear emotional component (self-doubt, frustration, repeated self-criticism), bridge to `reframe` before adjusting next actions. Changing the belief before the action list is more durable than just updating tasks.

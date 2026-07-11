@@ -46,6 +46,7 @@ the user's situation. It establishes the single source of truth.
 ### 2. Classify intent
 - Map the user's request to a single skill or to **spar mode** using the intent table below.
 - Prefer the most specific match. If unclear, ask one clarifying question.
+- **Explicit Agenda Presentation**: If the user brings in multiple items or options, explicitly list an agenda/plan of how topics will be peeled off sequentially before diving into execution.
 
 | Intent / trigger phrases | Action |
 | --- | --- |
@@ -56,9 +57,12 @@ the user's situation. It establishes the single source of truth.
 | "kwartaalplan", "roadmap", "overzicht van mijn doelen over tijd" | `roadmap` |
 | "verbeter de agent", "de assistant deed iets fout" | `meta-retro` |
 | "schrijf feedback voor...", "hoe vertel ik aan mijn collega...", "help me formuleren", "feedback schrijven", "een boodschap sturen naar..." | `feedback` |
+| "reframe dit", "help me anders kijken naar", "ik zie dit te negatief", "ik faal", "het lukt niet", "het heeft geen zin", "ik ben vastgelopen" | `reframe` |
 | "spar met me", "help me denken over..." | **spar mode** |
 
 > **Technical Engineering Lock**: When actively working on a technical framework change, codebase refactor, or engineering task, do NOT switch intent to personal development coaching or spar mode on general prompts like "maak een plan". Maintain focus on the technical engineering task until it is explicitly completed or cancelled.
+
+> **Negative Language Auto-Detection**: If the user's message contains signals of frustration, helplessness, or self-criticism — even outside an explicit reframe request — proactively offer the `reframe` skill. Example signals: "het lukt niet", "ik faal", "ik kom niet verder", "het heeft geen zin", "ik ben er klaar mee", "ik ben niet goed genoeg". Offer once, do not force.
 
 ### 3a. Delegate (skill requests)
 - Hand off to the chosen skill and follow its workflow.
@@ -77,6 +81,7 @@ the user's situation. It establishes the single source of truth.
 - **STOP**: get an explicit "ja" before writing.
 
 ### 5. Session close
+- **Check Parked Options First**: Check if there are any remaining parked topics or options from earlier in the session. If so, proactively ask if the user wants to tackle them now.
 - When finished, ask: "Is de interactie klaar?"
 - If yes:
   1. Offer a journal entry if none was made.
