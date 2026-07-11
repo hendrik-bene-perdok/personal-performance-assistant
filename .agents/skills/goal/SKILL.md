@@ -1,6 +1,7 @@
 ---
 name: goal
-description: Turns a fuzzy wish into a concrete objective, refines it using SMART/OKR frameworks, and writes it to workspace/doelen.md following the local goal template.
+version: 1.0.0
+description: Turns a fuzzy wish into a concrete objective, refines it using SMART/OKR frameworks, and writes it to workspace/doelen.md following the local goal template. Do not use for quarterly planning (use roadmap) or periodic goal reviews (use review).
 ---
 
 # Goal
@@ -42,7 +43,7 @@ A goal is well-formed when it is:
   - **Analyze:** Evaluate the goal against the SMART and OKR frameworks.
   - **Challenge:** Ask one question to strengthen the weakest element. "Hoe meten we of dit gelukt is (niet alleen dat je het gedaan hebt)?", "Wat is de harde deadline?".
   - **Re-draft:** Propose a refined OKR/SMART version of the goal.
-- [ ] **4. Template fill** — Once the goal is sharp and agreed upon, build the final block using `asset/goal.md` (local bundle). Fill placeholders only; do not invent dates or metrics. Ask if anything is missing.
+- [ ] **4. Template fill** — Once the goal is sharp and agreed upon, build the final block using `assets/goal.md` (local bundle). Fill placeholders only; do not invent dates or metrics. Ask if anything is missing.
 - [ ] **5. STOP — write gate** — Show the exact proposed addition/change for `workspace/doelen.md`.
       Ask: "Mag ik dit wegschrijven naar `doelen.md`? (ja/nee)".
 - [ ] **6. Apply & confirm** — On affirmative consent, apply the change idempotently and confirm.

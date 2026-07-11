@@ -17,7 +17,7 @@ cd personal-performance-assistant
 
 3. Toggle your AI chat/assistant integration (for example Copilot Chat in VS Code or your Antigravity agent).
 
-4. Select or invoke the **PPA** skill (the thin router) and describe what you want to do — set a goal, log progress, review your week, prioritize, plan, or reflect. The environment automatically loads `.agents/AGENTS.md` (hard rules) and delegates to the right skill without requiring redundant agent files.
+4. Select or invoke the **PPA** skill (the thin router) and describe what you want to do — set a goal, log progress, review your week, prioritize, plan, or reflect. The environment automatically loads `.agents/rules/ppa.md` (hard rules) and delegates to the right skill without requiring redundant agent files.
 
 ## Architecture
 
@@ -25,11 +25,11 @@ PPA uses a **thin router, rich skill** design consolidated under `.agents/`:
 
 - **Router & Coach** (`.agents/skills/ppa/SKILL.md`): routes actionable requests to skills AND spars as a read-only coaching partner. Its Step 1 bootstrap loads rules and learnings, then confirms your data.
 - **Skills** (`.agents/skills/`): each owns one modular capability via a `SKILL.md`.
-- **Hard rules** (`.agents/AGENTS.md`): binding rules including the **write gate** (no `workspace/` file changes without explicit confirmation), Dutch as default language, AI disclaimer, mandatory retro, and RISEN engineering principles.
+- **Hard rules** (`.agents/rules/ppa.md`): binding rules including the **write gate** (no `workspace/` file changes without explicit confirmation), Dutch as default language, AI disclaimer, mandatory retro, and RISEN engineering principles.
 - **Learnings** (`.agents/learnings.md`): persistent behavioral lessons accumulated across sessions.
 - **Data** (`workspace/`): your local Dutch markdown files are the single source of truth.
 
-> **Note on Modularity:** Following KISS and YAGNI principles, global behavioral boundaries live exclusively in `AGENTS.md`, while operational coaching workflows live in `SKILL.md`. There are no redundant agent definition files.
+> **Note on Modularity:** Following KISS and YAGNI principles, global behavioral boundaries live exclusively in `.agents/rules/ppa.md`, while operational coaching workflows live in `SKILL.md`. There are no redundant agent definition files.
 
 ### Skills
 
@@ -65,7 +65,7 @@ flowchart TD
     Review -.write gate.-> Workspace
     Prioritize -.write gate.-> Workspace
     Roadmap -.write gate.-> Workspace
-    MetaRetro -.write gate.-> Skills[(.agents/skills & AGENTS.md)]
+    MetaRetro -.write gate.-> Skills[(.agents/skills & .agents/rules/ppa.md)]
 
     Context -.reads.-> Workspace
 ```
@@ -79,14 +79,24 @@ The PPA uses a clear distinction between **Templates** (blueprints inside skills
     - `profiel.md` & `rolbeschrijving.md`: Your profile and role description.
     - `doelen.md`: Your active Top 3 goals, avoid list, and next actions.
     - `logboek/`: Your chronological monthly reflection logs.
-    - `gap-analyse.md`: Your gap analysis.
     - *Note: Do not commit sensitive data in this folder.*
+
+## Subagent Best Practices (Antigravity)
+
+PPA benut **Antigravity Subagents** om zware historische analyses en reflecties uit te voeren zonder het context window van het hoofdgesprek te vervuilen:
+
+1. **Read-Only Analist Isolatie**: Subagents (zoals de `stagnatie-detective` in `review` en `journal`) worden gedefinieerd via `define_subagent` met **uitsluitend leestools** (`read_file`, `list_dir`, `grep_search`). Zo blijft de PPA Write Gate (`.agents/rules/ppa.md` §1) 100% geborgd.
+2. **Gestructureerd 3-Delig Analist-Rapport**: Een subagent retourneert altijd een compact, actiegericht rapport bestaande uit:
+   - **Stagnatie-alerts** (~2 weken geen gelogde voortgang / repeterende blokkades).
+   - **Terugkerende Patronen** over meerdere maanden.
+   - **Socratische Spiegelvraag** voor diepere zelfreflectie.
+3. **Asynchroon & Non-Blocking**: Voor langere analyses kunnen subagents in de achtergrond worden aangeroepen (`invoke_subagent`), zodat de gebruiker en PPA ondertussen verder kunnen sparren.
 
 ## Structure
 
-- `.agents/AGENTS.md` — Hard rules (write gate, language, disclaimer, retro, RISEN principles).
+- `.agents/rules/ppa.md` — Hard rules (write gate, language, disclaimer, retro, RISEN principles).
 - `.agents/learnings.md` — Persistent behavioral lessons accumulated across sessions.
-- `.agents/skills/` — Modular skills (`ppa`, `goal`, `journal`, `review`, `prioritize`, `roadmap`, `feedback`, `meta-retro`).
+- `.agents/skills/` — Modular skills (`ppa`, `dagstart`, `reframe`, `goal`, `journal`, `review`, `prioritize`, `roadmap`, `feedback`, `meta-retro`).
 - `.agents/scripts/` — Helper scripts (e.g., `Backup-Workspace.ps1`).
 - `workspace/` — Your personal Markdown documents (DO NOT COMMIT SENSITIVE DATA).
 - `CHANGELOG.md` — Project changelog.

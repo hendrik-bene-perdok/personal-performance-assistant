@@ -1,6 +1,7 @@
 ---
 name: prioritize
-description: Applies the 5/25 rule to bring the user's focus back to a Top 3, moving the rest to the Avoid-at-all-costs list in workspace/doelen.md.
+version: 1.0.0
+description: Applies the 5/25 rule to bring the user's focus back to a Top 3, moving the rest to the Avoid-at-all-costs list in workspace/doelen.md. Do not use for weekly progress reviews (use review) or daily agenda planning (use dagstart).
 ---
 
 # Prioritize

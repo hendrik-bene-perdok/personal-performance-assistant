@@ -1,7 +1,7 @@
 ---
 name: journal
 version: 1.1.0
-description: Logs progress, obstacles, and guides structured personal reflections. Appends entries to workspace/logboek following the local journaling template.
+description: Logs progress, obstacles, and guides structured personal reflections. Appends entries to workspace/logboek following the local journaling template. Do not use for weekly reviews across all goals (use review) or improving the assistant (use meta-retro).
 ---
 
 # Journal
@@ -31,9 +31,10 @@ This skill owns appending entries to `workspace/logboek/YYYY-MM-logboek.md`.
   - **Coaching nudge:** Ask a sharp reflection question ("Wat was de concrete impact?", "Wat ligt binnen je invloedssfeer?").
 - [ ] **3b. Reflection mode**
   - **Look back:** Read `workspace/logboek/YYYY-MM-logboek.md` and current `doelen.md`.
+    - **Optionele Historische Subagent-Analyse (Antigravity)**: Bij periodieke of diepe maandreflecties kun je via `define_subagent` + `invoke_subagent` een read-only `stagnatie-detective` inschakelen om eerdere maanden (`workspace/logboek/*.md`) te scannen op terugkerende patronen en een **3-delig Gestructureerd Analist-Rapport** (Stagnatie-alerts, Terugkerende Patronen, Socratische Spiegelvraag) als input te benutten.
   - **Reflect:** Walk through prompts (Wat ging goed? Wat ging niet? Welk patroon zie je? Wat neem je mee?).
   - **Challenge:** Push on impact over output; on obstacles, focus on the circle of influence. Keep it supportive but honest. Add the AI disclaimer (rule §6) if the reflection touches health or mental well-being.
-- [ ] **4. Draft entry** — Build an entry using `asset/journaling.md` (local bundle). Fill placeholders only; do not alter headers.
+- [ ] **4. Draft entry** — Build an entry using `assets/journaling.md` (local bundle). Fill placeholders only; do not alter headers.
   - **C1 & Neutrale Procestaal:** Formuleer reflecties in professioneel, neutraal C1-Nederlands (gebruik procesgerichte bestuurstaal in plaats van emotioneel beladen of beschuldigende termen). Start bij strategische reflecties altijd met `De Kern: ...`.
 - [ ] **5. STOP — write gate** — Show the full entry as a labeled block:
       `> **Entry voor logboek (workspace/logboek/YYYY-MM-logboek.md):**`

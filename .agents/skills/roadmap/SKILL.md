@@ -1,6 +1,7 @@
 ---
 name: roadmap
-description: Places the user's goals on a quarterly timeline, grouping them into themes and sequencing milestones.
+version: 1.0.0
+description: Places the user's goals on a quarterly timeline, grouping them into themes and sequencing milestones. Do not use for creating single SMART goals (use goal) or weekly progress reviews (use review).
 ---
 
 # Roadmap

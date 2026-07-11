@@ -1,6 +1,7 @@
 ---
 name: reframe
-description: Guides the user through cognitive reframing of a negative thought or setback. Uses a Socratic, emotion-aware 6-step pattern (Situation → Emotion → Core Belief → Evidence & Balance → Alternative Perspective → Action Anchor). Read-only; optional handoff to journal at the end.
+version: 1.0.0
+description: Guides the user through cognitive reframing of a negative thought or setback. Uses a Socratic, emotion-aware 8-step pattern (Open → Situation → Emotion → Core Belief → Evidence & Balance → Alternative Perspective → Action Anchor → Close). Read-only; optional handoff to journal at the end. Do not use for general sparring, goal setting, or factual problem-solving.
 ---
 
 # Reframe

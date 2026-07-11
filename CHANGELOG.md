@@ -3,6 +3,25 @@
 All notable changes to the PPA architecture and its skills are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [2026-07-11] — agentskills.io Audit Fixes & Sanering
+
+### Added
+- **SemVer Versienummers**: Alle 10 skills zijn nu voorzien van een expliciet SemVer versienummer (`version: 1.0.0` of hoger) in de frontmatter voor volledige traceerbaarheid.
+- **Negatieve Triggers**: Aanvullende uitsluitingsregels ("Do not use for...") toegevoegd aan skill-descriptions om false positives te voorkomen.
+- **RISEN Compliance**: `dagstart` skill is compleet gemaakt met End Goal/Expectations en Narrowing/Novelty secties.
+- **Verdiepende Context Integratie**: Instructies toegevoegd in PPA bootstrap en review skill voor `act-profile.md` en `origin-gap.md`.
+
+### Changed
+- **Referentie-integriteit**: Alle referenties naar het niet-bestaande `AGENTS.md` in skills en documentatie hersteld naar `.agents/rules/ppa.md`.
+- **Template Standaardisatie**: 
+  - `workspace/templates/feedback.md` ge-üpdatet naar het 6-staps "Ruimte Teruggeven" patroon.
+  - `goal/assets/goal.md` geüniformiseerd met de genummerde lijstitems van `workspace/doelen.md`.
+  - Alle skill-assetmappen gestandaardiseerd naar meervoud (`assets/`).
+- **PPA Router Frontmatter**: Niet-functionele VS Code Copilot velden (`model`, `tools`, `infer`) verwijderd om tokens en context window te besparen.
+
+### Fixed
+- Code block wrapper (` ```markdown `) verwijderd uit `workspace/gap-analyse.md`.
+
 ## [2026-07-08] — Consolidatie naar .agents/ en RISEN framework
 
 ### Added

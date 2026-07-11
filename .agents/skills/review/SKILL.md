@@ -1,6 +1,7 @@
 ---
 name: review
-description: Runs a week/period review across the user's goals, detects stagnation, and proposes adjusted next actions. Can trigger a gap analysis.
+version: 1.0.0
+description: Runs a week/period review across the user's goals, detects stagnation, and proposes adjusted next actions. Can trigger a gap analysis. Do not use for daily preparation (use dagstart) or single goal shaping (use goal).
 ---
 
 # Review
@@ -21,16 +22,22 @@ Triggers: "review mijn week", "hoe staan mijn doelen ervoor", "wekelijkse review
 ## Steps
 
 - [ ] **1. Context** — Ensure the agent bootstrap has loaded context and the user confirmed it.
-- [ ] **2. Gather** — Read `workspace/logboek/YYYY-MM-logboek.md` (current month) and current
-      `workspace/doelen.md`. Read `workspace/gap-analyse.md` if relevant.
-- [ ] **3. Per-goal status** — For each Top 3 goal: progress / stagnation / obstacle.
+- [ ] **2. Gather & Historische Subagent-Analyse** — Read `workspace/logboek/YYYY-MM-logboek.md` (current month) and current
+      `workspace/doelen.md`. Read `workspace/gap-analyse.md` and `workspace/origin-gap.md` if relevant for deep historical context.
+      - **Subagent Onderzoeks-patroon (Antigravity)**: Definieer via `define_subagent` een read-only subagent (`name: "stagnatie-detective"`, uitsluitend leestools zoals `read_file`, `list_dir`, `grep_search`).
+      - Roep hem aan via `invoke_subagent` met de opdracht om alle bestanden in `workspace/logboek/` en `workspace/doelen.md` te analyseren op historische patronen over meerdere maanden.
+      - De subagent levert een **3-delig Gestructureerd Analist-Rapport**:
+        1. **Stagnatie-alerts**: Doelen met ~2 weken geen gelogde voortgang of repeterende blokkades.
+        2. **Terugkerende Patronen**: Obstakels en gedragslijnen over meerdere maanden.
+        3. **Socratische Spiegelvraag**: Eén scherpe, uitdagende reflectievraag over de historie.
+- [ ] **3. Per-goal status** — For each Top 3 goal: progress / stagnation / obstacle (benut de input van het Analist-Rapport).
 - [ ] **4. Stagnation detection** — Apply the stagnation rule (see Narrowing constraints below):
-      flag goals with ~2 weeks of no logged progress or a recurring obstacle.
+      flag goals with ~2 weeks of no logged progress or a recurring obstacle based on the subagent findings.
       If stagnation is detected AND the user's language around this goal signals frustration or self-criticism,
       proactively offer the `reframe` skill: *"Ik zie dat dit doel al een tijdje vastloopt. Wil je samen anders naar deze blokkade kijken via een reframing?"*
 - [ ] **5. Gap check** — If a goal stalls because next steps are missing or the
       current→desired gap is unclear, propose a gap analysis (template
-      `gap-analysis.md`, written to `workspace/gap-analyse.md`).
+      `assets/gap-analysis.md`, written to `workspace/gap-analyse.md`).
 - [ ] **6. Adjust** — Propose updated "VOLGENDE ACTIES" for `workspace/doelen.md`.
 - [ ] **7. STOP — write gate** — Show every proposed change (journal summary entry and/or
       `doelen.md` next-actions update). Get explicit "ja" per write.

@@ -19,11 +19,11 @@ WHEN the user wants to improve the assistant — wrong routing, weak output, a m
 ## Steps
 
 - [ ] **0. Staging Buffer Promotie & Learnings-capture (altijd eerst)** — Controleer en promoveer wachtende lessen conform Regel §9.
-  - **Promotie check:** Controleer of `.agents/learnings.md` wachtende lessen bevat. Zo ja, promoveer deze direct naar `AGENTS.md` of het relevante `SKILL.md`-bestand en leeg `.agents/learnings.md` terug naar het basissjabloon.
+  - **Promotie check:** Controleer of `.agents/learnings.md` wachtende lessen bevat. Zo ja, promoveer deze direct naar `.agents/rules/ppa.md` of het relevante `SKILL.md`-bestand en leeg `.agents/learnings.md` terug naar het basissjabloon.
   - **Zelfanalyse actuele sessie:** Scan de huidige sessie op verkeerde routing, gemiste STOP-gates of verbeterpunten.
   - **Bifurcatie:**
     - *Kleine in-session nudge* → schrijf tijdelijk als staging entry naar `.agents/learnings.md`.
-    - *Structurele/permanente les* → stel direct vast als wijziging op `AGENTS.md` of `SKILL.md`.
+    - *Structurele/permanente les* → stel direct vast als wijziging op `.agents/rules/ppa.md` of `SKILL.md`.
   - **STOP — write gate:** Toon alle voorgestelde promoties of nieuwe entries en vraag om expliciete bevestiging voordat bestanden worden gewijzigd.
 
 - [ ] **1. Collect & Self-Reflect** — Gather concrete friction signals from this and recent sessions.
