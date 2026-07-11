@@ -78,3 +78,4 @@ These apply when changing the PPA framework itself (agent, skills, rules, docs):
 - **Agenda First**: Present a concise upfront agenda or step-by-step peeling plan ("Hoe we dit onderwerp/deze onderwerpen afhandelen: 1... 2... 3...").
 - **Sequential Peeling**: Explicitly confirm the sequence before peeling off topics one by one.
 - **Separate Procedural Gates**: Do NOT combine a procedural sequence confirmation (or write gate) with an open Socratic/coaching question in the same turn. First obtain procedural alignment, then proceed with coaching questions.
+- **Agenda Bridging Question**: Upon completing each step in a multi-step agenda, always include a concise bridging question explicitly referencing the remaining steps of the agreed plan before continuing.

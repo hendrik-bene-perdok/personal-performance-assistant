@@ -1,6 +1,6 @@
 ---
 name: meta-retro
-version: 1.1.0
+version: 1.2.0
 description: Improves the PPA agent itself. Captures behavioral lessons into .agents/learnings.md (Step 0), then collects friction signals and proposes concrete skill/rule changes behind a write gate with SemVer bump and changelog entry.
 ---
 
@@ -18,16 +18,13 @@ WHEN the user wants to improve the assistant — wrong routing, weak output, a m
 
 ## Steps
 
-- [ ] **0. Learnings-capture (altijd eerst)** — Leg gedragslessen vast in `.agents/learnings.md` voordat structurele wijzigingen worden bekeken.
-  - **Zelfanalyse:** Scan de huidige sessie op: verkeerde routing, gemiste STOP-gates, template-afwijkingen, zwakke spar-kwaliteit, output-problemen.
-  - **Formuleer max 3 lessen.** Filter eenmalige gevallen en ruis. Elke les is een concrete, actionable instructie ("Doe X wanneer Y"), geen vage observatie.
-  - **Bifurcatie per les:**
-    - *Gedragsles* (nudge zonder bestandswijziging) → schrijf naar `.agents/learnings.md` onder de juiste categorie (Routing / Output kwaliteit / Edge Cases).
-    - *Structurele les* (vereist wijziging van een skill/rule-bestand) → sla op als signaal en ga door naar stap 1.
-  - **Escalatie-regel:** Staan er ≥2 lessen in `learnings.md` over hetzelfde onderwerp? Aanbevelen om door te gaan naar stap 1 voor een structurele fix.
-  - **STOP — write gate:** Toon de voorgestelde les-entries. Vraag: "Mag ik deze lessen toevoegen aan `.agents/learnings.md`? (ja/nee)". Ga alleen door bij expliciete "ja".
-  - **Schrijf** de goedgekeurde entries met datum (`[YYYY-MM-DD]`) naar het juiste sectie-kopje in `.agents/learnings.md`.
-  - Als er geen structurele lessen zijn → **stop hier**. De sessie is klaar.
+- [ ] **0. Staging Buffer Promotie & Learnings-capture (altijd eerst)** — Controleer en promoveer wachtende lessen conform Regel §9.
+  - **Promotie check:** Controleer of `.agents/learnings.md` wachtende lessen bevat. Zo ja, promoveer deze direct naar `AGENTS.md` of het relevante `SKILL.md`-bestand en leeg `.agents/learnings.md` terug naar het basissjabloon.
+  - **Zelfanalyse actuele sessie:** Scan de huidige sessie op verkeerde routing, gemiste STOP-gates of verbeterpunten.
+  - **Bifurcatie:**
+    - *Kleine in-session nudge* → schrijf tijdelijk als staging entry naar `.agents/learnings.md`.
+    - *Structurele/permanente les* → stel direct vast als wijziging op `AGENTS.md` of `SKILL.md`.
+  - **STOP — write gate:** Toon alle voorgestelde promoties of nieuwe entries en vraag om expliciete bevestiging voordat bestanden worden gewijzigd.
 
 - [ ] **1. Collect & Self-Reflect** — Gather concrete friction signals from this and recent sessions.
   - **Self-Critique first:** Force the agent to analyze its own recent responses. Did it miss cues? Was it too verbose? Identify 1-2 areas of potential improvement independently.
