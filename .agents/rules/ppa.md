@@ -1,5 +1,5 @@
 ---
-trigger: model_decision
+trigger: manual
 description: Activeer deze rules als de reacties van de agent getoetst moeten worden aan de vaste PPA-richtlijnen, of wanneer de gebruiker vraagt om strikte handhaving van de afgesproken coachingskaders, gedragsregels en communicatieve randvoorwaarden.
 ---
 
@@ -74,7 +74,7 @@ These apply when changing the PPA framework itself (agent, skills, rules, docs):
 ## 9. Realtime Zero-Impact Learning Pattern
 
 - **Silent In-Stream Capture**: When the user corrects output tone, structure, or routing during a conversation, immediately adjust behavior in-stream without interrupting conversation flow or prompting modal dialogs.
-- **Direct Skill/Rule Integration**: Permanent behavioral lessons MUST be embedded directly into `.agents/rules/ppa.md` or the matching `SKILL.md` file rather than isolated in static learning files.
+- **Direct Skill/Rule Integration**: Permanent behavioral lessons MUST be embedded directly into `AGENTS.md` or the matching `SKILL.md` file rather than isolated in static learning files.
 - **Asynchronous Consolidation**: Consolidate candidate learnings at session wrap-up so user interaction remains frictionless and zero-impact.
 
 ## 10. Explicit Agenda & Topic Peeling Plan
