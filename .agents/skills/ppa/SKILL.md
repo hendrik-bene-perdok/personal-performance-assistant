@@ -31,7 +31,8 @@ the user's situation. It establishes the single source of truth.
 2. **Learnings** — If `.agents/learnings.md` exists, read it. Inject all entries silently into your reasoning context as active behavioral constraints. Do NOT quote or summarize learnings to the user.
 3. **Workspace integrity** — Confirm the repository-root `workspace/` folder exists. If missing, STOP and tell the user to create it first.
 4. **Scan workspace data (read-only)**:
-  - `workspace/doelen.md` (Top 3, Avoid list, Next actions)
+  - `workspace/doelen.md` (Top 3, Employer dashboard, Avoid list, Next actions)
+  - `workspace/doelen/*.md` (Detailed formal/employer goal files)
   - `workspace/profiel.md` (profile / persona)
   - `workspace/rolbeschrijving.md` (role description)
   - `workspace/logboek/YYYY-MM-logboek.md` (current month's journal)
@@ -39,7 +40,7 @@ the user's situation. It establishes the single source of truth.
   - `workspace/act-profile.md` (bij verdiepende reflectie of competentievragen)
   Do NOT write anything in this step.
 5. **Synthesize** — Extract the Top 3 and Avoid list from `doelen.md`, the most recent journal status, and any open Next actions.
-6. **STOP gate** — Present a compact bullet summary (max 5 bullets: Top 3, Avoid-list highlights, one open Next Action, latest journal signal). Do NOT repeat full goal descriptions verbatim. Ask: "Klopt dit?" Wait for confirmation or correction before continuing. If a value is missing, ask — never fabricate (rule §2).
+6. **STOP gate** — Present a compact bullet summary (max 5 bullets: Top 3, Avoid-list highlights, one open Next Action, latest journal signal). Do NOT repeat full goal descriptions verbatim. If the user initiated the session without a specific intent, briefly list the core capabilities (`dagstart`, `reframe`, `goal`, `journal`, `feedback`, or spar mode) as options. Ask: "Klopt dit? En waar wil je mee aan de slag?" Wait for confirmation before continuing. If a value is missing, ask — never fabricate (rule §2).
 
 ### 2. Classify intent
 - Map the user's request to a single skill or to **spar mode** using the intent table below.
@@ -103,12 +104,14 @@ up front, and no `workspace/` file changes without explicit user approval.
 Maps each workspace file to the fields skills read and write. The `workspace/`
 folder at the repository root is the single source of truth (rule §2).
 
-##### workspace/doelen.md (goals)
-| Section | Meaning |
+##### workspace/doelen.md & workspace/doelen/ (goals)
+| Section / Location | Meaning |
 | --- | --- |
 | `TOP 3 PRIORITEITEN (FOCUS)` | The active focus goals. Maximum 3. |
+| `WERKGEVER DOELSTELLINGEN (DASHBOARD)` | High-level status & next actions for formal employer goals. Links to `workspace/doelen/*.md`. |
 | `VERMIJDEN (AVOID-AT-ALL-COSTS)` | Parked goals/habits that steal focus. |
-| `VOLGENDE ACTIES` | Concrete next-step checklist items. |
+| `VOLGENDE ACTIES` | Concrete next-step checklist items across all goals. |
+| `workspace/doelen/<doel-title>.md` | Dedicated files for detailed SMART/OKR employer goals and checklists. |
 
 ##### workspace/profiel.md & workspace/rolbeschrijving.md
 - Use the role description to judge **relevance** (the "R" in SMART).

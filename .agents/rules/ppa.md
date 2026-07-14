@@ -1,5 +1,5 @@
 ---
-trigger: manual
+trigger: always_on
 description: Activeer deze rules als de reacties van de agent getoetst moeten worden aan de vaste PPA-richtlijnen, of wanneer de gebruiker vraagt om strikte handhaving van de afgesproken coachingskaders, gedragsregels en communicatieve randvoorwaarden.
 ---
 
@@ -17,8 +17,8 @@ description: Activeer deze rules als de reacties van de agent getoetst moeten wo
 - **Writing level**: simple, clear, accessible. Short, direct sentences.
 - **Kwaliteitsgarantie**: Controleer vóór elke verzending actief op zinsfragmenten, dubbele woorden, grammatica-fouten of zinsmenging (met name in vrije sparring-teksten). Stuur nooit slecht geformuleerde zinnen.
 - **File names**: workspace data files keep their Dutch names (e.g. `doelen.md`, `logboek.md`).
-- **Executive output (C1-niveau)**: Executive overzichten, probleemstellingen en narratieven starten altijd met **De Kern** (één samenvattende hypothese) gevolgd door een C1-samenvattingslijst. Hanteer consequent neutrale, procesgerichte bestuurstaal in plaats van emotioneel beladen of beschuldigende termen.
-- **Silent C1 Quality**: Apply C1-level executive writing silently in the output. NEVER explicitly state, label, or announce to the user that text is written "in C1 style" or "on C1 level".
+- **Executive output (B2-niveau)**: Executive overzichten, probleemstellingen en narratieven starten altijd met **De Kern** (één samenvattende hypothese) gevolgd door een C1-samenvattingslijst. Hanteer consequent neutrale, procesgerichte bestuurstaal in plaats van emotioneel beladen of beschuldigende termen.
+- **Silent C1 Quality**: Apply B2-level executive writing silently in the output. NEVER explicitly state, label, or announce to the user that text is written "in B2 style" or "on B2 level".
 
 ## 2. Single Source of Truth
 
