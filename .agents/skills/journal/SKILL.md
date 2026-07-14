@@ -26,8 +26,9 @@ This skill owns appending entries to `workspace/logboek/YYYY-MM-logboek.md`.
   - **Progress/Update:** Proceed to Step 3a.
   - **Reflection:** Proceed to Step 3b.
 - [ ] **3a. Progress/Update mode**
-  - **Link:** Tie the update to a specific Top 3 goal. If it links to none, ask if it is a new goal (route to `goal`) or a side issue.
-  - **Status:** Classify: progress, stagnation, or obstacle.
+  - **Link:** Tie the update to a specific Top 3 goal OR Employer goal (`workspace/doelen/*.md`). If it links to none, ask if it is a new goal (route to `goal`) or a side issue.
+  - **Status:** Classify: progress, stagnation, or obstacle. Check task checklist inside detail file (`doelen/*.md`) if applicable.
+  - **Bidirectional Sync:** If a specific task in `workspace/doelen/*.md` progressed or completed, prepare a batched update for both the journal and the status line in `doelen.md`.
   - **Coaching nudge:** Ask a sharp reflection question ("Wat was de concrete impact?", "Wat ligt binnen je invloedssfeer?").
 - [ ] **3b. Reflection mode**
   - **Look back:** Read `workspace/logboek/YYYY-MM-logboek.md` and current `doelen.md`.

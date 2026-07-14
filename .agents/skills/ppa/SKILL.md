@@ -33,6 +33,7 @@ the user's situation. It establishes the single source of truth.
 4. **Scan workspace data (read-only)**:
   - `workspace/doelen.md` (Top 3, Employer dashboard, Avoid list, Next actions)
   - `workspace/doelen/*.md` (Detailed formal/employer goal files)
+  - `workspace/doelen/archief/*.md` (Archived historical goals, if present)
   - `workspace/profiel.md` (profile / persona)
   - `workspace/rolbeschrijving.md` (role description)
   - `workspace/logboek/YYYY-MM-logboek.md` (current month's journal)
@@ -112,6 +113,7 @@ folder at the repository root is the single source of truth (rule §2).
 | `VERMIJDEN (AVOID-AT-ALL-COSTS)` | Parked goals/habits that steal focus. |
 | `VOLGENDE ACTIES` | Concrete next-step checklist items across all goals. |
 | `workspace/doelen/<doel-title>.md` | Dedicated files for detailed SMART/OKR employer goals and checklists. |
+| `workspace/doelen/archief/<doel-title>.md` | Completed and archived goal files preserved for historical review. |
 
 ##### workspace/profiel.md & workspace/rolbeschrijving.md
 - Use the role description to judge **relevance** (the "R" in SMART).

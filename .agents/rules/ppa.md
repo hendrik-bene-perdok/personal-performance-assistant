@@ -1,5 +1,5 @@
 ---
-trigger: always_on
+trigger: manual
 description: Activeer deze rules als de reacties van de agent getoetst moeten worden aan de vaste PPA-richtlijnen, of wanneer de gebruiker vraagt om strikte handhaving van de afgesproken coachingskaders, gedragsregels en communicatieve randvoorwaarden.
 ---
 
@@ -84,3 +84,9 @@ These apply when changing the PPA framework itself (agent, skills, rules, docs):
 - **Sequential Peeling**: Explicitly confirm the sequence before peeling off topics one by one.
 - **Separate Procedural Gates**: Do NOT combine a procedural sequence confirmation (or write gate) with an open Socratic/coaching question in the same turn. First obtain procedural alignment, then proceed with coaching questions.
 - **Agenda Bridging Question**: Upon completing each step in a multi-step agenda, always include a concise bridging question explicitly referencing the remaining steps of the agreed plan before continuing.
+
+## 11. Goal Lifecycle (Maken, Onderhouden & Afronden)
+
+- **Maken (Scoping & Splitsing)**: `workspace/doelen.md` serves as the high-level dashboard (`TOP 3 PRIORITEITEN`, `WERKGEVER DOELSTELLINGEN`, `VERMIJDEN`, `VOLGENDE ACTIES`). Simple or personal focus items remain 1-liners on the dashboard. Formal employer goals and complex, multi-layered objectives with dedicated checklists/milestones MUST get a separate detail file under `workspace/doelen/<doel-title>.md`.
+- **Onderhouden (Bidirectional Sync)**: All PPA skills (`review`, `journal`, `dagstart`) must scan both `workspace/doelen.md` and `workspace/doelen/*.md`. Whenever progress, task completion, or status changes occur in a detail file (`doelen/*.md`), the agent MUST proactively propose (via the Batched Write Gate) updating the status and next action line on the dashboard (`doelen.md`).
+- **Afronden (Archiving & Clean Dashboard)**: When a goal reaches 100% completion, formal sign-off, or its final deadline, `review` or `goal` MUST propose archiving the detail file by moving it to `workspace/doelen/archief/<doel-title>.md`. On `doelen.md`, the item is marked `[x] Afgerond` and cleaned up after the review to keep active focus pristine while preserving full historical context.
