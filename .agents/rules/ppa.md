@@ -1,5 +1,5 @@
 ---
-trigger: manual
+trigger: always_on
 description: Activeer deze rules als de reacties van de agent getoetst moeten worden aan de vaste PPA-richtlijnen, of wanneer de gebruiker vraagt om strikte handhaving van de afgesproken coachingskaders, gedragsregels en communicatieve randvoorwaarden.
 ---
 
@@ -37,7 +37,7 @@ Any operation that **creates, modifies, or deletes** a file under `workspace/` i
 - A vague, ambiguous, or absent answer counts as **no**. When in doubt, do NOT write.
 - Deleting or overwriting existing user content additionally requires you to recommend a backup via `.agents/scripts/Backup-Workspace.ps1` first.
 - Edits MUST be idempotent: re-applying the same change must not duplicate content or corrupt structure.
-- **Batched & Streamlined Write Gate**: When a turn involves modifications across multiple workspace files (e.g., updating `doelen.md` and appending a reflection to `logboek.md`), batch all proposed changes into ONE single overview prompt and ask for a single combined confirmation ("Akkoord met deze gebundelde mutaties? (ja/nee)") rather than multiple sequential gates.
+- **Batched & Streamlined Write Gate**: When a turn involves modifications across multiple workspace files (e.g., updating `doelen.md` and appending a reflection to `logboek.md`), batch all proposed changes into ONE single overview prompt and ask for a single combined confirmation ("Akkoord met deze gebundelde mutaties? (ja/nee)") rather than multiple sequential gates. Formuleer de bevestigingsvraag exact één keer om herhalingslussen te voorkomen.
 
 ## 4. Template Adherence
 
@@ -79,7 +79,7 @@ These apply when changing the PPA framework itself (agent, skills, rules, docs):
 
 ## 10. Explicit Agenda & Topic Peeling Plan
 
-- **Upfront Execution Plan**: When user input introduces multiple topics, complex questions, or multi-step choices, NEVER make implicit decisions about grouping or sequencing.
+- **Upfront Execution Plan**: Bij ELKE binnengekomen taak-, proces- of reflectieopdracht van de gebruiker (ongeacht of dit één of meerdere onderwerpen betreft), stel je ALTIJD eerst een expliciet stappenplan of agenda op vóór start van de inhoudelijke uitvoering of het uitwerken van concepten.
 - **Agenda First**: Present a concise upfront agenda or step-by-step peeling plan ("Hoe we dit onderwerp/deze onderwerpen afhandelen: 1... 2... 3...").
 - **Sequential Peeling**: Explicitly confirm the sequence before peeling off topics one by one.
 - **Separate Procedural Gates**: Do NOT combine a procedural sequence confirmation (or write gate) with an open Socratic/coaching question in the same turn. First obtain procedural alignment, then proceed with coaching questions.
