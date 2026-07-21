@@ -14,6 +14,8 @@ Max 3 new entries per session. Entries are actionable instructions, not observat
 ## Output kwaliteit
 
 <!-- Pattern: [YYYY-MM-DD] Instruction -->
+[2026-07-21] Leun bij gestructureerde of omvangrijke output (zoals Dagstart-plannen, analyses, review-overzichten en gebundelde mutatievoorstellen) actief op Antigravity-artifacten (write_to_file met UserFacing: true en optioneel RequestFeedback: true). Houd de inline chat hierdoor beknopt, direct en gefocust op Socratische afstemming, terwijl het document side-by-side wordt getoond.
+
 
 ## Edge Cases
 

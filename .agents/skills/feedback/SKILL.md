@@ -17,6 +17,11 @@ Triggers: "schrijf feedback voor...", "hoe vertel ik aan mijn collega...", "ik w
 
 > **Note:** This skill produces output text for external use only. It does NOT write to `workspace/`.
 
+### Context Loading
+Before initiating the intake or applying the pattern, silently verify context from:
+- `workspace/act-profile.md` (ACT profile: qualities, ratio preference, action vs. adaptability)
+- `workspace/logboek/YYYY-MM-logboek.md` (recent progress and friction)
+
 ### The "Ruimte Teruggeven" Pattern
 
 Every feedback message follows these 6 steps in order:
@@ -47,10 +52,10 @@ Every feedback message follows these 6 steps in order:
   - Wat is de kern van wat je wilt zeggen (in één ruwe zin)?
   - Wat is het gewenste effect — wat moet er na dit gesprek anders zijn?
 - [ ] **3. Patroon toepassen** — Loop de 6 stappen door. Stel per stap een gerichte vraag als de gebruiker de inhoud nog niet heeft gegeven. Gebruik de antwoorden als bouwstenen.
-  - Stap 1–2: trek informatie op uit het journaal en profiel als het patroon herkend wordt (bijv. uitvoeringsreflex, te weinig delegeren).
-  - Stap 3: vraag de gebruiker altijd expliciet: "Hoe denk jij dat dit bij [naam] landt?"
-  - Stap 4–5: koppel de omslag direct aan een concreet gedrag of afspraak.
-  - Stap 6: de vraag moet uitnodigend zijn, niet eisend. Eindig met een open invitatie.
+  - Stap 1–2 (Zelfherkenning & Impact): Trek informatie op uit het journaal én `workspace/act-profile.md`. Spiegel op natuurlijke reflexen: herken je hier je sterke actiegerichtheid (`Sturend`/`Initiatiefrijk`), de neiging om vanuit `Ratio` te sturen, of het zelf willen oplossen?
+  - Stap 3 (Impact op de ander): Vraag expliciet: "Hoe denk jij dat dit bij [naam] landt?" Houd rekening met een lage score op `Aanpassingsvermogen` (`Ander: 0`): daag de gebruiker uit om écht vanuit het perspectief en de rust van de ander te voelen, niet alleen te beredeneren.
+  - Stap 4–5 (Omslag & Voorwaarde): Koppel de omslag direct aan een concreet gedrag of afspraak. Benut `Communicatie & Strategie` om de behoefte kraakhelder en constructief te positioneren.
+  - Stap 6 (Concrete vraag): De vraag moet uitnodigend zijn, niet eisend. Eindig met een open invitatie.
 - [ ] **4. Draft presenteren** — Presenteer de volledige tekst als één alinea, kopieerklaar:
   ```
   > **Feedback-tekst voor [naam/rol]:**
@@ -71,5 +76,5 @@ Een kopieerklare, professionele en persoonlijke feedbacktekst van maximaal 5 zin
 - Fabriceer geen namen of feiten over de ontvanger. Vraag altijd.
 
 ### Novelty & Expansive Thinking
-- **Empathy Reversal**: Challenge the user to step fully into the receiver's shoes during Step 3, uncovering unspoken emotional impact or friction.
-- **Vulnerability Amplification**: Encourage authentic self-reflection in Steps 1-2, transforming defensive communication into trust-building dialogue.
+- **Empathy Reversal & Adaptability Check**: Challenge the user to step fully into the receiver's shoes during Step 3, specifically bridging their `0` score on `Aanpassingsvermogen` to uncover unspoken emotional friction or resistance.
+- **Vulnerability vs. Ratio**: Encourage authentic self-reflection in Steps 1-2 by gently challenging pure rationalization (`Ratio`-voorkeur), transforming defensive or directive communication into trust-building dialogue.

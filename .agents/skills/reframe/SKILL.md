@@ -31,11 +31,12 @@ This skill is **read-only**. It does NOT write to `workspace/`. An optional hand
 Before starting Step 1, silently load context from:
 - `workspace/doelen.md` — Top 3 goals and Avoid list
 - `workspace/logboek/YYYY-MM-logboek.md` — recent journal signals
+- `workspace/act-profile.md` — ACT profile (`Communicatie & Strategie`, `Ratio`-voorkeur, `Ik: 2 / Ander: 0`)
 
 Use this context to:
-- Recognize whether the situation is related to a known goal or recurring blocker
-- Anchor the alternative perspective to the user's actual priorities (not generic advice)
-- Flag if this is a pattern, not an isolated incident (and name it gently)
+- Recognize whether the situation is related to a known goal, recurring blocker, or psychometric reflex
+- Anchor the alternative perspective to the user's actual priorities and natural strengths
+- Flag if this is a pattern (e.g., pure cognitive rationalization vs. feeling, or excessive action reflex), not an isolated incident (and name it gently)
 
 ---
 
@@ -61,6 +62,7 @@ Use this context to:
 - This surfaces the limiting belief (e.g., "Ik ben niet goed genoeg", "Anderen falen me altijd", "Het lukt me nooit").
 - Reflect it back literally: *"Je hebt het gevoel dat [letterlijke woorden van de gebruiker]. Klopt dat?"*
 - If the user draws a blank: *"Als je het ergste scenario in één zin zou samenvatten — wat zou dat zijn?"*
+- **ACT Ratio Check**: Notice if the belief is phrased as pure intellectualization (`Ratio`-voorkeur). If the user rationalizes away the emotional weight, gently ask: *"Dat is de logische analyse. Maar welk gevoel zit daaronder?"*
 
 ### 5. Bewijs & Balans — Socratisch uitdagen
 - Do NOT debunk or argue. Ask questions that introduce doubt gently.
@@ -69,6 +71,9 @@ Use this context to:
   - *"Wat zou je zeggen tegen een vriend die in dezelfde situatie zat?"*
   - *"Is dit een feit, of een interpretatie van een feit?"*
   - *"Wat heb je in het verleden al overwonnen dat je eerst ook als onmogelijk zag?"*
+- **ACT Profile Challenge**:
+  - *Action vs. Deceleration*: If the user blames themselves for not acting fast enough (`Sturend`, `Initiatiefrijk`), challenge the action reflex: *"Is direct handelen hier écht de oplossing, of vraagt dit juist om vertraging en acceptatie?"*
+  - *Adaptability check*: If friction involves others (`Ander: 0`), ask: *"Wat zou het effect zijn als je hier meebeweegt in plaats van streeft naar controle?"*
 - If context shows a recurring pattern: *"Ik zie in je logboek dat dit vaker speelt rondom [doel/blokkade]. Herken je dat?"*
 
 ### 6. Alternatief Perspectief — De gebruiker formuleert zelf
