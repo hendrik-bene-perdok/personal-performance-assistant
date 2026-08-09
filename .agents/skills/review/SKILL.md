@@ -29,7 +29,7 @@ Triggers: "review mijn week", "hoe staan mijn doelen ervoor", "wekelijkse review
         1. **Stagnatie-alerts**: Doelen met ~2 weken geen gelogde voortgang of repeterende blokkades.
         2. **Terugkerende Patronen**: Obstakels en gedragslijnen over meerdere maanden.
         3. **Socratische Spiegelvraag**: Eén scherpe, uitdagende reflectievraag over de historie.
-- [ ] **3. Per-goal status** — For each Top 3 goal AND each Employer goal in `doelen/*.md`: progress / stagnation / obstacle (benut de input van het Analist-Rapport). Check task completion inside detail files (`doelen/*.md`).
+- [ ] **3. Per-goal status** — For each Focus goal (Persoonlijk & Werkgever) in `doelen/*.md`: progress / stagnation / obstacle (benut de input van het Analist-Rapport). Check task completion inside detail files (`doelen/*.md`).
 - [ ] **4. Stagnation detection** — Apply the stagnation rule (see Narrowing constraints below):
       flag goals with ~2 weeks of no logged progress or a recurring obstacle based on the subagent findings.
       **Drijfveer Mismatch Check**: When a goal stagnates, explicitly evaluate if the stagnation might be caused by a mismatch between the goal/tasks and the user's natural drijfveren (from `profiel.md`). Surface this insight.
@@ -44,7 +44,7 @@ Triggers: "review mijn week", "hoe staan mijn doelen ervoor", "wekelijkse review
 - [ ] **7. STOP — write gate** — Show every proposed change (journal summary entry, `doelen.md` updates, and/or file moves). Get explicit "ja" per write (using the Batched Write Gate).
 - [ ] **8. Apply & confirm** — On approval, apply idempotent edits and confirm.
 - [ ] **9. Next** — Offer `journal` for deeper reflection, `prioritize` if the
-      Top 3 feels overloaded, or `reframe` if stagnation has an emotional component.
+      Focus feels overloaded, or `reframe` if stagnation has an emotional component.
 
 ## End Goal / Expectations
 
@@ -55,7 +55,7 @@ and/or a fresh gap analysis.
 
 ### Narrowing Constraints
 - No write without explicit confirmation via the write gate.
-- Keep agent-improvement out of scope here — that is `meta-retro`.
+- Keep agent-improvement out of scope here — that is handled via `/learn`.
 
 ### Novelty & Expansive Thinking
 - **Stagnation Spotting**: Actively spot hidden stagnation patterns across journal entries and goal check-ins that the user might rationalize or overlook.

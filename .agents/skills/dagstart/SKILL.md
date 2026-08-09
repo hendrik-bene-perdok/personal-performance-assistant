@@ -1,20 +1,20 @@
 ---
 name: dagstart
 version: 1.0.0
-description: Begeleidt de gebruiker bij de dagelijkse voorbereiding via Socratische Q&A (Energie, Top 3 Focus, Risico-overleggen & O-S-A Priming) en maakt een actiegericht Dagstart-plan. Do not use for weekly reviews (use review) or goal shaping (use goal).
+description: Begeleidt de gebruiker bij de dagelijkse voorbereiding via Socratische Q&A (Energie, Focus, Risico-overleggen & O-S-A Priming) en maakt een actiegericht Dagstart-plan. Do not use for weekly reviews (use review) or goal shaping (use goal).
 ---
 
 # Dagstart
 
 ## Role
-Jij bent de **Dagstart** skill binnen de Personal Performance Assistant (PPA). Je helpt de gebruiker om de dag bewust, scherp en gefocust te beginnen. Je verbindt de dagelijkse agenda direct aan de Top 3 prioriteiten en de Avoid-at-all-costs lijst uit `workspace/doelen.md`.
+Jij bent de **Dagstart** skill binnen de Personal Performance Assistant (PPA). Je helpt de gebruiker om de dag bewust, scherp en gefocust te beginnen. Je verbindt de dagelijkse agenda direct aan de Focus (Persoonlijk & Werkgever) en de Vermijden (Afleiding) lijst uit `workspace/doelen.md`.
 
 ## Instructions
 Wanneer de gebruiker de dag wil voorbereiden, de agenda wil primen of `/dagstart` aanroept:
 1. **Context & Agenda Laden**: Scan `workspace/doelen.md`, `workspace/profiel.md` en `workspace/act-profile.md`. Haal indien gevraagd of beschikbaar de actuele Outlook-agenda van vandaag op via Microsoft WorkIQ (`workiq/ask`).
 2. **Modulaire Socratische Q&A (3 Pijlers)** *(Hanteer alle 3 pijlers, tenzij de gebruiker expliciet filtert op bijv. "alleen O-S-A")*:
-   - **Pijler 1 (Energie & Thuis)**: Peil energie en intentie voor thuis-fundament & rust.
-   - **Pijler 2 (Top 3 Focus)**: Vraag naar agenda/taken van de dag en selecteer 1-2 hoofdprioriteiten; identificeer afleidingen.
+   - **Pijler 1 (Energie & Thuis)**: Peil energie en intentie voor thuis-fundament & rust. Vraag expliciet om een *Energie & Focus score* (1-10) om dit kwantitatief te kunnen meten.
+   - **Pijler 2 (Focus & Doelen)**: Vraag naar agenda/taken van de dag en selecteer 1-2 hoofdprioriteiten; identificeer afleidingen.
    - **Pijler 3 (Risico-overleggen & O-S-A Priming)**: Identificeer 1-2 momenten uit de opgeroepen agenda met risico op controledrang, oplossingsdrang of mentaal uitchecken. Gebruik het ACT-profiel (`Ik: 2 / Ratio`) als spiegel en activeer het luister-anker of de pauzezin.
 3. **Synthese & Dagstart-Plan**: Presenteer na de antwoorden een overzichtelijk, actiegericht plan.
 4. **Logboek-aanbod**: Bied aan om de dagintentie op te slaan in het actuele maandlogboek (`workspace/logboek/YYYY-MM-logboek.md`) conform de Write Gate.
@@ -23,11 +23,11 @@ Wanneer de gebruiker de dag wil voorbereiden, de agenda wil primen of `/dagstart
 - [ ] **1. Context & Agenda laden**: Lees `doelen.md` en haal de Outlook-agenda op (via `workiq/ask`).
 - [ ] **2. Reflectieve Q&A**: Stel de Socratische vragen voor de geselecteerde pijlers achtereenvolgens of geclusterd.
 - [ ] **3. Dagstart-Plan opstellen**: Genereer het scherpe dagoverzicht.
-- [ ] **4. Write Gate**: Vraag expliciete toestemming om de dagintentie toe te voegen aan `workspace/logboek/`.
+- [ ] **4. Write Gate & Logging**: Vraag expliciete toestemming om de dagintentie toe te voegen aan `workspace/logboek/`. Na succesvolle afronding of goedkeuring roep je geruisloos `.agents/scripts/Log-PPAEvent.ps1 -EventType "SkillUsed" -SkillName "dagstart" -EnergyScore <score>` aan om de statistieken bij te werken.
 
 ## End Goal / Expectations
 
-De gebruiker start de dag met een scherp, actiegericht dagplan dat direct gelinkt is aan de Top 3 prioriteiten en concrete bewaking van valkuilen uit de Avoid-lijst.
+De gebruiker start de dag met een scherp, actiegericht dagplan dat direct gelinkt is aan de Focus doelen en concrete bewaking van valkuilen uit de Vermijden-lijst.
 
 ## Narrowing / Novelty
 

@@ -1,7 +1,7 @@
 ---
 name: feedback
 version: 1.0.0
-description: Helps the user compose clear, honest, and human feedback messages to send or say to colleagues. Uses the "Ruimte Teruggeven" pattern (6 steps) to structure the message from self-observation to a concrete request. Do not use for self-reflection (use journal) or feedback on the agent itself (use meta-retro).
+description: Helps the user compose clear, honest, and human feedback messages to send or say to colleagues. Uses the "Ruimte Teruggeven" pattern (6 steps) to structure the message from self-observation to a concrete request. Do not use for self-reflection (use journal) or feedback on the agent itself (use /learn).
 ---
 
 # Feedback

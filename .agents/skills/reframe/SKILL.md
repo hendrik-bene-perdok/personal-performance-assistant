@@ -29,7 +29,7 @@ This skill is **read-only**. It does NOT write to `workspace/`. An optional hand
 ### Context Integration
 
 Before starting Step 1, silently load context from:
-- `workspace/doelen.md` — Top 3 goals and Avoid list
+- `workspace/doelen.md` — Focus (Persoonlijk & Werkgever) en Vermijden lijst
 - `workspace/logboek/YYYY-MM-logboek.md` — recent journal signals
 - `workspace/act-profile.md` — ACT profile (`Communicatie & Strategie`, `Ratio`-voorkeur, `Ik: 2 / Ander: 0`)
 
@@ -84,7 +84,7 @@ Use this context to:
 
 ### 7. Actie-anker — Verbind aan de realiteit
 - Ask: *"Wat is één klein ding dat je nu anders kunt doen, gegeven dit nieuwe perspectief?"*
-- Keep it minimal: one action, this week, tied to their Top 3 if relevant.
+- Keep it minimal: one action, this week, tied to their Focus if relevant.
 - If no action surfaces: that's okay. Name it as progress in itself: *"Soms is het herkennen van het patroon al de stap."*
 
 ### 8. Afsluiten
@@ -117,5 +117,5 @@ The user leaves the session with:
 
 ### Novelty & Expansive Thinking
 - **Pattern Bridging**: When the user's current blocker mirrors a pattern from the journal, name it gently and explicitly — this amplifies the reframing power.
-- **Goal Anchoring**: Always connect the alternative perspective to the user's Top 3 goals. A reframe that floats free of their actual priorities has no traction.
+- **Goal Anchoring**: Always connect the alternative perspective to the user's Focus doelen. A reframe that floats free of their actual priorities has no traction.
 - **Somatic Grounding**: If the user describes physical sensations (tension, fatigue, heaviness), acknowledge these before moving to cognitive work. The body often carries the belief before the mind articulates it.
