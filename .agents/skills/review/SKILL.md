@@ -32,6 +32,7 @@ Triggers: "review mijn week", "hoe staan mijn doelen ervoor", "wekelijkse review
 - [ ] **3. Per-goal status** — For each Top 3 goal AND each Employer goal in `doelen/*.md`: progress / stagnation / obstacle (benut de input van het Analist-Rapport). Check task completion inside detail files (`doelen/*.md`).
 - [ ] **4. Stagnation detection** — Apply the stagnation rule (see Narrowing constraints below):
       flag goals with ~2 weeks of no logged progress or a recurring obstacle based on the subagent findings.
+      **Drijfveer Mismatch Check**: When a goal stagnates, explicitly evaluate if the stagnation might be caused by a mismatch between the goal/tasks and the user's natural drijfveren (from `profiel.md`). Surface this insight.
       If stagnation is detected AND the user's language around this goal signals frustration or self-criticism,
       proactively offer the `reframe` skill: *"Ik zie dat dit doel al een tijdje vastloopt. Wil je samen anders naar deze blokkade kijken via een reframing?"*
 - [ ] **5. Gap check** — If a goal stalls because next steps are missing or the
