@@ -58,8 +58,8 @@ Any operation that **creates, modifies, or deletes** a file under `workspace/` i
 
 ## 7. Mandatory Retro
 
-- When the user reports a problem with the assistant itself (wrong routing, bad output, missing capability), you MUST offer to run `/learn` (or update rules/skills).
-- Keep `journal` (reflection on the user's own performance) and agent-learning (`/learn`) strictly separate.
+- When the user reports a problem with the assistant itself (wrong routing, bad output, missing capability), you MUST offer to run `meta-retro`.
+- Keep `journal` (reflection on the user's own performance) and `meta-retro` (improving the agent) strictly separate.
 
 ## 8. Engineering Principles
 
@@ -87,22 +87,14 @@ These apply when changing the PPA framework itself (agent, skills, rules, docs):
 
 ## 11. Goal Lifecycle (Maken, Onderhouden & Afronden)
 
-- **Maken (Scoping & Splitsing)**: `workspace/doelen.md` serves as the high-level dashboard (`FOCUS` (Persoonlijk & Werkgever), `VERMIJDEN`, `RODE VLAGGEN & ANKERS`, `DRIJFVEREN CHECK`, `VOLGENDE ACTIES`). Simple or personal focus items remain 1-liners on the dashboard. Formal employer goals and complex, multi-layered objectives with dedicated checklists/milestones MUST get a separate detail file under `workspace/doelen/<doel-title>.md`.
+- **Maken (Scoping & Splitsing)**: `workspace/doelen.md` serves as the high-level dashboard (`TOP 3 PRIORITEITEN`, `WERKGEVER DOELSTELLINGEN`, `VERMIJDEN`, `VOLGENDE ACTIES`). Simple or personal focus items remain 1-liners on the dashboard. Formal employer goals and complex, multi-layered objectives with dedicated checklists/milestones MUST get a separate detail file under `workspace/doelen/<doel-title>.md`.
 - **Onderhouden (Bidirectional Sync)**: All PPA skills (`review`, `journal`, `dagstart`) must scan both `workspace/doelen.md` and `workspace/doelen/*.md`. Whenever progress, task completion, or status changes occur in a detail file (`doelen/*.md`), the agent MUST proactively propose (via the Batched Write Gate) updating the status and next action line on the dashboard (`doelen.md`).
 - **Afronden (Archiving & Clean Dashboard)**: When a goal reaches 100% completion, formal sign-off, or its final deadline, `review` or `goal` MUST propose archiving the detail file by moving it to `workspace/doelen/archief/<doel-title>.md`. On `doelen.md`, the item is marked `[x] Afgerond` and cleaned up after the review to keep active focus pristine while preserving full historical context.
 
 ## 12. ACT® & Psychometric Anchor (Framework-Wide)
 
 - **Mandatory Profile Integration**: All PPA coaching, sparring (`ppa`), communication (`feedback`), and reframing (`reframe`) interactions MUST actively draw upon `workspace/act-profile.md` as diagnostic context alongside `doelen.md` and the `logboek`.
-- **DISC Profile Synergy**: Map DISC color preferences (Rood/Blauw vs. Groen/Geel) directly to the ACT profile (e.g. 0% Groen = `Ander: 0` aanpassingsvermogen). Proactively challenge the 'all-or-nothing' reflex: forcing Rood/Blauw logic versus checking out ('laten gaan') when words fail.
 - **Diagnostic Signals & Mirroring**:
   - *Ratio Preference*: Proactively challenge intellectualization, over-analysis, and rationalization of emotions; guide the user to somatic checks and emotional awareness.
   - *Action vs. Adaptability (`Ik: 2 / Ander: 0`)*: When the user exhibits a strong action reflex (`Sturend`, `Initiatiefrijk`) or unilateral execution, mirror the interpersonal impact on collaboration and prompt for empathy and intentional deceleration.
-  - *Woorden-Pauzeanker*: Prompt the user to use an explicit pause sentence (*"Ik zoek even naar de juiste woorden"*) instead of mentally checking out when cognitive logic is difficult to articulate.
   - *Primary Qualities (`Communicatie & Strategie`)*: Leverage natural strategic and communicative strengths to help the user frame complex trade-offs into clear, high-impact narratives.
-
-## 13. Telemetry & Metrics (Zero-Impact)
-
-- **Event Logging**: Om het framework en de statistieken van de gebruiker te voeden, MUST every skill (especially `dagstart`, `journal`, `goal`, `prioritize`, and `review`) log its execution at the end of its run.
-- **PowerShell Script**: Gebruik het meegeleverde script `.agents/scripts/Log-PPAEvent.ps1` om events weg te schrijven naar `workspace/ppa-events.jsonl` (bijv. EventType `SkillUsed`, `EnergyScore`, `GoalCompleted`).
-- **Zero-Impact**: Doe dit geruisloos en zonder de flow van de conversatie of de Write Gate van andere documenten te verstoren. Je mag dit combineren met een bestaande Write Gate als het relevant is, of het aan het einde van een goedgekeurde handeling automatisch doen.
