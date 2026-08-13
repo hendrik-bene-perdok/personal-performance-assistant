@@ -59,6 +59,7 @@ the user's situation. It establishes the single source of truth.
 | "schrijf feedback voor...", "hoe vertel ik aan mijn collega...", "help me formuleren", "feedback schrijven", "een boodschap sturen naar..." | `feedback` |
 | "reframe dit", "help me anders kijken naar", "ik zie dit te negatief", "ik faal", "het lukt niet", "het heeft geen zin", "ik ben vastgelopen" | `reframe` |
 | "dagstart", "bereid mijn dag voor", "mijn dag voorbereiden", "start mijn dag" | `dagstart` |
+| "report", "dashboard", "statistieken", "toon statistieken" | `report` (directe dashboardpresentatie & automatische sync naar `statistieken.md`) |
 | "spar met me", "help me denken over..." | **spar mode** |
 
 > **Technical Engineering Lock**: When actively working on a technical framework change, codebase refactor, or engineering task, do NOT switch intent to personal development coaching or spar mode on general prompts like "maak een plan". Maintain focus on the technical engineering task until it is explicitly completed or cancelled.

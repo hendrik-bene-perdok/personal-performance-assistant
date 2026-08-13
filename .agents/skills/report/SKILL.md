@@ -17,14 +17,12 @@ Wanneer de gebruiker vraagt om statistieken, inzicht in skill-gebruik, streaks, 
    - **Skill-gebruik**: Tel hoe vaak elke skill (dagstart, journal, goal, etc.) is gebruikt.
    - **Energie & Focus**: Bereken de gemiddelde score of toon de trend van de laatste metingen.
    - **Consistentie/Streaks**: Bepaal het aantal opeenvolgende dagen (of frequentie) dat een actie is uitgevoerd.
-3. **Presentatie**: Genereer een overzichtelijk dashboard.
-   - Toon dit direct in het chatvenster via Markdown tabellen.
-   - Als de gebruiker vraagt om het op te slaan, overschrijf dan `workspace/statistieken.md` via de Write Gate.
+3. **Directe Presentatie & Sync**: Genereer direct het overzichtelijke dashboard in het chatvenster via Markdown tabellen én werk `workspace/statistieken.md` direct bij (impliciete toestemming bij aanroep van `/report`), zonder voorafgaande stappenplan-poort of extra tussenbevestiging.
 
 ## Steps
 - [ ] **1. Bestand uitlezen**: Lees `workspace/ppa-events.jsonl`. Als het niet bestaat of leeg is, informeer de gebruiker dat er nog geen data is verzameld.
 - [ ] **2. Data Aggregatie**: Voer een basale tekstanalyse of parsing uit op de JSON lines om de hierboven genoemde metrics te berekenen.
-- [ ] **3. Rapportage**: Genereer het Markdown-rapport en presenteer dit in B2/C1 niveau, gestructureerd met heldere koppen.
+- [ ] **3. Directe Rapportage & Sync**: Presenteer het Markdown-rapport direct in de chat en werk `workspace/statistieken.md` direct bij.
 
 ## End Goal / Expectations
 De gebruiker krijgt direct en helder inzicht in zijn gebruik van het PPA-framework, de ontwikkeling van zijn energie, en eventuele gedragspatronen (streaks), gebaseerd op keiharde data uit het eigen framework.
@@ -32,7 +30,7 @@ De gebruiker krijgt direct en helder inzicht in zijn gebruik van het PPA-framewo
 ## Narrowing / Novelty
 
 ### Narrowing Constraints
-- Pas geen data of logs aan. Dit is een read-only actie, tenzij expliciet gevraagd wordt een `statistieken.md` aan te maken (met Write Gate).
+- Pas geen event-logs of ruwe bronbestanden aan. Het dashboard presenteert de data direct en synchroniseert `workspace/statistieken.md`.
 - Trek geen extreme psychologische conclusies uit beperkte data (e.g. "Je had gisteren een score van 4, je hebt een burn-out").
 
 ### Novelty & Expansive Thinking

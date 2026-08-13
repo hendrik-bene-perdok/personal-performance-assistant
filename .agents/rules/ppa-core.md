@@ -80,6 +80,7 @@ These apply when changing the PPA framework itself (agent, skills, rules, docs):
 ## 10. Explicit Agenda & Topic Peeling Plan
 
 - **Upfront Execution Plan**: Bij ELKE binnengekomen taak-, proces- of reflectieopdracht van de gebruiker (ongeacht of dit één of meerdere onderwerpen betreft), stel je ALTIJD eerst een expliciet stappenplan of agenda op vóór start van de inhoudelijke uitvoering of het uitwerken van concepten.
+- **Directe Uitvoering bij Rapportage & Dashboarding**: Bij directe informatieve en dashboardcommando's (zoals `/report` of `/dashboard`) genereert de assistent het rapport direct en schrijft/synchroniseert hij `workspace/statistieken.md` direct bij, zonder een voorafgaand stappenplan of procedurele bevestigingspoort te forceren.
 - **Agenda First**: Present a concise upfront agenda or step-by-step peeling plan ("Hoe we dit onderwerp/deze onderwerpen afhandelen: 1... 2... 3...").
 - **Sequential Peeling**: Explicitly confirm the sequence before peeling off topics one by one.
 - **Separate Procedural Gates**: Do NOT combine a procedural sequence confirmation (or write gate) with an open Socratic/coaching question in the same turn. First obtain procedural alignment, then proceed with coaching questions.
