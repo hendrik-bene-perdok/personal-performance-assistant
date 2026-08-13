@@ -40,8 +40,8 @@ the user's situation. It establishes the single source of truth.
   - `workspace/gap-analyse.md` (if present)
   - `workspace/act-profile.md` (vaste psychometrische context: kwaliteiten, actie- vs. aanpassingsvermogen, ratio-voorkeur)
   Do NOT write anything in this step.
-5. **Synthesize** — Extract the Focus (Persoonlijk & Werkgever) and Vermijden (Afleiding) list from `doelen.md`, the most recent journal status, and any open Next actions.
-6. **STOP gate** — Present a compact bullet summary (max 5 bullets: Focus, Vermijden-highlights, one open Next Action, latest journal signal). Do NOT repeat full goal descriptions verbatim. If the user initiated the session without a specific intent, briefly list the core capabilities (`dagstart`, `reframe`, `goal`, `journal`, `feedback`, or spar mode) as options. Ask: "Klopt dit? En waar wil je mee aan de slag?" Wait for confirmation before continuing. If a value is missing, ask — never fabricate (rule §2).
+5. **Synthesize** — Extract the Focus (Persoonlijk & Werkgever), Vermijden (Afleiding) list, and Concrete Projecttaken from `doelen.md`, along with the most recent journal status.
+6. **STOP gate** — Present the direct overview from `workspace/doelen.md` (Focus Persoonlijk & Werkgever, Vermijden-highlights, and active Concrete Projecttaken with status) instead of an abstracted 5-bullet summary, so the user has full dashboard visibility. If the user initiated the session without a specific intent, list the core capabilities (`dagstart`, `reframe`, `goal`, `journal`, `feedback`, or spar mode) as options. Ask: "Klopt dit? En waar wil je mee aan de slag?" Wait for confirmation before continuing. If a value is missing, ask — never fabricate (rule §2).
 
 ### 2. Classify intent
 - Map the user's request to a single skill or to **spar mode** using the intent table below.

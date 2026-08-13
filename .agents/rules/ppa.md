@@ -71,10 +71,10 @@ These apply when changing the PPA framework itself (agent, skills, rules, docs):
 - **Boy Scout Rule** — leave a file cleaner than you found it.
 - **Always Update Documentation** — when you change behaviour, update the matching guides in the same change. A task is not done until docs reflect reality.
 
-## 9. Realtime Zero-Impact Learning Pattern
+## 9. Realtime Zero-Impact Learning Pattern & Framework Updates
 
 - **Silent In-Stream Capture**: When the user corrects output tone, structure, or routing during a conversation, immediately adjust behavior in-stream without interrupting conversation flow or prompting modal dialogs.
-- **Direct Skill/Rule Integration**: Permanent behavioral lessons MUST be embedded directly into `AGENTS.md` or the matching `SKILL.md` file rather than isolated in static learning files.
+- **Framework-Wide Scope of `/learn`**: The `/learn` command is the dedicated trigger for framework-wide retrospection and improvement. When `/learn` is activated, the assistant MUST analyze the session's corrections and propose permanent updates directly across the relevant PPA framework files — including `.agents/rules/ppa.md`, matching skills under `.agents/skills/`, and agent instructions — ensuring the entire framework evolves as a cohesive unit.
 - **Asynchronous Consolidation**: Consolidate candidate learnings at session wrap-up so user interaction remains frictionless and zero-impact.
 
 ## 10. Explicit Agenda & Topic Peeling Plan
@@ -88,8 +88,11 @@ These apply when changing the PPA framework itself (agent, skills, rules, docs):
 ## 11. Goal Lifecycle (Maken, Onderhouden & Afronden)
 
 - **Maken (Scoping & Splitsing)**: `workspace/doelen.md` serves as the high-level dashboard (`TOP 3 PRIORITEITEN`, `WERKGEVER DOELSTELLINGEN`, `VERMIJDEN`, `VOLGENDE ACTIES`). Simple or personal focus items remain 1-liners on the dashboard. Formal employer goals and complex, multi-layered objectives with dedicated checklists/milestones MUST get a separate detail file under `workspace/doelen/<doel-title>.md`.
+- **Dashboard Takenstructuur**: Under `VOLGENDE ACTIES & TAKENOVERZICHT` on `workspace/doelen.md`, always maintain a clear separation between `📌 Concrete Projecttaken (Actief & Lopend)` and `⚓ Continuous Gedragsankers & Routines`. Projecttaken MUST be grouped under explicit status headings (`**[In opstart / Bezig]**` and `**[Open]**`) with concise, scanable one-liner descriptions. The status `[Gepland]` is explicitly forbidden, as open tasks are handled in an arbitrary priority order.
 - **Onderhouden (Bidirectional Sync)**: All PPA skills (`review`, `journal`, `dagstart`) must scan both `workspace/doelen.md` and `workspace/doelen/*.md`. Whenever progress, task completion, or status changes occur in a detail file (`doelen/*.md`), the agent MUST proactively propose (via the Batched Write Gate) updating the status and next action line on the dashboard (`doelen.md`).
 - **Afronden (Archiving & Clean Dashboard)**: When a goal reaches 100% completion, formal sign-off, or its final deadline, `review` or `goal` MUST propose archiving the detail file by moving it to `workspace/doelen/archief/<doel-title>.md`. On `doelen.md`, the item is marked `[x] Afgerond` and cleaned up after the review to keep active focus pristine while preserving full historical context.
+- **Dashboard Display (Post-Update)**: If `workspace/doelen.md` is modified during a session, the assistant MUST display the full, updated contents of the dashboard to the user before or during the session close.
+
 
 ## 12. ACT® & Psychometric Anchor (Framework-Wide)
 

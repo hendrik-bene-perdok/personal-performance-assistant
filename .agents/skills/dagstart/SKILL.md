@@ -11,16 +11,16 @@ Jij bent de **Dagstart** skill binnen de Personal Performance Assistant (PPA). J
 
 ## Instructions
 Wanneer de gebruiker de dag wil voorbereiden, de agenda wil primen of `/dagstart` aanroept:
-1. **Context & Agenda Laden**: Scan `workspace/doelen.md`, `workspace/profiel.md` en `workspace/act-profile.md`. Haal indien gevraagd of beschikbaar de actuele Outlook-agenda van vandaag op via Microsoft WorkIQ (`workiq/ask`).
-2. **Modulaire Socratische Q&A (3 Pijlers)** *(Hanteer alle 3 pijlers, tenzij de gebruiker expliciet filtert op bijv. "alleen O-S-A")*:
+1. **Context & Agenda Laden**: Scan `workspace/doelen.md`, `workspace/profiel.md` en `workspace/act-profile.md`. Controleer ook direct in `workspace/logboek/YYYY-MM-logboek.md` of er voor vandaag al een dagstart-entry bestaat. Zo ja, haal deze op en vat de gelogde intenties direct samen ter herinnering alvorens door te vragen. Haal indien gevraagd of beschikbaar de actuele Outlook-agenda van vandaag op via Microsoft WorkIQ (`workiq/ask`).
+2. **Modulaire Socratische Q&A (3 Pijlers)** *(Hanteer alle 3 pijlers, tenzij de gebruiker expliciet filtert op bijv. "alleen O-S-A" of als er al een gelogde dagstart is)*:
    - **Pijler 1 (Energie & Thuis)**: Peil energie en intentie voor thuis-fundament & rust. Vraag expliciet om een *Energie & Focus score* (1-10) om dit kwantitatief te kunnen meten.
    - **Pijler 2 (Focus & Doelen)**: Vraag naar agenda/taken van de dag en selecteer 1-2 hoofdprioriteiten; identificeer afleidingen.
    - **Pijler 3 (Risico-overleggen & O-S-A Priming)**: Identificeer 1-2 momenten uit de opgeroepen agenda met risico op controledrang, oplossingsdrang of mentaal uitchecken. Gebruik het ACT-profiel (`Ik: 2 / Ratio`) als spiegel en activeer het luister-anker of de pauzezin.
 3. **Synthese & Dagstart-Plan**: Presenteer na de antwoorden een overzichtelijk, actiegericht plan.
-4. **Logboek-aanbod**: Bied aan om de dagintentie op te slaan in het actuele maandlogboek (`workspace/logboek/YYYY-MM-logboek.md`) conform de Write Gate.
+4. **Logboek-aanbod**: Bied aan om de dagintentie op te slaan in het actuele maandlogboek (`workspace/logboek/YYYY-MM-logboek.md`) conform de Write Gate (indien nog niet gelogd).
 
 ## Steps
-- [ ] **1. Context & Agenda laden**: Lees `doelen.md` en haal de Outlook-agenda op (via `workiq/ask`).
+- [ ] **1. Context & Agenda laden**: Lees `doelen.md`, controleer op een reeds gelogde dagstart in het logboek, en haal de Outlook-agenda op (via `workiq/ask`).
 - [ ] **2. Reflectieve Q&A**: Stel de Socratische vragen voor de geselecteerde pijlers achtereenvolgens of geclusterd.
 - [ ] **3. Dagstart-Plan opstellen**: Genereer het scherpe dagoverzicht.
 - [ ] **4. Write Gate & Logging**: Vraag expliciete toestemming om de dagintentie toe te voegen aan `workspace/logboek/`. Na succesvolle afronding of goedkeuring roep je geruisloos `.agents/scripts/Log-PPAEvent.ps1 -EventType "SkillUsed" -SkillName "dagstart" -EnergyScore <score>` aan om de statistieken bij te werken.

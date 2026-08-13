@@ -8,7 +8,12 @@
 			],
 			"gallery": "https://api.mcp.github.com",
 			"version": "1.0.0"
-		}
+		},
+		  "workiq": {
+    "command": "npx",
+    "args": ["-y", "@microsoft/workiq@latest", "mcp"],
+    "tools": ["*"]
+  }
 	},
 	"inputs": []
 }
