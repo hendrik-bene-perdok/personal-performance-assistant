@@ -3,7 +3,7 @@
 > Replacement block for the focus sections of `workspace/doelen.md`.
 > Fill placeholders only. Keep headers intact.
 
-## 🎯 FOCUS
+## FOCUS
 
 ### 1. Persoonlijk
 - **[doel]**: [korte focus-omschrijving]
@@ -14,7 +14,7 @@
 
 ---
 
-## 🛑 VERMIJDEN (AFLEIDING)
+## VERMIJDEN (AFLEIDING)
 *Deze gewoontes en doelen zijn absoluut verboden terrein (5/25 regel).*
 
 - **[geparkeerd item]**: [focus-kost / reden]
