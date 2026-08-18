@@ -29,7 +29,7 @@ This skill is **read-only**. It does NOT write to `workspace/`. An optional hand
 ### Context Integration
 
 Before starting Step 1, silently load context from:
-- `workspace/doelen.md` — Focus (Persoonlijk & Werkgever) en Vermijden lijst
+- `workspace/focus.md` — Focus (Persoonlijk & Werkgever) en Vermijden lijst
 - `workspace/logboek/YYYY-MM-logboek.md` — recent journal signals
 - `workspace/act-profile.md` — ACT profile (`Communicatie & Strategie`, `Ratio`-voorkeur, `Ik: 2 / Ander: 0`)
 
@@ -110,7 +110,7 @@ The user leaves the session with:
 ### Narrowing Constraints
 - **Read-only**: no `workspace/` writes in this skill, except via explicit `journal` handoff.
 - **Never reframe before the emotion is named.** Steps 3 and 4 must complete before Step 5.
-- **Never fabricate context**: only use what is actually in `doelen.md` and the logboek. If missing, proceed without it — do not invent.
+- **Never fabricate context**: only use what is actually in `focus.md` and the logboek. If missing, proceed without it — do not invent.
 - **Do not dismiss the feeling**: reframing is not toxic positivity. Validate before pivoting.
 - **One question per turn**: never stack multiple questions in one message.
 - **AI Disclaimer**: always display at Step 1. Never skip.

@@ -7,7 +7,7 @@
 ## 2. Subagent: stagnatie-detective
 - **Role**: Read-Only Deep Logbook & Goal Stagnation Pattern Analyzer
 - **Mode**: Read-Only (geen schrijfbevoegdheid naar `workspace/`)
-- **Capabilities**: Scant historische maandlogboeken (`workspace/logboek/*.md`), gearchiveerde doelen (`workspace/doelen/archief/*.md`), en `workspace/gap-analyse.md`.
+- **Capabilities**: Scant historische maandlogboeken (`workspace/logboek/*.md`), gearchiveerde doelen (`workspace/doelen/archief/*.md`), actuele data in `workspace/focus.md` en `workspace/gap-analyse.md`.
 - **Tools**: Gebruikt native `view_file` en `list_dir`.
 - **Invocation**: Wordt gedelegeerd door de `review` en `journal` skills bij diepgaande kwartaal- en voortgangscontroles.
 

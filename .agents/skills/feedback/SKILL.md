@@ -44,6 +44,11 @@ Every feedback message follows these 6 steps in order:
 - Maximaal 5 zinnen in de finale tekst.
 - Controleer op zinsmenging, dubbele woorden en grammaticafouten voor verzending.
 
+### Toepassing in Teamceremonies (bijv. Retro, Planning, Refinement)
+Wanneer feedback of een rolverschuiving (zoals kostenverantwoordelijkheid of adoptie) in een teamoverleg wordt ingebracht:
+- **Ruimte Teruggeven in groepsverband:** Formuleer Stap 5 & 6 als een *open uitnodiging tot dialoog* ("Hoe kijken jullie hiertegenaan, en wat werkt voor jullie prettig?").
+- **Doel:** Voorkom dat een Rood/Blauwe stuurreflex wordt ervaren als een directief besluit; leg de operationele verantwoordelijkheid expliciet bij de expertise van het team.
+
 ## Steps
 
 - [ ] **1. Context** — Ensure the agent bootstrap has loaded context and the user confirmed it.

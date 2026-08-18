@@ -3,6 +3,11 @@
 All notable changes to the PPA architecture and its skills are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [2026-08-17] — Directe Start & Stappenindicatie Gestructureerde Skills
+
+### Changed
+- **Directe Start Zonder Dubbele Bevestiging**: Regel §10 (`ppa-core.md`), `dagstart/SKILL.md` en `ppa/SKILL.md` bijgewerkt zodat bij het aanroepen van een gestructureerde skill na de bootstrap (zoals `ja + dagstart`) direct wordt gestart met Stap 1 inclusief stappenindicatie (`Stap 1 van 4: ...`), zonder een redundante tussenbevestiging te forceren.
+
 ## [2026-07-11] — agentskills.io Audit Fixes & Sanering
 
 ### Added

@@ -28,10 +28,10 @@ This skill owns appending entries to `workspace/logboek/YYYY-MM-logboek.md`.
 - [ ] **3a. Progress/Update mode**
   - **Link:** Tie the update to a specific Top 3 goal OR Employer goal (`workspace/doelen/*.md`). If it links to none, ask if it is a new goal (route to `goal`) or a side issue.
   - **Status:** Classify: progress, stagnation, or obstacle. Check task checklist inside detail file (`doelen/*.md`) if applicable.
-  - **Bidirectional Sync:** If a specific task in `workspace/doelen/*.md` progressed or completed, prepare a batched update for both the journal and the status line in `doelen.md`.
+  - **Bidirectional Sync:** If a specific task in `workspace/doelen/*.md` progressed or completed, prepare a batched update for both the journal and the status line in `focus.md`.
   - **Coaching nudge:** Ask a sharp reflection question ("Wat was de concrete impact?", "Wat ligt binnen je invloedssfeer?").
 - [ ] **3b. Reflection mode**
-  - **Look back:** Read `workspace/logboek/YYYY-MM-logboek.md` and current `doelen.md`.
+  - **Look back:** Read `workspace/logboek/YYYY-MM-logboek.md` and current `focus.md`.
     - **Optionele Historische Subagent-Analyse (Antigravity)**: Bij periodieke of diepe maandreflecties kun je via `define_subagent` + `invoke_subagent` een read-only `stagnatie-detective` inschakelen om eerdere maanden (`workspace/logboek/*.md`) te scannen op terugkerende patronen en een **3-delig Gestructureerd Analist-Rapport** (Stagnatie-alerts, Terugkerende Patronen, Socratische Spiegelvraag) als input te benutten.
   - **Reflect:** Walk through prompts (Wat ging goed? Wat ging niet? Welk patroon zie je? Wat neem je mee?). Vraag de gebruiker ook expliciet om een *Energie & Focus score* (1-10) toe te kennen aan deze periode.
   - **Challenge:** Push on impact over output; on obstacles, focus on the circle of influence. Keep it supportive but honest. Add the AI disclaimer (rule §6) if the reflection touches health or mental well-being.

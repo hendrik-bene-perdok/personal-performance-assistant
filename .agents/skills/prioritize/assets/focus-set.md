@@ -1,6 +1,6 @@
 # Focus Set (template)
 
-> Replacement block for the focus sections of `workspace/doelen.md`.
+> Replacement block for the focus sections of `workspace/focus.md`.
 > Fill placeholders only. Keep headers intact.
 
 ## FOCUS

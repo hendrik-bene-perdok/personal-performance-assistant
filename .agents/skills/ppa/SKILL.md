@@ -31,7 +31,7 @@ the user's situation. It establishes the single source of truth.
 2. **Learnings** — If `.agents/learnings.md` exists, read it. Inject all entries silently into your reasoning context as active behavioral constraints. Do NOT quote or summarize learnings to the user.
 3. **Workspace integrity** — Confirm the repository-root `workspace/` folder exists. If missing, STOP and tell the user to create it first.
 4. **Scan workspace data (read-only)**:
-  - `workspace/doelen.md` (Focus, Vermijden, Rode Vlaggen & Ankers, Drijfveren Check, Volgende Acties)
+  - `workspace/focus.md` (Focus, Vermijden, Rode Vlaggen & Ankers, Drijfveren Check, Volgende Acties)
   - `workspace/doelen/*.md` (Detailed formal/employer goal files)
   - `workspace/doelen/archief/*.md` (Archived historical goals, if present)
   - `workspace/profiel.md` (profile / persona / drijfveren)
@@ -40,8 +40,8 @@ the user's situation. It establishes the single source of truth.
   - `workspace/gap-analyse.md` (if present)
   - `workspace/act-profile.md` (vaste psychometrische context: kwaliteiten, actie- vs. aanpassingsvermogen, ratio-voorkeur)
   Do NOT write anything in this step.
-5. **Synthesize** — Extract the Focus (Persoonlijk & Werkgever), Vermijden (Afleiding) list, and Concrete Projecttaken from `doelen.md`, along with the most recent journal status.
-6. **STOP gate** — Present the direct overview from `workspace/doelen.md` (Focus Persoonlijk & Werkgever, Vermijden-highlights, and active Concrete Projecttaken with status) instead of an abstracted 5-bullet summary, so the user has full dashboard visibility. If the user initiated the session without a specific intent, list the core capabilities (`dagstart`, `reframe`, `goal`, `journal`, `feedback`, or spar mode) as options. Ask: "Klopt dit? En waar wil je mee aan de slag?" Wait for confirmation before continuing. If a value is missing, ask — never fabricate (rule §2).
+5. **Synthesize** — Extract the Focus (Persoonlijk & Werkgever), Vermijden (Afleiding) list, and Concrete Projecttaken from `focus.md`, along with the most recent journal status.
+6. **STOP gate** — Present the direct overview from `workspace/focus.md` (Focus Persoonlijk & Werkgever, Vermijden-highlights, and active Concrete Projecttaken with status) instead of an abstracted 5-bullet summary, so the user has full dashboard visibility. If the user initiated the session without a specific intent, list the core capabilities (`dagstart`, `reframe`, `goal`, `journal`, `feedback`, or spar mode) as options. Ask: "Klopt dit? En waar wil je mee aan de slag?" Wait for confirmation before continuing. If a value is missing, ask — never fabricate (rule §2).
 
 ### 2. Classify intent
 - Map the user's request to a single skill or to **spar mode** using the intent table below.
@@ -69,6 +69,7 @@ the user's situation. It establishes the single source of truth.
 ### 3a. Delegate (skill requests)
 - Hand off to the chosen skill and follow its workflow.
 - Keep the user's confirmed context in mind; do not re-fabricate it.
+- For structured skills with predefined steps (such as `dagstart`, `review`, `reframe`), initiate Step 1 directly with a clear step progress indicator (e.g., `Stap 1 van 4: Energie & Thuis`), avoiding redundant procedural confirmation gates.
 
 ### 3b. Spar mode (coaching / thinking partner)
 - **Socratic default**: before giving an answer or solution, reflect the user's own words back.
@@ -114,7 +115,7 @@ up front, and no `workspace/` file changes without explicit user approval.
 Maps each workspace file to the fields skills read and write. The `workspace/`
 folder at the repository root is the single source of truth (rule §2).
 
-##### workspace/doelen.md & workspace/doelen/ (goals)
+##### workspace/focus.md & workspace/doelen/ (goals)
 | Section / Location | Meaning |
 | --- | --- |
 | `FOCUS` | The active focus goals, split into Persoonlijk and Werkgever. |

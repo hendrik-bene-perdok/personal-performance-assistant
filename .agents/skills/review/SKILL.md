@@ -22,9 +22,9 @@ Triggers: "review mijn week", "hoe staan mijn doelen ervoor", "wekelijkse review
 ## Steps
 
 - [ ] **1. Context** — Ensure the agent bootstrap has loaded context and the user confirmed it.
-- [ ] **2. Gather & Historische Subagent-Analyse** — Read `workspace/logboek/YYYY-MM-logboek.md` (current month), `workspace/doelen.md`, and any detail files in `workspace/doelen/*.md`. Read `workspace/gap-analyse.md` and `workspace/origin-gap.md` if relevant for deep historical context.
+- [ ] **2. Gather & Historische Subagent-Analyse** — Read `workspace/logboek/YYYY-MM-logboek.md` (current month), `workspace/focus.md`, and any detail files in `workspace/doelen/*.md`. Read `workspace/gap-analyse.md` and `workspace/origin-gap.md` if relevant for deep historical context.
       - **Subagent Onderzoeks-patroon (Antigravity)**: Definieer via `define_subagent` een read-only subagent (`name: "stagnatie-detective"`, uitsluitend leestools zoals `read_file`, `list_dir`, `grep_search`).
-      - Roep hem aan via `invoke_subagent` met de opdracht om alle bestanden in `workspace/logboek/`, `workspace/doelen.md` en `workspace/doelen/*.md` te analyseren op historische patronen over meerdere maanden.
+      - Roep hem aan via `invoke_subagent` met de opdracht om alle bestanden in `workspace/logboek/`, `workspace/focus.md` en `workspace/doelen/*.md` te analyseren op historische patronen over meerdere maanden.
       - De subagent levert een **3-delig Gestructureerd Analist-Rapport**:
         1. **Stagnatie-alerts**: Doelen met ~2 weken geen gelogde voortgang of repeterende blokkades.
         2. **Terugkerende Patronen**: Obstakels en gedragslijnen over meerdere maanden.
@@ -38,10 +38,10 @@ Triggers: "review mijn week", "hoe staan mijn doelen ervoor", "wekelijkse review
 - [ ] **5. Gap check** — If a goal stalls because next steps are missing or the
       current→desired gap is unclear, propose a gap analysis (template
       `assets/gap-analysis.md`, written to `workspace/gap-analyse.md`).
-- [ ] **6. Adjust, Sync & Archive** — Propose updated "VOLGENDE ACTIES" for `workspace/doelen.md`.
-      - **Bidirectional Sync**: If tasks in `workspace/doelen/*.md` progressed or finished, propose updating the corresponding status line on the `doelen.md` dashboard.
-      - **Archiving**: If a goal reached 100% completion or formal sign-off, propose moving `workspace/doelen/<doel-title>.md` to `workspace/doelen/archief/<doel-title>.md` and marking `[x] Afgerond` on `doelen.md` (cleaning it up after the review).
-- [ ] **7. STOP — write gate** — Show every proposed change (journal summary entry, `doelen.md` updates, and/or file moves). Get explicit "ja" per write (using the Batched Write Gate).
+- [ ] **6. Adjust, Sync & Archive** — Propose updated "VOLGENDE ACTIES" for `workspace/focus.md`.
+      - **Bidirectional Sync**: If tasks in `workspace/doelen/*.md` progressed or finished, propose updating the corresponding status line on the `focus.md` dashboard.
+      - **Archiving**: If a goal reached 100% completion or formal sign-off, propose moving `workspace/doelen/<doel-title>.md` to `workspace/doelen/archief/<doel-title>.md` and marking `[x] Afgerond` on `focus.md` (cleaning it up after the review).
+- [ ] **7. STOP — write gate** — Show every proposed change (journal summary entry, `focus.md` updates, and/or file moves). Get explicit "ja" per write (using the Batched Write Gate).
 - [ ] **8. Apply & confirm** — On approval, apply idempotent edits and confirm.
 - [ ] **9. Next** — Offer `journal` for deeper reflection, `prioritize` if the
       Focus feels overloaded, or `reframe` if stagnation has an emotional component.

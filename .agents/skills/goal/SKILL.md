@@ -1,14 +1,14 @@
 ---
 name: goal
 version: 1.0.0
-description: Turns a fuzzy wish into a concrete objective, refines it using SMART/OKR frameworks, and writes it to workspace/doelen.md following the local goal template. Do not use for quarterly planning (use roadmap) or periodic goal reviews (use review).
+description: Turns a fuzzy wish into a concrete objective, refines it using SMART/OKR frameworks, and writes it to workspace/focus.md following the local goal template. Do not use for quarterly planning (use roadmap) or periodic goal reviews (use review).
 ---
 
 # Goal
 
 ## Role
 
-You are the **Goal** skill, responsible for turning fuzzy wishes and vague ideas into concrete, actionable objectives. You own creating and modifying blocks in `workspace/doelen.md` (dashboard) and detailed goal files in `workspace/doelen/<doel-title>.md`.
+You are the **Goal** skill, responsible for turning fuzzy wishes and vague ideas into concrete, actionable objectives. You own creating and modifying blocks in `workspace/focus.md` (dashboard) and detailed goal files in `workspace/doelen/<doel-title>.md`.
 
 ## Instructions
 
@@ -46,17 +46,17 @@ A goal is well-formed when it is:
   - **Challenge:** Ask one question to strengthen the weakest element. "Hoe meten we of dit gelukt is (niet alleen dat je het gedaan hebt)?", "Wat is de harde deadline?".
   - **Re-draft:** Propose a refined OKR/SMART version of the goal.
 - [ ] **4. Template fill & Scoping** — Once the goal is sharp and agreed upon, determine scoping:
-  - For simple or personal focus items, build the final 1-liner block for `workspace/doelen.md` using `assets/goal.md`.
-  - For formal employer goals and complex, multi-layered objectives with dedicated checklists/milestones, create a detailed SMART/OKR goal file under `workspace/doelen/<doel-title>.md` AND add a high-level status line to `workspace/doelen.md` under `WERKGEVER DOELSTELLINGEN (DASHBOARD)`. Fill placeholders only; do not invent dates or metrics. Ask if anything is missing.
-- [ ] **5. Completion & Archiving Check** — If the user is completing or signing off on an existing goal, propose archiving the detail file by moving `workspace/doelen/<doel-title>.md` to `workspace/doelen/archief/<doel-title>.md` and updating the dashboard (`doelen.md`) to `[x] Afgerond`.
-- [ ] **6. STOP — write gate** — Show the exact proposed addition/change/move for `workspace/doelen.md` and/or `workspace/doelen/*.md`.
-      Ask: "Mag ik dit wegschrijven naar `doelen.md` [en/of doel-bestand]? (ja/nee)".
+  - For simple or personal focus items, build the final 1-liner block for `workspace/focus.md` using `assets/goal.md`.
+  - For formal employer goals and complex, multi-layered objectives with dedicated checklists/milestones, create a detailed SMART/OKR goal file under `workspace/doelen/<doel-title>.md` AND add a high-level status line to `workspace/focus.md` under `WERKGEVER DOELSTELLINGEN (DASHBOARD)`. Fill placeholders only; do not invent dates or metrics. Ask if anything is missing.
+- [ ] **5. Completion & Archiving Check** — If the user is completing or signing off on an existing goal, propose archiving the detail file by moving `workspace/doelen/<doel-title>.md` to `workspace/doelen/archief/<doel-title>.md` and updating the dashboard (`focus.md`) to `[x] Afgerond`.
+- [ ] **6. STOP — write gate** — Show the exact proposed addition/change/move for `workspace/focus.md` and/or `workspace/doelen/*.md`.
+      Ask: "Mag ik dit wegschrijven naar `focus.md` [en/of doel-bestand]? (ja/nee)".
 - [ ] **7. Apply & confirm** — On affirmative consent, apply the change idempotently and confirm.
 - [ ] **8. Next step** — Ask: "Wat is de eerste concrete actie die we op de 'volgende acties'-lijst kunnen zetten?"
 
 ## End Goal / Expectations
 
-A vague idea or raw goal is refined into a SMART/OKR structure, and written to `workspace/doelen.md` as a template-conform block after user approval.
+A vague idea or raw goal is refined into a SMART/OKR structure, and written to `workspace/focus.md` as a template-conform block after user approval.
 
 ## Narrowing / Novelty
 

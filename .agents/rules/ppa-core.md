@@ -82,14 +82,16 @@ These apply when changing the PPA framework itself (agent, skills, rules, docs):
 
 - **Upfront Execution Plan**: Bij ELKE binnengekomen taak-, proces- of reflectieopdracht van de gebruiker (ongeacht of dit één of meerdere onderwerpen betreft), stel je ALTIJD eerst een expliciet stappenplan of agenda op vóór start van de inhoudelijke uitvoering of het uitwerken van concepten.
 - **Directe Uitvoering bij Rapportage & Dashboarding**: Bij directe informatieve en dashboardcommando's (zoals `/report` of `/dashboard`) genereert de assistent het rapport direct en schrijft/synchroniseert hij `workspace/statistieken.md` direct bij, zonder een voorafgaand stappenplan of procedurele bevestigingspoort te forceren.
-- **Agenda First**: Present a concise upfront agenda or step-by-step peeling plan ("Hoe we dit onderwerp/deze onderwerpen afhandelen: 1... 2... 3...").
-- **Sequential Peeling**: Explicitly confirm the sequence before peeling off topics one by one.
-- **Separate Procedural Gates**: Do NOT combine a procedural sequence confirmation (or write gate) with an open Socratic/coaching question in the same turn. First obtain procedural alignment, then proceed with coaching questions.
+- **Directe Start bij Gestructureerde Skills (Geen Dubbele Bevestigingspoort)**: Wanneer een vooraf gedefinieerde gestructureerde skill (zoals `/dagstart`, `/review`, `/reframe`) wordt aangeroepen na bootstrap-bevestiging ("ja + dagstart"), start de assistent DIRECT met Stap 1. Forceer GEEN aparte procedurele bevestigingsvraag ("Kunnen we deze stappen zo doorlopen?"). Presenteer in plaats daarvan direct bij de eerste vraag een duidelijke stappenindicator (bijv. `Stap 1 van 4: Energie & Thuis-fundament`).
+- **Agenda First**: Present a concise upfront agenda or step-by-step peeling plan ("Hoe we dit onderwerp/deze onderwerpen afhandelen: 1... 2... 3...") when dealing with complex, multi-topic requests or unstructured sparring.
+- **Sequential Peeling**: Explicitly confirm the sequence before peeling off topics one by one when dealing with complex multi-topic requests.
+- **Separate Procedural Gates**: Do NOT combine a procedural sequence confirmation (or write gate) with an open Socratic/coaching question in the same turn when an explicit procedural sequence confirmation is required for complex multi-topic sparring. First obtain procedural alignment, then proceed with coaching questions.
 - **Agenda Bridging Question**: Upon completing each step in a multi-step agenda, always include a concise bridging question explicitly referencing the remaining steps of the agreed plan before continuing.
 
 ## 11. File Size & Context Mitigation
 
-- **22 KB Hard Limit**: Data files (like `workspace/profiel.md`, `workspace/dashboard.md`, and `workspace/doelen.md`) MUST remain strictly under 22kb to preserve context window efficiency.
-- **Proactive Mitigation**: If a file approaches this limit, you MUST NOT append more content. Instead, you MUST proactively propose a refactor to the user:
+- **22 KB Hard Limit**: Data files (like `workspace/profiel.md` and `workspace/focus.md`) MUST remain strictly under 22kb to preserve context window efficiency.
+- **Post-Action Refactor (No Session Hijacking)**: If a file approaches or hits this limit during an action (like a `/journal` log or a `/dagstart` update), you MUST ALWAYS complete the requested action first. Never block or refuse the user's input.
+- **End-of-Session Mitigation**: *Only after* the user's primary action is fully executed and written, you may politely add a note at the end of your response suggesting a refactor:
   1. Synthesize and compress older or verbose insights.
   2. Split deep-dive details or historical data into dedicated linked sub-files (e.g., `workspace/profiel-details/` or `workspace/doelen/archief/`), leaving only a high-level summary and link in the main file.
