@@ -1,6 +1,6 @@
 # Review Summary (template)
 
-> Optional summary block for `workspace/logboek.md` (weekly variant).
+> Optional summary block for `workspace/logboek/YYYY-MM-logboek.md` (weekly variant).
 > Fill placeholders only.
 
 ## Week-review — [datum]

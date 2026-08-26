@@ -1,0 +1,1 @@
+[Nummer]. **[Doelnaam / Titel] ([Kernfocus / Thema])**: [Heldere, SMART/OKR omschrijving van wat te bereiken en waaraan succes te meten is]. *([Korte toelichting of afweging ter bescherming van focus]).*

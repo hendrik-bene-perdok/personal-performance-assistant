@@ -1,17 +1,21 @@
 # Focus Set (template)
 
-> Replacement block for the focus sections of `workspace/doelen.md`.
+> Replacement block for the focus sections of `workspace/focus.md`.
 > Fill placeholders only. Keep headers intact.
 
-## TOP 3 PRIORITEITEN (FOCUS)
-1. **[doel]**: [korte focus-omschrijving]
-2. **[doel]**: [korte focus-omschrijving]
-3. **[doel]**: [korte focus-omschrijving]
+## FOCUS
+
+### 1. Persoonlijk
+- **[doel]**: [korte focus-omschrijving]
+
+### 2. Werkgever
+- **[doel]**: [korte focus-omschrijving]
+- **[doel]**: [korte focus-omschrijving]
 
 ---
 
-## VERMIJDEN (AVOID-AT-ALL-COSTS)
-*Deze doelen en gewoontes zijn verboden terrein totdat de Top 3 stabiel is.*
+## VERMIJDEN (AFLEIDING)
+*Deze gewoontes en doelen zijn absoluut verboden terrein (5/25 regel).*
 
 - **[geparkeerd item]**: [focus-kost / reden]
 - **[geparkeerd item]**: [focus-kost / reden]
