@@ -39,11 +39,16 @@ In PPA, the Focus in `focus.md` is the active focus; everything parked goes to t
       `workspace/focus.md`. Get explicit "ja". Recommend a backup before overwriting.
 - [ ] **7. Apply & confirm** — On approval, apply the idempotent edit and confirm.
 
-## End Goal / Expectations
+## End Goal
 
 A clear Focus and an honest Vermijden list, recorded in `workspace/focus.md` after approval.
 
-## Narrowing / Novelty
+## Narrowing
+
+### Gotchas & Best Practices
+- **Spend Context Wisely**: Assume general AI knowledge, focus on PPA-specific templates and constraints.
+- **Provide Defaults**: Suggest the most common path first, avoid presenting equal menus unless requested.
+- **Progressive Disclosure**: If relying on large structures, verify against referenced files instead of overloading instructions.
 
 ### Narrowing Constraints
 - No write without explicit confirmation via the write gate.

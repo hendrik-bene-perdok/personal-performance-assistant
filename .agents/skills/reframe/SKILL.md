@@ -95,7 +95,7 @@ Use this context to:
 
 ---
 
-## End Goal / Expectations
+## End Goal
 
 The user leaves the session with:
 1. A named emotion and a surfaced limiting belief.
@@ -105,7 +105,12 @@ The user leaves the session with:
 
 ---
 
-## Narrowing / Novelty
+## Narrowing
+
+### Gotchas & Best Practices
+- **Spend Context Wisely**: Assume general AI knowledge, focus on PPA-specific templates and constraints.
+- **Provide Defaults**: Suggest the most common path first, avoid presenting equal menus unless requested.
+- **Progressive Disclosure**: If relying on large structures, verify against referenced files instead of overloading instructions.
 
 ### Narrowing Constraints
 - **Read-only**: no `workspace/` writes in this skill, except via explicit `journal` handoff.

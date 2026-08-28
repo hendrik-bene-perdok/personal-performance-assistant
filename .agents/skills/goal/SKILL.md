@@ -54,11 +54,16 @@ A goal is well-formed when it is:
 - [ ] **7. Apply & confirm** — On affirmative consent, apply the change idempotently and confirm.
 - [ ] **8. Next step** — Ask: "Wat is de eerste concrete actie die we op de 'volgende acties'-lijst kunnen zetten?"
 
-## End Goal / Expectations
+## End Goal
 
 A vague idea or raw goal is refined into a SMART/OKR structure, and written to `workspace/focus.md` as a template-conform block after user approval.
 
-## Narrowing / Novelty
+## Narrowing
+
+### Gotchas & Best Practices
+- **Spend Context Wisely**: Assume general AI knowledge, focus on PPA-specific templates and constraints.
+- **Provide Defaults**: Suggest the most common path first, avoid presenting equal menus unless requested.
+- **Progressive Disclosure**: If relying on large structures, verify against referenced files instead of overloading instructions.
 
 ### Narrowing Constraints
 - Do not provide a polished goal immediately; iterate with the user.

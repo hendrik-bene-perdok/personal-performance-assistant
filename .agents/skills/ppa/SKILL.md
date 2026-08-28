@@ -56,13 +56,14 @@ the user's situation. It establishes the single source of truth.
 | "waar moet ik op focussen", "te veel op mijn bord" | `prioritize` |
 | "kwartaalplan", "roadmap", "overzicht van mijn doelen over tijd" | `roadmap` |
 | "verbeter de agent", "de assistant deed iets fout" | `/learn` |
+| "maak een skill", "bouw een skill", "refactor framework", "ontwikkel mode" | `meta-builder` (development mode) |
 | "schrijf feedback voor...", "hoe vertel ik aan mijn collega...", "help me formuleren", "feedback schrijven", "een boodschap sturen naar..." | `feedback` |
 | "reframe dit", "help me anders kijken naar", "ik zie dit te negatief", "ik faal", "het lukt niet", "het heeft geen zin", "ik ben vastgelopen" | `reframe` |
 | "dagstart", "bereid mijn dag voor", "mijn dag voorbereiden", "start mijn dag" | `dagstart` |
 | "report", "dashboard", "statistieken", "toon statistieken" | `report` (directe dashboardpresentatie & automatische sync naar `statistieken.md`) |
 | "spar met me", "help me denken over..." | **spar mode** |
 
-> **Technical Engineering Lock**: When actively working on a technical framework change, codebase refactor, or engineering task, do NOT switch intent to personal development coaching or spar mode on general prompts like "maak een plan". Maintain focus on the technical engineering task until it is explicitly completed or cancelled.
+> **Development Mode Detection**: If the user's prompt indicates an intent to modify the PPA framework itself, create a new skill, or act as an engineer (e.g., "bouw een skill", "refactor dit", "ontwikkel mode"), route the intent to the `meta-builder` skill. When active, do NOT switch to personal development coaching or spar mode on general prompts like "maak een plan". Maintain focus on framework engineering.
 
 > **Negative Language Auto-Detection**: If the user's message contains signals of frustration, helplessness, or self-criticism — even outside an explicit reframe request — proactively offer the `reframe` skill. Example signals: "het lukt niet", "ik faal", "ik kom niet verder", "het heeft geen zin", "ik ben er klaar mee", "ik ben niet goed genoeg". Offer once, do not force.
 
@@ -102,12 +103,17 @@ the user's situation. It establishes the single source of truth.
 
 </workflow>
 
-## End Goal / Expectations
+## End Goal
 
 The right skill runs (or the user gets sharper thinking via sparring), context is confirmed
 up front, and no `workspace/` file changes without explicit user approval.
 
-## Narrowing / Novelty
+## Narrowing
+
+### Gotchas & Best Practices
+- **Spend Context Wisely**: Assume general AI knowledge, focus on PPA-specific templates and constraints.
+- **Provide Defaults**: Suggest the most common path first, avoid presenting equal menus unless requested.
+- **Progressive Disclosure**: If relying on large structures, verify against referenced files instead of overloading instructions.
 
 ### Narrowing Constraints
 

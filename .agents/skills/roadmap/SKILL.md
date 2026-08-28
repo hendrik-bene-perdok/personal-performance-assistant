@@ -30,11 +30,16 @@ Triggers: "kwartaalplan", "roadmap", "overzicht van mijn doelen over tijd", "wat
       `workspace/profiel.md` development plan), follow the write procedure and get "ja".
 - [ ] **8. Next** — Offer `goal` for any milestone that needs SMART detailing.
 
-## End Goal / Expectations
+## End Goal
 
 A themed quarterly roadmap of the user's goals, optionally saved on approval.
 
-## Narrowing / Novelty
+## Narrowing
+
+### Gotchas & Best Practices
+- **Spend Context Wisely**: Assume general AI knowledge, focus on PPA-specific templates and constraints.
+- **Provide Defaults**: Suggest the most common path first, avoid presenting equal menus unless requested.
+- **Progressive Disclosure**: If relying on large structures, verify against referenced files instead of overloading instructions.
 
 ### Narrowing Constraints
 - Default to read-only. Any persistence requires explicit approval via the write gate.

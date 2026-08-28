@@ -69,11 +69,16 @@ Wanneer feedback of een rolverschuiving (zoals kostenverantwoordelijkheid of ado
 - [ ] **5. Itereren** — Vraag: "Wil je iets aanpassen in de toon, lengte of inhoud?" Pas aan op verzoek. Maximaal 2 iteratieronden.
 - [ ] **6. Afsluiten** — Vraag of de gebruiker de boodschap wil loggen als intentie in het journaal (optioneel, handoff naar `journal`).
 
-## End Goal / Expectations
+## End Goal
 
 Een kopieerklare, professionele en persoonlijke feedbacktekst van maximaal 5 zinnen, opgebouwd via de 6 stappen, klaar om te versturen of uit te spreken.
 
-## Narrowing / Novelty
+## Narrowing
+
+### Gotchas & Best Practices
+- **Spend Context Wisely**: Assume general AI knowledge, focus on PPA-specific templates and constraints.
+- **Provide Defaults**: Suggest the most common path first, avoid presenting equal menus unless requested.
+- **Progressive Disclosure**: If relying on large structures, verify against referenced files instead of overloading instructions.
 
 ### Narrowing Constraints
 - Geen workspace-writes in deze skill, behalve bij expliciete handoff naar `journal`.
