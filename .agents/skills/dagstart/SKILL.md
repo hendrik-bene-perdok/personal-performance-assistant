@@ -25,11 +25,16 @@ Wanneer de gebruiker de dag wil voorbereiden, de agenda wil primen of `/dagstart
 - [ ] **3. Dagstart-Plan opstellen (Stap 4)**: Genereer het scherpe dagoverzicht.
 - [ ] **4. Write Gate & Logging**: Vraag expliciete toestemming om de dagintentie toe te voegen aan `workspace/logboek/`. Na succesvolle afronding of goedkeuring roep je geruisloos `.agents/scripts/Log-PPAEvent.ps1 -EventType "SkillUsed" -SkillName "dagstart" -EnergyScore <score>` aan om de statistieken bij te werken.
 
-## End Goal / Expectations
+## End Goal
 
 De gebruiker start de dag met een scherp, actiegericht dagplan dat direct gelinkt is aan de Focus doelen en concrete bewaking van valkuilen uit de Vermijden-lijst.
 
-## Narrowing / Novelty
+## Narrowing
+
+### Gotchas & Best Practices
+- **Spend Context Wisely**: Assume general AI knowledge, focus on PPA-specific templates and constraints.
+- **Provide Defaults**: Suggest the most common path first, avoid presenting equal menus unless requested.
+- **Progressive Disclosure**: If relying on large structures, verify against referenced files instead of overloading instructions.
 
 ### Narrowing Constraints
 - Read-only voor de workspace behalve een optionele logboek-entry via de Write Gate.

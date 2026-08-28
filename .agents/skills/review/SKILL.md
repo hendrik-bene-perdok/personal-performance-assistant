@@ -46,12 +46,17 @@ Triggers: "review mijn week", "hoe staan mijn doelen ervoor", "wekelijkse review
 - [ ] **9. Next** — Offer `journal` for deeper reflection, `prioritize` if the
       Focus feels overloaded, or `reframe` if stagnation has an emotional component.
 
-## End Goal / Expectations
+## End Goal
 
 A clear per-goal status with stagnation flags, and (after approval) updated next actions
 and/or a fresh gap analysis.
 
-## Narrowing / Novelty
+## Narrowing
+
+### Gotchas & Best Practices
+- **Spend Context Wisely**: Assume general AI knowledge, focus on PPA-specific templates and constraints.
+- **Provide Defaults**: Suggest the most common path first, avoid presenting equal menus unless requested.
+- **Progressive Disclosure**: If relying on large structures, verify against referenced files instead of overloading instructions.
 
 ### Narrowing Constraints
 - No write without explicit confirmation via the write gate.

@@ -43,11 +43,16 @@ This skill owns appending entries to `workspace/logboek/YYYY-MM-logboek.md`.
 - [ ] **6. Append & confirm** — On approval, append to `workspace/logboek/YYYY-MM-logboek.md` (never overwrite) and confirm. Roep na afloop geruisloos `.agents/scripts/Log-PPAEvent.ps1 -EventType "SkillUsed" -SkillName "journal" -EnergyScore <score>` aan om de sessie te loggen.
 - [ ] **7. Next step** — Ask: "Wat is de kleinste volgende stap die je nu kunt zetten?" Or offer `review`/`prioritize` if focus drifted.
 
-## End Goal / Expectations
+## End Goal
 
 A template-conform entry (progress update or structured reflection) appended to `workspace/logboek/YYYY-MM-logboek.md` after approval, plus a concrete next step or intention.
 
-## Narrowing / Novelty
+## Narrowing
+
+### Gotchas & Best Practices
+- **Spend Context Wisely**: Assume general AI knowledge, focus on PPA-specific templates and constraints.
+- **Provide Defaults**: Suggest the most common path first, avoid presenting equal menus unless requested.
+- **Progressive Disclosure**: If relying on large structures, verify against referenced files instead of overloading instructions.
 
 ### Narrowing Constraints
 - Append only — never overwrite existing journal history.

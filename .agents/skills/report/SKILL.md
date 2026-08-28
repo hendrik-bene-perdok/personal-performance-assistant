@@ -24,10 +24,15 @@ Wanneer de gebruiker vraagt om statistieken, inzicht in skill-gebruik, streaks, 
 - [ ] **2. Data Aggregatie**: Voer een basale tekstanalyse of parsing uit op de JSON lines om de hierboven genoemde metrics te berekenen.
 - [ ] **3. Directe Rapportage & Sync**: Presenteer het Markdown-rapport direct in de chat en werk `workspace/statistieken.md` direct bij.
 
-## End Goal / Expectations
+## End Goal
 De gebruiker krijgt direct en helder inzicht in zijn gebruik van het PPA-framework, de ontwikkeling van zijn energie, en eventuele gedragspatronen (streaks), gebaseerd op keiharde data uit het eigen framework.
 
-## Narrowing / Novelty
+## Narrowing
+
+### Gotchas & Best Practices
+- **Spend Context Wisely**: Assume general AI knowledge, focus on PPA-specific templates and constraints.
+- **Provide Defaults**: Suggest the most common path first, avoid presenting equal menus unless requested.
+- **Progressive Disclosure**: If relying on large structures, verify against referenced files instead of overloading instructions.
 
 ### Narrowing Constraints
 - Pas geen event-logs of ruwe bronbestanden aan. Het dashboard presenteert de data direct en synchroniseert `workspace/statistieken.md`.

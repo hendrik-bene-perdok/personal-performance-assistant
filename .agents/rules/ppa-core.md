@@ -66,7 +66,12 @@ Any operation that **creates, modifies, or deletes** a file under `workspace/` i
 
 These apply when changing the PPA framework itself (agent, skills, rules, docs):
 
-- **RISEN** — every agent and skill states its **R**ole, **I**nstructions, **S**teps, **E**nd Goal / Expectations, and **N**arrowing / Novelty.
+- **RISEN** — every agent and skill states its core components:
+  - **R – Role:** Tell the AI who it is. Assign a job or expert persona (e.g., "Act as a senior software architect" or "a copywriter").
+  - **I – Instructions:** State the core task clearly. Explain what the AI needs to do or create in direct terms.
+  - **S – Steps:** Give the AI a logical order or workflow to follow. This acts like a recipe or chain-of-thought path.
+  - **E – End Goal (or Expectation):** Describe the final outcome, target audience, or exact format of the final result.
+  - **N – Narrowing:** Set hard boundaries and limits. Restrict things like tone, length, word count, or what not to do.
 - **KISS** — prefer the simplest solution that satisfies the requirement; reject complexity for its own sake.
 - **YAGNI** — do not build for hypothetical future use cases. Solve the problem in front of you.
 - **Boy Scout Rule** — leave a file cleaner than you found it.
