@@ -1,7 +1,7 @@
 ---
 name: feedback
 version: 1.0.0
-description: Helps the user compose clear, honest, and human feedback messages to send or say to colleagues. Uses the "Ruimte Teruggeven" pattern (6 steps) to structure the message from self-observation to a concrete request. Do not use for self-reflection (use journal) or feedback on the agent itself (use /learn).
+description: Helps the user compose clear, honest, and human feedback messages to send or say to colleagues. Uses the "Ruimte Teruggeven" pattern (6 steps) to structure the message from self-observation to a concrete request. Do not use for self-reflection (use journal), internal notes-to-self / mindset anchors, private/family situations (use spar mode), or feedback on the agent itself (use /learn).
 ---
 
 # Feedback
@@ -35,25 +35,32 @@ Every feedback message follows these 6 steps in order:
 | 5. Voorwaarde/Behoefte | Wat jij nodig hebt om dat te doen | *"Om dat te kunnen doen, heb ik nodig..."* |
 | 6. Concrete vraag | Één heldere actie of verzoek | *"Kunnen we...?"* |
 
-### Referentievoorbeeld
+### Referentievoorbeelden
 
+#### 1. Individuele communicatie (1-op-1)
 > "Ik merk dat ik nu te veel probeer te beïnvloeden op de korte termijn. Dat kost mij te veel denkkracht en het geeft jullie waarschijnlijk het gevoel van micromanagement. Dat wil ik omdraaien: ik wil jullie de volledige vrijheid en autonomie geven. Om dat met een gerust hart te kunnen doen, heb ik meer vertrouwen nodig in onze planning voor de komende weken. Kunnen we vandaag kijken hoe we die rust voor mij, en die vrijheid voor jullie kunnen regelen."
+
+#### 2. Teamceremonie / Retro (Kadering, feitelijke context & ruimtegevende slotvraag)
+> "Ik leg het Pluvo consulting-traject graag even op tafel als leermoment voor onze samenwerking. Deze feature is buiten ons proces om zonder ureninschatting opgepakt, waardoor er een opleverdatum aan de klant is beloofd waar ik niet van wist. Zodra ik daardoor verrast word, wordt dit voor mij direct een afleidende side-quest en ga ik me ermee bemoeien, wat mij veel tijd kost en voor David mogelijk als micromanagement is ervaren. Ik wil die controle en bemoeienis juist loslaten en volledig kunnen vertrouwen op onze gezamenlijke planning. Welke afspraak kunnen we vandaag maken zodat we elkaars werk niet doorkruisen?"
 
 ### Output quality
 - Schrijfstijl: kort, menselijk, eerlijk — geen HR-jargon.
-- Maximaal 5 zinnen in de finale tekst.
+- Maximaal 5 zinnen in de finale tekst (één vloeiende alinea).
 - Controleer op zinsmenging, dubbele woorden en grammaticafouten voor verzending.
 
 ### Toepassing in Teamceremonies (bijv. Retro, Planning, Refinement)
 Wanneer feedback of een rolverschuiving (zoals kostenverantwoordelijkheid of adoptie) in een teamoverleg wordt ingebracht:
 - **Ruimte Teruggeven in groepsverband:** Formuleer Stap 5 & 6 als een *open uitnodiging tot dialoog* ("Hoe kijken jullie hiertegenaan, en wat werkt voor jullie prettig?").
 - **Doel:** Voorkom dat een Rood/Blauwe stuurreflex wordt ervaren als een directief besluit; leg de operationele verantwoordelijkheid expliciet bij de expertise van het team.
+- **Kadering & Context-kalibratie:** Start met 1 zachte inleidende zin (gericht op leermoment/samenwerking, géén vingerwijzen) en 1 feitelijke contextzin (wat er concreet plaatsvond). Beperk de totale gesproken inbreng tot 1 compacte alinea van 4-5 zinnen. Voorkom lange monologen ("te lang"), maar borg wel het concrete voorval ("voldoende context").
+- **Ruimtegevende Slotvraag:** Sluit af met een constructieve, gelijkwaardige uitnodiging die focust op het voorkomen van onderlinge frictie en wederzijds vertrouwen (bijv. *"Welke afspraak kunnen we vandaag maken zodat we elkaars werk niet doorkruisen?"*).
+- **Retro-titel meeleveren:** Bied bij een teamceremonie standaard 1-2 constructieve, beknopte titels aan (3-5 woorden) voor op het retro-board of post-it (bijv. *Casus X: verwachtingsmanagement en voorkomen van verrassingen*).
 
 ## Steps
 
 - [ ] **1. Context** — Ensure the agent bootstrap has loaded context and the user confirmed it.
-- [ ] **2. Intake** — Ask the following, ONE question at a time:
-  - Wie is de ontvanger (naam/rol)?
+- [ ] **2. Intake** — Ensure the message is intended for an external professional colleague. If the user seeks a personal reflection, note-to-self, or deals with a private/home situation, stop immediately and offer to route to `spar mode` or `journal`. If the recipient named by the user is a family member or personal relation, redirect to `spar mode`. Otherwise, ask the following, ONE question at a time:
+  - Wie is de ontvanger (naam/rol van de collega)?
   - Wat is de kern van wat je wilt zeggen (in één ruwe zin)?
   - Wat is het gewenste effect — wat moet er na dit gesprek anders zijn?
 - [ ] **3. Patroon toepassen** — Loop de 6 stappen door. Stel per stap een gerichte vraag als de gebruiker de inhoud nog niet heeft gegeven. Gebruik de antwoorden als bouwstenen.

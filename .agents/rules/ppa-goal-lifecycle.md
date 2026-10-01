@@ -14,6 +14,7 @@ description: Goal creation, scoping, dashboard sync, task structure, and archivi
   6. **Doorlopende Routines** (Vaste gewoontes).
 - **Detailbestanden**: De gedetailleerde projectmijlpalen leven indien nodig in verdiepende bestanden onder `workspace/doelen/*.md`.
 - **Takenstructuur**: In `focus.md` houd je acties beknopt. Complexe acties verwijzen naar detailbestanden. De status `[Gepland]` is verboden.
+- **Afronding van taken (Afgerond-sectie)**: Wanneer taken in `workspace/focus.md` onder `### 2.2 VOLGENDE ACTIES & TAKENOVERZICHT` worden afgerond, verplaats je deze van `**[Open]**` naar een expliciete `**[Afgerond]**`-lijst, voorzien van `[x]` en de afrondingsdatum in het formaat `(afgerond: YYYY-MM-DD)`. Zo blijft de actieve focuslijst direct scanbaar.
 - **Onderhouden (Focus Sync)**: All PPA skills (`review`, `journal`, `dagstart`) must scan and update `workspace/focus.md`. Progress or task completion in a detail file MUST trigger a proactive proposal to update the main `focus.md` dashboard.
 - **Afronden (Archiving)**: When a SMART goal is fully completed, archive its details to `workspace/doelen/archief/<doel-title>.md`. Remove it from the active `focus.md` to keep the focus clean.
 - **Display Post-Update**: If `workspace/focus.md` is modified, display the full, updated contents to the user before session close. Geen emoji's toegestaan in dit bestand.
