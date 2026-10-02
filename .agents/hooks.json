@@ -1,0 +1,22 @@
+{
+  "hooks": {
+    "ppa-write-gate": {
+      "type": "PreToolUse",
+      "matcher": "write_to_file|replace_file_content|multi_replace_file_content",
+      "action": {
+        "type": "command",
+        "command": "pwsh -ExecutionPolicy Bypass -File .agents/scripts/ppa_write_gate_hook.ps1",
+        "timeoutMs": 10000
+      }
+    },
+    "ppa-telemetry-logger": {
+      "type": "PostToolUse",
+      "matcher": "write_to_file|replace_file_content|multi_replace_file_content",
+      "action": {
+        "type": "command",
+        "command": "pwsh -ExecutionPolicy Bypass -File .agents/scripts/ppa_post_write_logger.ps1",
+        "timeoutMs": 10000
+      }
+    }
+  }
+}
